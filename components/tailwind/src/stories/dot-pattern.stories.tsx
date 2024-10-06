@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 import { DotPattern } from "../ui/dot-pattern";
 
 const meta: Meta<typeof DotPattern> = {
-	title: "Dot Pattern",
+	title: "Backgrounds/Dot Pattern",
 	component: DotPattern,
 	tags: ["autodocs"],
 	argTypes: {

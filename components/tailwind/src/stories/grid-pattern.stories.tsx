@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
 
+import { cn } from "@/lib/utils";
 import { GridPattern } from "../ui/grid-pattern";
 
 const meta: Meta<typeof GridPattern> = {
-	title: "Grid Pattern",
+	title: "Backgrounds/Grid Pattern",
 	component: GridPattern,
 	tags: ["autodocs"],
 	argTypes: {
