@@ -1,8 +1,7 @@
-import type { BlurIn } from "@/ui/blur-in";
 import { BorderBeam } from "@/ui/border-beam";
 import type { Meta, StoryObj } from "storybook-solidjs";
 
-const meta: Meta<typeof BlurIn> = {
+const meta: Meta<typeof BorderBeam> = {
 	title: "Effects/Border Beam",
 	component: BorderBeam,
 	tags: ["autodocs"],
