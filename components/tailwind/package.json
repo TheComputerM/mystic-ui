@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@biomejs/biome": "1.9.3",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/builder-vite": "^8.3.5",
     "@storybook/docs-tools": "^8.3.5",
@@ -20,7 +21,10 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "biome format src",
+    "lint": "biome lint src",
+    "check": "biome check src"
   },
   "dependencies": {
     "clsx": "^2.1.1",
