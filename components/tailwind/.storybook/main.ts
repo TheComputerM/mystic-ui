@@ -1,6 +1,8 @@
 import type { StorybookConfig } from "storybook-solidjs-vite";
-
 import { join, dirname } from "path";
+
+import { mergeConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -18,5 +20,10 @@ const config: StorybookConfig = {
     name: getAbsolutePath("storybook-solidjs-vite"),
     options: {},
   },
+  viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()]
+    })
+  }
 };
 export default config;
