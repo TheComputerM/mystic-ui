@@ -1,0 +1,17 @@
+{
+  "name": "@mystic-ui/pandacss",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "convert": "bun scripts/convert.ts"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.46.1",
+    "@types/bun": "latest",
+    "tw2panda": "^0.3.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@mystic-ui/tailwind",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/builder-vite": "^8.3.5",
+    "@storybook/docs-tools": "^8.3.5",
+    "@types/bun": "latest",
+    "storybook": "^8.3.5",
+    "storybook-solidjs": "^1.0.0-beta.2",
+    "storybook-solidjs-vite": "^1.0.0-beta.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}
