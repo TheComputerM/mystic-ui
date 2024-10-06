@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/ui/marquee";
 import { For } from "solid-js";
-import { GridPattern } from "../ui/grid-pattern";
 
 const meta: Meta<typeof Marquee> = {
 	title: "Marquee",

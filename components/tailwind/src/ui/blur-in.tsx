@@ -3,7 +3,7 @@
 import { Motion } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
-import { type Component, mergeProps, splitProps } from "solid-js";
+import { type Component, mergeProps } from "solid-js";
 
 interface BlurInProps {
 	text: string;

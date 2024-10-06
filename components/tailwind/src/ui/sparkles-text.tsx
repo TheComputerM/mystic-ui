@@ -1,13 +1,10 @@
 "use client";
 
-import { Motion, motion } from "solid-motionone";
+import { Motion } from "solid-motionone";
 
-import { cn } from "@/lib/utils";
 import {
 	type Component,
-	For,
 	Index,
-	type JSXElement,
 	type ParentComponent,
 	createSignal,
 	mergeProps,

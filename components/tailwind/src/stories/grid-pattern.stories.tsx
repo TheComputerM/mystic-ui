@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
-
-import { cn } from "@/lib/utils";
 import { GridPattern } from "../ui/grid-pattern";
 
 const meta: Meta<typeof GridPattern> = {
