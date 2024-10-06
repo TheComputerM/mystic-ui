@@ -47,6 +47,7 @@ export const Button: Component<ButtonProps> = (props) => {
         'storybook-button': true,
         'storybook-button--primary': local.primary === true,
         'storybook-button--secondary': local.primary === false,
+        'w-52': true 
       }}
       style={{ 'background-color': local.backgroundColor }}
     >
