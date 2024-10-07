@@ -38,7 +38,7 @@ export const Marquee: ParentComponent<MarqueeProps> = (props) => {
 			)}
 		>
 			<For each={Array(localProps.repeat).fill(0)}>
-				{(_, i) => (
+				{() => (
 					<div
 						class={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
 							"animate-marquee flex-row": !localProps.vertical,
