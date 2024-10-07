@@ -21,9 +21,9 @@ export const LetterPullup: Component<LetterPullupProps> = (props) => {
 				{(letter, i) => (
 					<Motion.div
 						initial={{ y: 100, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
+						inView={{ y: 0, opacity: 1 }}
 						transition={{
-							delay: i() * (localProps.delay ? localProps.delay : 0.05),
+							delay: i() * localProps.delay,
 						}}
 					>
 						{letter === " " ? <span>&nbsp;</span> : letter}

@@ -1,26 +1,29 @@
 "use client";
 
-import { Motion } from "solid-motionone";
+import { Motion, type VariantDefinition } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
-import { For, mergeProps } from "solid-js";
+import { type Component, For, mergeProps } from "solid-js";
 
 interface FlipTextProps {
 	text: string;
 	duration?: number;
 	delayMultiple?: number;
-	states?: any;
+	states?: {
+		initial: VariantDefinition;
+		animate: VariantDefinition;
+	};
 	class?: string;
 }
 
-export const FlipText = (props: FlipTextProps) => {
+export const FlipText: Component<FlipTextProps> = (props) => {
 	const localProps = mergeProps(
 		{
 			duration: 0.5,
 			delayMultiple: 0.08,
 			states: {
-				hidden: { rotateX: -90, opacity: 0 },
-				visible: { rotateX: 0, opacity: 1 },
+				initial: { rotateX: -90, opacity: 0 },
+				animate: { rotateX: 0, opacity: 1 },
 			},
 		},
 		props,
@@ -31,8 +34,8 @@ export const FlipText = (props: FlipTextProps) => {
 			<For each={localProps.text.split("")}>
 				{(char, i) => (
 					<Motion.div
-						initial={localProps.states.hidden}
-						animate={localProps.states.visible}
+						initial={localProps.states.initial}
+						inView={localProps.states.animate}
 						transition={{
 							duration: localProps.duration,
 							delay: i() * localProps.delayMultiple,

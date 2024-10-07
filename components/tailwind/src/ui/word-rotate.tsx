@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	type Component,
 	type JSX,
 	Show,
 	createEffect,
@@ -13,19 +14,19 @@ import { Motion, type Options, Presence } from "solid-motionone";
 interface WordRotateProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	words: string[];
 	duration?: number;
-	animation?: Options;
+	states?: Options;
 }
 
-export function WordRotate(props: WordRotateProps) {
+export const WordRotate: Component<WordRotateProps> = (props) => {
 	const [_localProps, forwardProps] = splitProps(props, [
 		"words",
 		"duration",
-		"animation",
+		"states",
 	]);
 	const localProps = mergeProps(
 		{
 			duration: 2500,
-			animation: {
+			states: {
 				initial: { opacity: 0, y: -50 },
 				animate: { opacity: 1, y: 0 },
 				exit: { opacity: 0, y: 50 },
@@ -49,10 +50,10 @@ export function WordRotate(props: WordRotateProps) {
 	return (
 		<Presence>
 			<Show when={index() + 1} keyed>
-				<Motion.div {...localProps.animation} {...forwardProps}>
+				<Motion.div {...localProps.states} {...forwardProps}>
 					{localProps.words[index()]}
 				</Motion.div>
 			</Show>
 		</Presence>
 	);
-}
+};

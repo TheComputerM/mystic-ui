@@ -3,7 +3,7 @@
 import { Motion } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
-import { For, mergeProps } from "solid-js";
+import { type Component, For, mergeProps } from "solid-js";
 
 interface GradualSpacingProps {
 	text: string;
@@ -13,7 +13,7 @@ interface GradualSpacingProps {
 	class?: string;
 }
 
-export const GradualSpacing = (props: GradualSpacingProps) => {
+export const GradualSpacing: Component<GradualSpacingProps> = (props) => {
 	const localProps = mergeProps(
 		{
 			duration: 0.5,
@@ -32,7 +32,7 @@ export const GradualSpacing = (props: GradualSpacingProps) => {
 				{(char, i) => (
 					<Motion.div
 						initial={localProps.states.hidden}
-						animate={localProps.states.visible}
+						inView={localProps.states.visible}
 						exit={localProps.states.hidden}
 						transition={{
 							duration: localProps.duration,
