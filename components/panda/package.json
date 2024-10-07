@@ -4,14 +4,29 @@
   "type": "module",
   "scripts": {
     "prepare": "panda codegen",
-    "convert": "bun scripts/convert.ts"
+    "convert": "bun scripts/convert.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "format": "biome format src",
+    "lint": "biome lint src",
+    "check": "biome check src"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.3",
     "@pandacss/dev": "^0.46.1",
     "@types/bun": "latest",
+    "postcss": "^8.4.47",
     "tw2panda": "^0.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/builder-vite": "^8.3.5",
+    "@storybook/docs-tools": "^8.3.5",
+    "storybook": "^8.3.5",
+    "storybook-solidjs": "^1.0.0-beta.2",
+    "storybook-solidjs-vite": "^1.0.0-beta.2"
   }
 }

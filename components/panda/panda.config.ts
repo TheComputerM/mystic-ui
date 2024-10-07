@@ -8,4 +8,5 @@ export default defineConfig({
     extend: {},
   },
   outdir: "styled-system",
+  jsxFactory: "solid"
 });

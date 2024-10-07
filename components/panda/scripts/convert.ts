@@ -23,15 +23,14 @@ async function getHash(filePath: string) {
   return hasher.digest("hex");
 }
 
-const glob = new Glob("../tailwind/src/*.tsx");
-
+const glob = new Glob("../tailwind/src/ui/*.tsx");
 
 for await (const file of glob.scan()) {
   const fileHash = await getHash(file);
   const fileName = path.basename(file);
   if (tracker[fileName] !== fileHash) {
-    await $`cp ${file} ./src`;
-    await $`tw2panda rewrite ./src/${fileName} -w`
+    await $`cp ${file} ./src/ui/`;
+    await $`tw2panda rewrite ./src/ui/${fileName} -w --tw ../tailwind/tailwind.config.js -c ./panda.config.ts`;
     tracker[fileName] = fileHash;
   }
 }
