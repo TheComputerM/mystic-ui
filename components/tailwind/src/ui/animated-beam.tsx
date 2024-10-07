@@ -13,7 +13,7 @@ import {
 
 export interface AnimatedBeamProps {
 	class?: string;
-	containerRef: HTMLElement; // Container ref
+	containerRef: HTMLElement;
 	fromRef: HTMLElement;
 	toRef: HTMLElement;
 	curvature?: number;
@@ -133,29 +133,25 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (_props) => {
 				linearGradient.setAttribute(
 					"x1",
 					`${
-						(gradientCoordinates.x1[1] - gradientCoordinates.x1[0]) * p +
-						gradientCoordinates.x1[0]
+						gradientCoordinates.x1[1] * p + gradientCoordinates.x1[0] * (1 - p)
 					}%`,
 				);
 				linearGradient.setAttribute(
 					"x2",
 					`${
-						(gradientCoordinates.x2[1] - gradientCoordinates.x2[0]) * p +
-						gradientCoordinates.x2[0]
+						gradientCoordinates.x2[1] * p + gradientCoordinates.x2[0] * (1 - p)
 					}%`,
 				);
 				linearGradient.setAttribute(
 					"y1",
 					`${
-						(gradientCoordinates.y1[1] - gradientCoordinates.y1[0]) * p +
-						gradientCoordinates.y1[0]
+						gradientCoordinates.y1[1] * p + gradientCoordinates.y1[0] * (1 - p)
 					}%`,
 				);
 				linearGradient.setAttribute(
 					"y2",
 					`${
-						(gradientCoordinates.y2[1] - gradientCoordinates.y2[0]) * p +
-						gradientCoordinates.y2[0]
+						gradientCoordinates.y2[1] * p + gradientCoordinates.y2[0] * (1 - p)
 					}%`,
 				);
 			},
