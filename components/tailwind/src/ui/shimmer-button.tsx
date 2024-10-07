@@ -8,31 +8,31 @@ import {
 
 export interface ShimmerButtonProps
 	extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
-	shimmerColor?: string;
-	shimmerSize?: string;
-	borderRadius?: string;
-	shimmerDuration?: string;
 	background?: string;
+	borderRadius?: string;
 	class?: string;
+	shimmerColor?: string;
+	shimmerDuration?: string;
+	shimmerSize?: string;
 }
 
 export const ShimmerButton: ParentComponent<ShimmerButtonProps> = (props) => {
 	const [_localProps, forwardProps] = splitProps(props, [
-		"shimmerColor",
-		"shimmerSize",
-		"shimmerDuration",
-		"borderRadius",
 		"background",
-		"class",
+		"borderRadius",
 		"children",
+		"class",
+		"shimmerColor",
+		"shimmerDuration",
+		"shimmerSize",
 	]);
 	const localProps = mergeProps(
 		{
-			shimmerColor: "#ffffff",
-			shimmerSize: "0.05em",
-			shimmerDuration: "3s",
-			borderRadius: "100px",
 			background: "rgba(0, 0, 0, 1)",
+			borderRadius: "100px",
+			shimmerColor: "#ffffff",
+			shimmerDuration: "3s",
+			shimmerSize: "0.05em",
 		},
 		_localProps,
 	);

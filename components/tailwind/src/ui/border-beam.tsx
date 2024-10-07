@@ -2,26 +2,26 @@ import { cn } from "@/lib/utils";
 import { type Component, mergeProps } from "solid-js";
 
 interface BorderBeamProps {
-	class?: string;
-	size?: number;
-	duration?: number;
-	borderWidth?: number;
 	anchor?: number;
+	borderWidth?: number;
+	class?: string;
 	colorFrom?: string;
 	colorTo?: string;
 	delay?: number;
+	duration?: number;
+	size?: number;
 }
 
 export const BorderBeam: Component<BorderBeamProps> = (props) => {
 	const localProps = mergeProps(
 		{
-			size: 200,
-			duration: 15,
 			anchor: 90,
 			borderWidth: 1.5,
 			colorFrom: "#ffaa40",
 			colorTo: "#9c40ff",
 			delay: 0,
+			duration: 15,
+			size: 200,
 		},
 		props,
 	);

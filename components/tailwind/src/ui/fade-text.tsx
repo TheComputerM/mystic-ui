@@ -6,8 +6,8 @@ import { Motion, type Options } from "solid-motionone";
 type FadeTextProps = {
 	class?: string;
 	direction?: "up" | "down" | "left" | "right";
-	transition?: Options["transition"];
 	text: string;
+	transition?: Options["transition"];
 };
 
 const map = { up: 10, down: -10, left: -10, right: 10 };
@@ -17,7 +17,7 @@ export const FadeText: Component<FadeTextProps> = (props) => {
 		{ direction: "up" as FadeTextProps["direction"] },
 		props,
 	);
-	const directionOffset = map[localProps.direction ?? "up"];
+	const directionOffset = map[localProps.direction!];
 	const axis =
 		localProps.direction === "up" || localProps.direction === "down"
 			? "y"

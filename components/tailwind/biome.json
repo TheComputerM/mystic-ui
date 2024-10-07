@@ -25,6 +25,9 @@
 			},
 			"correctness": {
 				"noUnusedImports": "warn"
+			},
+			"style": {
+				"noNonNullAssertion": "off"
 			}
 		}
 	},

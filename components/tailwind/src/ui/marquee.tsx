@@ -9,20 +9,20 @@ import {
 
 interface MarqueeProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	class?: string;
-	reverse?: boolean;
 	pauseOnHover?: boolean;
-	vertical?: boolean;
 	repeat?: number;
+	reverse?: boolean;
+	vertical?: boolean;
 }
 
 export const Marquee: ParentComponent<MarqueeProps> = (props) => {
 	const [_localProps, forwardProps] = splitProps(props, [
-		"class",
-		"reverse",
 		"children",
+		"class",
 		"pauseOnHover",
-		"vertical",
 		"repeat",
+		"reverse",
+		"vertical",
 	]);
 	const localProps = mergeProps(
 		{ reverse: false, pauseOnHover: false, vertical: false, repeat: 4 },

@@ -13,38 +13,32 @@ import {
 } from "solid-js";
 
 interface Sparkle {
-	id: string;
-	x: string;
-	y: string;
 	color: string;
 	delay: number;
-	scale: number;
+	id: string;
 	lifespan: number;
+	scale: number;
+	x: string;
+	y: string;
 }
 
 interface SparklesTextProps {
-	/**
-	 * The class of the text
-	 */
+	/** The colors of the sparkles */
+	colors?: string[];
+
+	/** The class of the text */
 	class?: string;
 
-	/**
-	 * The count of sparkles
-	 */
+	/** The number of sparkles */
 	sparklesCount?: number;
-
-	/**
-	 * The colors of the sparkles
-	 */
-	colors?: string[];
 }
 
 export const SparklesText: ParentComponent<SparklesTextProps> = (props) => {
 	const [_localProps, forwardProps] = splitProps(props, [
-		"colors",
-		"sparklesCount",
 		"children",
 		"class",
+		"colors",
+		"sparklesCount",
 	]);
 	const localProps = mergeProps(
 		{ colors: ["#9E7AFF", "#FE8BBB"], sparklesCount: 10 },

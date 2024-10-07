@@ -1,30 +1,33 @@
 "use client";
 
+import {
+	type JSX,
+	type ParentComponent,
+	mergeProps,
+	splitProps,
+} from "solid-js";
 import { Motion } from "solid-motionone";
 
-import { cn } from "@/lib/utils";
-import { type Component, mergeProps } from "solid-js";
-
-interface BlurInProps {
-	text: string;
-	class?: string;
+interface BlurInProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	blur?: string;
 	duration?: number;
 }
 
-export const BlurIn: Component<BlurInProps> = (props) => {
-	const localProps = mergeProps({ blur: "16px", duration: 1 }, props);
+export const BlurIn: ParentComponent<BlurInProps> = (props) => {
+	const [_localProps, forwardProps] = splitProps(props, [
+		"blur",
+		"duration",
+		"children",
+	]);
+	const localProps = mergeProps({ blur: "16px", duration: 1 }, _localProps);
 	return (
-		<Motion.h1
+		<Motion.div
 			initial={{ filter: `blur(${localProps.blur})`, opacity: 0 }}
 			animate={{ filter: "blur(0px)", opacity: 1 }}
 			transition={{ duration: localProps.duration }}
-			class={cn(
-				"font-display text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]",
-				localProps.class,
-			)}
+			{...forwardProps}
 		>
-			{localProps.text}
-		</Motion.h1>
+			{localProps.children}
+		</Motion.div>
 	);
 };

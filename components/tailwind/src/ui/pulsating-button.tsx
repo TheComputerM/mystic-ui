@@ -10,21 +10,21 @@ import {
 
 interface PulsatingButtonProps
 	extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
-	pulseColor?: string;
 	duration?: string;
+	pulseColor?: string;
 }
 
 export const PulsatingButton: ParentComponent<PulsatingButtonProps> = (
 	props,
 ) => {
 	const [_localProps, forwardProps] = splitProps(props, [
-		"class",
 		"children",
-		"pulseColor",
+		"class",
 		"duration",
+		"pulseColor",
 	]);
 	const localProps = mergeProps(
-		{ pulseColor: "#0096ff", duration: "1.5s" },
+		{ duration: "1.5s", pulseColor: "#0096ff" },
 		_localProps,
 	);
 	return (

@@ -8,14 +8,14 @@ type TColorProp = string | string[];
 interface ShineBorderProps {
 	borderRadius?: number;
 	borderWidth?: number;
-	duration?: number;
-	color?: TColorProp;
 	class?: string;
+	color?: TColorProp;
+	duration?: number;
 }
 
 export const ShineBorder: ParentComponent<ShineBorderProps> = (props) => {
 	const localProps = mergeProps(
-		{ borderRadius: 8, borderWidth: 1, duration: 14, color: "#000000" },
+		{ borderRadius: 8, borderWidth: 1, color: "#000000", duration: 14 },
 		props,
 	);
 	return (

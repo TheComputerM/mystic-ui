@@ -10,26 +10,26 @@ import {
 import { cn } from "@/lib/utils";
 
 interface GridPatternProps {
-	width?: number;
+	class?: string;
 	height?: number;
-	x?: number;
-	y?: number;
 	squares?: Array<[x: number, y: number]>;
 	strokeDasharray?: string;
-	class?: string;
+	width?: number;
+	x?: number;
+	y?: number;
 }
 
 export const GridPattern: Component<GridPatternProps> = (
 	props: GridPatternProps,
 ) => {
 	const [_localProps, forwardProps] = splitProps(props, [
-		"width",
+		"class",
 		"height",
+		"squares",
+		"strokeDasharray",
+		"width",
 		"x",
 		"y",
-		"strokeDasharray",
-		"squares",
-		"class",
 	]);
 	const localProps = mergeProps(
 		{ width: 40, height: 40, x: -1, y: -1, strokeDasharray: "0" },

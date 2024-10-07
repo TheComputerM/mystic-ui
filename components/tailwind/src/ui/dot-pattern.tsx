@@ -1,5 +1,6 @@
 import {
 	type Component,
+	type JSX,
 	createUniqueId,
 	mergeProps,
 	splitProps,
@@ -7,14 +8,14 @@ import {
 
 import { cn } from "@/lib/utils";
 
-interface DotPatternProps {
-	width?: string | number;
-	height?: string | number;
-	x?: string | number;
-	y?: string | number;
-	cx?: string | number;
-	cy?: string | number;
-	cr?: string | number;
+interface DotPatternProps extends JSX.SvgSVGAttributes<SVGSVGElement> {
+	width?: number;
+	height?: number;
+	x?: number;
+	y?: number;
+	cx?: number;
+	cy?: number;
+	cr?: number;
 	class?: string;
 }
 
