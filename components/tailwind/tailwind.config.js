@@ -13,6 +13,9 @@ export default {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         shine: "shine var(--duration) infinite linear",
+        grid: "grid 15s linear infinite",
+        gradient: "gradient 8s linear infinite",
+        meteor: "meteor 5s linear infinite",
       },
       keyframes: {
         "spin-around": {
@@ -60,6 +63,23 @@ export default {
           },
           to: {
             "background-position": "0% 0%",
+          },
+        },
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
+          "70%": { opacity: 1 },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: 0,
           },
         },
       },
