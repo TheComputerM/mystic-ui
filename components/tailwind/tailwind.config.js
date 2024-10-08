@@ -16,6 +16,7 @@ export default {
         grid: "grid 15s linear infinite",
         gradient: "gradient 8s linear infinite",
         meteor: "meteor 5s linear infinite",
+        ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
       },
       keyframes: {
         "spin-around": {
@@ -80,6 +81,14 @@ export default {
           "100%": {
             transform: "rotate(215deg) translateX(-500px)",
             opacity: 0,
+          },
+        },
+        ripple: {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(0.9)",
           },
         },
       },
