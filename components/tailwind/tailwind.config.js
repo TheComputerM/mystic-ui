@@ -17,6 +17,7 @@ export default {
         gradient: "gradient 8s linear infinite",
         meteor: "meteor 5s linear infinite",
         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
+        "shiny-text": "shiny-text 8s infinite",
       },
       keyframes: {
         "spin-around": {
@@ -89,6 +90,14 @@ export default {
           },
           "50%": {
             transform: "translate(-50%, -50%) scale(0.9)",
+          },
+        },
+        "shiny-text": {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shiny-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shiny-width)) 0",
           },
         },
       },
