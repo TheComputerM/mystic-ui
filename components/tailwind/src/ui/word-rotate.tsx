@@ -48,7 +48,7 @@ export const WordRotate: Component<WordRotateProps> = (props) => {
 	});
 
 	return (
-		<Presence>
+		<Presence exitBeforeEnter>
 			<Show when={index() + 1} keyed>
 				<Motion.div {...localProps.states} {...forwardProps}>
 					{localProps.words[index()]}

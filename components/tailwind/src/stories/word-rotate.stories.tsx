@@ -13,10 +13,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	render: (props: any) => (
-		<WordRotate
-			{...props}
-			class="text-4xl font-bold text-black dark:text-white"
-			words={["Word", "Rotate"]}
-		/>
+		<div class="overflow-hidden py-2">
+			<WordRotate
+				{...props}
+				class="text-4xl font-bold text-black dark:text-white"
+				words={["Word", "Rotate"]}
+			/>
+		</div>
 	),
 };
