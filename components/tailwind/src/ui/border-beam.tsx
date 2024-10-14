@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { type Component, mergeProps } from "solid-js";
 
-interface BorderBeamProps {
+export interface BorderBeamProps {
 	anchor?: number;
 	borderWidth?: number;
 	class?: string;

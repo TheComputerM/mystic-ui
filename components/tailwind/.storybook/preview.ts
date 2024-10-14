@@ -1,6 +1,7 @@
 import "./tailwind.css";
 
 const preview = {
+	tags: ["autodocs"],
 	parameters: {
 		controls: {
 			matchers: {
