@@ -1,0 +1,15 @@
+{
+  "name": "@mystic-ui/registry",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "biome check --write src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

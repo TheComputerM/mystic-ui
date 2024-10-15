@@ -1,0 +1,3 @@
+interface RegistryEntry {
+  name: string;
+}
