@@ -29,7 +29,6 @@
   "dependencies": {
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/slim": "^3.5.0",
-    "@tsparticles/solid": "^3.0.0",
     "clsx": "^2.1.1",
     "motion": "^10.18.0",
     "solid-motionone": "^1.0.2",
