@@ -7,13 +7,13 @@ export default function DockDemo() {
 			<DockIcon>
 				<TbHome />
 			</DockIcon>
-      <DockIcon>
+			<DockIcon>
 				<TbEdit />
 			</DockIcon>
-      <DockIcon>
+			<DockIcon>
 				<TbMail />
 			</DockIcon>
-      <DockIcon>
+			<DockIcon>
 				<TbSun />
 			</DockIcon>
 		</Dock>

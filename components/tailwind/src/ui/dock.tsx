@@ -12,8 +12,8 @@ import {
 import { Motion } from "solid-motionone";
 
 export interface DockProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  magnification?: number;
-  distance?: number;
+	magnification?: number;
+	distance?: number;
 }
 
 const DockContext = createContext<Accessor<number>>();
@@ -30,7 +30,7 @@ export const Dock: ParentComponent<DockProps> = (props) => {
 			)}
 			{...forwardProps}
 			onMouseMove={(e) => setMouseX(e.pageX)}
-      onMouseLeave={() => setMouseX(Number.POSITIVE_INFINITY)}
+			onMouseLeave={() => setMouseX(Number.POSITIVE_INFINITY)}
 		>
 			<DockContext.Provider value={mouseX}>
 				{localProps.children}
@@ -67,7 +67,7 @@ export const DockIcon: ParentComponent<DockIconProps> = (props) => {
 				"flex aspect-square cursor-pointer items-center justify-center rounded-full",
 				localProps.class,
 			)}
-      initial={{ width: "40px" }}
+			initial={{ width: "40px" }}
 			animate={{ width: `${width()}px` }}
 			transition={{
 				easing: spring({ mass: 0.1, stiffness: 150, damping: 12 }),
