@@ -14,7 +14,7 @@ interface NumberTickerProps extends JSX.HTMLAttributes<HTMLSpanElement> {
 	decimalPlaces?: number;
 }
 
-const NumberTicker: Component<NumberTickerProps> = (props) => {
+export const NumberTicker: Component<NumberTickerProps> = (props) => {
 	const [_localProps, forwardProps] = splitProps(props, [
 		"value",
 		"direction",
@@ -50,5 +50,3 @@ const NumberTicker: Component<NumberTickerProps> = (props) => {
 
 	return <span {...forwardProps} ref={ref} />;
 };
-
-export default NumberTicker;
