@@ -5,8 +5,7 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof BentoCard> = {
 	title: "Bento Grid",
 	component: BentoCard,
-	argTypes: {
-	},
+	argTypes: {},
 };
 
 export default meta;

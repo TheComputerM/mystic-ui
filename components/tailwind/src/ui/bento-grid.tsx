@@ -54,7 +54,9 @@ const BentoCard: Component<BentoCardProps> = (props) => (
 		</div>
 
 		<div class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-			<button class="text-sm">Replace with your CTA</button>
+			<button type="button" class="text-sm">
+				Replace with your CTA
+			</button>
 			{/* <Button variant="ghost" asChild size="sm" class="pointer-events-auto">
         <a href={href}>
           {cta}
