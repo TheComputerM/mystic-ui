@@ -32,7 +32,7 @@ export const GridPattern: Component<GridPatternProps> = (
 		"y",
 	]);
 	const localProps = mergeProps(
-		{ width: 40, height: 40, x: -1, y: -1, strokeDasharray: "0" },
+		{ width: 40, height: 40, x: -1, y: -1, strokeDasharray: "0", squares: [] },
 		_localProps,
 	);
 	const id = createUniqueId();
