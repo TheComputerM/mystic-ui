@@ -9,7 +9,8 @@ import {
 
 // adapted from: https://github.com/Ashikpaul/Starfield-effect
 
-interface StarfieldProps extends JSX.CanvasHTMLAttributes<HTMLCanvasElement> {
+export interface StarfieldProps
+	extends JSX.CanvasHTMLAttributes<HTMLCanvasElement> {
 	background?: string;
 	color?: string;
 	quantity?: number;

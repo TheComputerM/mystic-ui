@@ -7,7 +7,7 @@ import {
 	mergeProps,
 } from "solid-js";
 
-interface TypingAnimationProps {
+export interface TypingAnimationProps {
 	text: string;
 	duration?: number;
 }

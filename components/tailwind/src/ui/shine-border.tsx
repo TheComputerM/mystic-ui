@@ -5,7 +5,7 @@ import { type ParentComponent, mergeProps } from "solid-js";
 
 type TColorProp = string | string[];
 
-interface ShineBorderProps {
+export interface ShineBorderProps {
 	borderRadius?: number;
 	borderWidth?: number;
 	class?: string;

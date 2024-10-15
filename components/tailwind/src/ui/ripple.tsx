@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { type Component, For, mergeProps } from "solid-js";
 
-interface RippleProps {
+export interface RippleProps {
 	mainCircleSize?: number;
 	mainCircleOpacity?: number;
 	numCircles?: number;

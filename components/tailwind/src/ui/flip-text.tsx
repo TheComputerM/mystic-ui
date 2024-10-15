@@ -5,7 +5,7 @@ import { Motion, type VariantDefinition } from "solid-motionone";
 import { cn } from "@/lib/utils";
 import { type Component, For, mergeProps } from "solid-js";
 
-interface FlipTextProps {
+export interface FlipTextProps {
 	text: string;
 	duration?: number;
 	delayMultiple?: number;

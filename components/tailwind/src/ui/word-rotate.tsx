@@ -11,7 +11,7 @@ import {
 } from "solid-js";
 import { Motion, type Options, Presence } from "solid-motionone";
 
-interface WordRotateProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface WordRotateProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	words: string[];
 	duration?: number;
 	states?: Options;

@@ -7,7 +7,7 @@ import {
 	splitProps,
 } from "solid-js";
 
-interface MarqueeProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface MarqueeProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	class?: string;
 	pauseOnHover?: boolean;
 	repeat?: number;

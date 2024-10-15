@@ -11,7 +11,7 @@ import {
 } from "solid-js";
 import { Motion } from "solid-motionone";
 
-interface SparklesProps {
+export interface SparklesProps {
 	id?: string;
 	class?: string;
 	background?: string;

@@ -22,7 +22,7 @@ interface Sparkle {
 	y: string;
 }
 
-interface SparklesTextProps {
+export interface SparklesTextProps {
 	/** The colors of the sparkles */
 	colors?: string[];
 

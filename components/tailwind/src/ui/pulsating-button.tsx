@@ -8,7 +8,7 @@ import {
 	splitProps,
 } from "solid-js";
 
-interface PulsatingButtonProps
+export interface PulsatingButtonProps
 	extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
 	duration?: string;
 	pulseColor?: string;

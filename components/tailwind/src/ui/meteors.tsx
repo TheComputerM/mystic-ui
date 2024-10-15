@@ -10,7 +10,7 @@ import {
 	mergeProps,
 } from "solid-js";
 
-interface MeteorsProps {
+export interface MeteorsProps {
 	number?: number;
 }
 export const Meteors: Component<MeteorsProps> = (props) => {

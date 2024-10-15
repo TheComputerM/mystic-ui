@@ -6,7 +6,7 @@ import {
 	splitProps,
 } from "solid-js";
 
-interface AnimatedShinyTextProps
+export interface AnimatedShinyTextProps
 	extends JSX.HTMLAttributes<HTMLParagraphElement> {
 	shimmerWidth?: number;
 }

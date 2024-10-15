@@ -7,7 +7,7 @@ import {
 	splitProps,
 } from "solid-js";
 
-interface NumberTickerProps extends JSX.HTMLAttributes<HTMLSpanElement> {
+export interface NumberTickerProps extends JSX.HTMLAttributes<HTMLSpanElement> {
 	value?: number;
 	direction?: "up" | "down";
 	delay?: number;

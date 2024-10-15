@@ -5,7 +5,7 @@ import { Motion } from "solid-motionone";
 import { cn } from "@/lib/utils";
 import { type Component, For, mergeProps } from "solid-js";
 
-interface GradualSpacingProps {
+export interface GradualSpacingProps {
 	text: string;
 	duration?: number;
 	delayMultiple?: number;

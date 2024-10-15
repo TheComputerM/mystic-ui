@@ -3,12 +3,12 @@
 import { type Component, mergeProps } from "solid-js";
 import { Motion, type Options } from "solid-motionone";
 
-type FadeTextProps = {
+export interface FadeTextProps {
 	class?: string;
 	direction?: "up" | "down" | "left" | "right";
 	text: string;
 	transition?: Options["transition"];
-};
+}
 
 const map = { up: 10, down: -10, left: -10, right: 10 };
 

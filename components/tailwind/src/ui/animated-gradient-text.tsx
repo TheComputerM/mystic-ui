@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { ParentComponent } from "solid-js";
 
-interface AnimatedGradientTextProps {
+export interface AnimatedGradientTextProps {
 	class?: string;
 }
 

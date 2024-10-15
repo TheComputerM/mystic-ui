@@ -8,7 +8,7 @@ import {
 
 import { cn } from "@/lib/utils";
 
-interface DotPatternProps extends JSX.SvgSVGAttributes<SVGSVGElement> {
+export interface DotPatternProps extends JSX.SvgSVGAttributes<SVGSVGElement> {
 	width?: number;
 	height?: number;
 	x?: number;

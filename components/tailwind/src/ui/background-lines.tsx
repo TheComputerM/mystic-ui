@@ -9,7 +9,7 @@ import {
 } from "solid-js";
 import { Motion } from "solid-motionone";
 
-interface BackgroundLinesProps extends Partial<SVGOptions> {
+export interface BackgroundLinesProps extends Partial<SVGOptions> {
 	class?: string;
 }
 

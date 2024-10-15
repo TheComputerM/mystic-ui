@@ -9,7 +9,7 @@ import {
 
 import { cn } from "@/lib/utils";
 
-interface GridPatternProps {
+export interface GridPatternProps {
 	class?: string;
 	height?: number;
 	squares?: Array<[x: number, y: number]>;

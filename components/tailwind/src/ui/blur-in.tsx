@@ -8,7 +8,7 @@ import {
 } from "solid-js";
 import { Motion } from "solid-motionone";
 
-interface BlurInProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface BlurInProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	blur?: string;
 	duration?: number;
 }

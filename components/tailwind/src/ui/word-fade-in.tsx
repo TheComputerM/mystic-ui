@@ -10,7 +10,7 @@ import {
 } from "solid-js";
 import { Motion, type VariantDefinition } from "solid-motionone";
 
-interface WordFadeInProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface WordFadeInProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	text: string;
 	delay?: number;
 	duration?: number;
