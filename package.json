@@ -1,12 +1,12 @@
 {
-  "name": "mystic-ui",
-  "version": "0.0.1",
-  "workspaces": ["components/*", "packages/*", "website"],
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.6.2"
-  }
+	"name": "mystic-ui",
+	"version": "0.0.1",
+	"workspaces": ["components/*", "packages/*", "website"],
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.6.2"
+	}
 }

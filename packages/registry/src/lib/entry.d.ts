@@ -1,3 +1,3 @@
 interface RegistryEntry {
-  name: string;
+	name: string;
 }

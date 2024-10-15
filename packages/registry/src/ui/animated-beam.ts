@@ -1,5 +1,5 @@
 const AnimatedBeam: RegistryEntry = {
-  name: "Animated Beam",
+	name: "Animated Beam",
 };
 
 export default AnimatedBeam;
