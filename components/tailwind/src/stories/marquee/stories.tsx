@@ -1,9 +1,6 @@
-import type { Meta, StoryObj } from "storybook-solidjs";
-
-import { cn } from "@/lib/utils";
-import { Marquee } from "@/ui/marquee";
-import { For } from "solid-js";
 import { getStory } from "@/lib/storybook";
+import { Marquee } from "@/ui/marquee";
+import type { Meta, StoryObj } from "storybook-solidjs";
 
 const meta: Meta<typeof Marquee> = {
 	title: "Marquee",

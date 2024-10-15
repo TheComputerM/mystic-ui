@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
 
-import { DotPattern } from "@/ui/dot-pattern";
 import { getStory } from "@/lib/storybook";
+import { DotPattern } from "@/ui/dot-pattern";
 
 const meta: Meta<typeof DotPattern> = {
 	title: "Backgrounds/Dot Pattern",
