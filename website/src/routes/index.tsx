@@ -1,12 +1,20 @@
+import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
-import { Container, Divider, HStack, Stack } from "styled-system/jsx";
-import { CodeBlock } from "~/components/code-block";
+import { css } from "styled-system/css";
+import {
+	Box,
+	Container,
+	Divider,
+	Flex,
+	HStack,
+	Stack,
+} from "styled-system/jsx";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
 
-export default function Home() {
+const CompatileEcosystem = () => {
 	const ecosystem = [
 		{
 			icon: <TbBrandSolidjs size="28" />,
@@ -35,38 +43,49 @@ export default function Home() {
 		},
 	];
 
+	return (
+		<HStack gap="6" color="fg.subtle" textStyle="lg" fontWeight="medium">
+			<For each={ecosystem}>
+				{({ icon, label }) => (
+					<HStack gap="2">
+						{icon}
+						{label}
+					</HStack>
+				)}
+			</For>
+		</HStack>
+	);
+};
+
+export default function Home() {
 	const words = ["code less", "create more", "build faster", "launch sooner"];
 
 	return (
 		<>
 			<Container height="screen" display="grid" alignItems="center">
-				<Stack maxW="3xl" gap="8">
-					<Heading as="h1" textStyle="6xl" fontWeight="bolder">
-						Components that help you code less
-					</Heading>
-					<Text textStyle="xl">
-						Empower your SolidJS projects with stunning open-source UI
-						components and use them without having to worry about styling and
-						animations.
-					</Text>
-					<HStack>
-						<Button size="2xl">Explore Components</Button>
-						<Button size="2xl" variant="outline">
-							<TbBrandGithub />
-							Star on GitHub
-						</Button>
-					</HStack>
-					<HStack gap="6" color="fg.subtle" textStyle="lg" fontWeight="medium">
-						<For each={ecosystem}>
-							{({ icon, label }) => (
-								<HStack gap="2">
-									{icon}
-									{label}
-								</HStack>
-							)}
-						</For>
-					</HStack>
-				</Stack>
+				<Flex>
+					<Stack flexBasis="3/5" gap="8">
+						<Heading as="h1" textStyle="6xl" fontWeight="bolder">
+							UI Components that help you{" "}
+							<div class={css({ display: "inline-flex", overflowY: "hidden" })}>
+								<WordRotate words={words} />
+							</div>
+						</Heading>
+						<Text textStyle="xl">
+							Empower your SolidJS projects with stunning open-source UI
+							components and use them without having to worry about styling and
+							animations.
+						</Text>
+						<HStack>
+							<Button size="2xl">Explore Components</Button>
+							<Button size="2xl" variant="outline">
+								<TbBrandGithub />
+								Star on GitHub
+							</Button>
+						</HStack>
+						<CompatileEcosystem />
+					</Stack>
+				</Flex>
 			</Container>
 		</>
 	);
