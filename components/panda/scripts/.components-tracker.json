@@ -1,4 +1,4 @@
 {
-  "word-rotate.tsx": "9cc97b80cf6e63cfa2b489bbc4f71133df1806ede4ce49d9ad348699a1fee840",
-  "dot-pattern.tsx": "7c400634461c5c80a82e2b67de1b5281c199c8a274b9b4a4d7a5540431eaefaf"
+  "../tailwind/src/ui/word-rotate.tsx": "9cc97b80cf6e63cfa2b489bbc4f71133df1806ede4ce49d9ad348699a1fee840",
+  "../tailwind/src/ui/dot-pattern.tsx": "7c400634461c5c80a82e2b67de1b5281c199c8a274b9b4a4d7a5540431eaefaf"
 }

@@ -33,10 +33,10 @@ async function getHash(filePath: string) {
 async function transform(filePath: string) {
 	const fileHash = await getHash(filePath);
 	const fileName = path.basename(filePath);
-	if (tracker[fileName] !== fileHash) {
+	if (tracker[filePath] !== fileHash) {
 		await $`cp ${filePath} ./src/ui/`;
 		await $`tw2panda rewrite ./src/ui/${fileName} -w --tw ../tailwind/tailwind.config.js -c ./panda.config.ts`;
-		tracker[fileName] = fileHash;
+		tracker[filePath] = fileHash;
 	}
 }
 
