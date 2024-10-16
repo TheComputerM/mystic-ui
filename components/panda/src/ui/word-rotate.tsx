@@ -10,7 +10,6 @@ import {
 	splitProps,
 } from "solid-js";
 import { Motion, type MotionComponentProps, Presence } from "solid-motionone";
-import { css } from "styled-system/css";
 
 export interface WordRotateProps
 	extends JSX.HTMLAttributes<HTMLDivElement>,
