@@ -16,7 +16,6 @@ export interface DotPatternProps extends JSX.SvgSVGAttributes<SVGSVGElement> {
 	cx?: number;
 	cy?: number;
 	cr?: number;
-	class?: string;
 }
 
 export const DotPattern: Component<DotPatternProps> = (props) => {
