@@ -1,6 +1,7 @@
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { Container, Divider, HStack, Stack } from "styled-system/jsx";
+import { CodeBlock } from "~/components/code-block";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
