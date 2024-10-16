@@ -1,12 +1,12 @@
 import { createListCollection } from "@ark-ui/solid";
 import { TbBrandGithubFilled } from "solid-icons/tb";
 import { Index } from "solid-js";
+import { css } from "styled-system/css";
 import { Box, Container, HStack } from "styled-system/jsx";
 import { ThemeSwitcher } from "./theme-switcher";
 import { Badge } from "./ui/badge";
 import { IconButton } from "./ui/icon-button";
 import { Select } from "./ui/select";
-import { Text } from "./ui/text";
 
 const SelectCSS = () => {
 	interface Item {
@@ -55,9 +55,9 @@ export const Navbar = () => {
 			<Container>
 				<HStack justify="space-between">
 					<HStack>
-						<Text textStyle="lg" fontWeight="bold">
+						<a href="/" class={css({ textStyle: "lg", fontWeight: "bold" })}>
 							Mystic UI
-						</Text>
+						</a>
 						<Badge>alpha</Badge>
 					</HStack>
 					<HStack>

@@ -1,15 +1,8 @@
-import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
+import { WordRotate } from "@mystic-ui/panda/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";
-import {
-	Box,
-	Container,
-	Divider,
-	Flex,
-	HStack,
-	Stack,
-} from "styled-system/jsx";
+import { Container, Flex, HStack, Stack } from "styled-system/jsx";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
@@ -58,30 +51,56 @@ const CompatileEcosystem = () => {
 };
 
 export default function Home() {
-	const words = ["code less", "create more", "build faster", "launch sooner"];
-
 	return (
 		<>
-			<Container height="screen" display="grid" alignItems="center">
-				<Flex>
+			<Container minHeight="screen" display="grid" alignItems="center">
+				<Flex direction={{ base: "column", lg: "row" }}>
 					<Stack flexBasis="3/5" gap="8">
-						<Heading as="h1" textStyle="6xl" fontWeight="bolder">
-							UI Components that help you{" "}
+						<Heading
+							as="h1"
+							textStyle={{ base: "4xl", sm: "6xl" }}
+							fontWeight="bolder"
+						>
+							UI Components that <br /> help you{" "}
 							<div class={css({ display: "inline-flex", overflowY: "hidden" })}>
-								<WordRotate words={words} />
+								<WordRotate
+									words={[
+										"code less",
+										"create more",
+										"build faster",
+										"launch sooner",
+									]}
+								/>
 							</div>
 						</Heading>
-						<Text textStyle="xl">
+						<Text textStyle={{ base: "lg", sm: "xl" }}>
 							Empower your SolidJS projects with stunning open-source UI
 							components and use them without having to worry about styling and
 							animations.
 						</Text>
 						<HStack>
-							<Button size="2xl">Explore Components</Button>
-							<Button size="2xl" variant="outline">
-								<TbBrandGithub />
-								Star on GitHub
-							</Button>
+							<Button
+								size="2xl"
+								asChild={(parentProps) => (
+									<a href="/docs/panda/word-rotate" {...parentProps()}>
+										Explore Components
+									</a>
+								)}
+							/>
+							<Button
+								size="2xl"
+								variant="outline"
+								asChild={(parentProps) => (
+									<a
+										target="_blank"
+										href="https://github.com/TheComputerM/mystic-ui"
+										{...parentProps()}
+									>
+										<TbBrandGithub />
+										Star on GitHub
+									</a>
+								)}
+							/>
 						</HStack>
 						<CompatileEcosystem />
 					</Stack>
