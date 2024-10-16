@@ -6,4 +6,9 @@ export default defineConfig({
 	vite: {
 		plugins: [tsconfigPaths(), contentCollections()],
 	},
+	server: {
+		preset: "github_pages",
+		// see https://github.com/solidjs/solid-start/issues/1614
+		esbuild: { options: { target: 'esnext' } },
+	},
 });
