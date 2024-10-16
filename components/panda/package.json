@@ -1,5 +1,5 @@
 {
-  "name": "@mystic-ui/pandacss",
+  "name": "@mystic-ui/panda",
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,7 +19,7 @@
     "tw2panda": "^0.3.1"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "@storybook/addon-essentials": "^8.3.5",
