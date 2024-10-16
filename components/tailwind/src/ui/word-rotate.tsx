@@ -9,29 +9,20 @@ import {
 	mergeProps,
 	splitProps,
 } from "solid-js";
-import { Motion, type Options, Presence } from "solid-motionone";
+import { Motion, type MotionComponentProps, Presence } from "solid-motionone";
 
-export interface WordRotateProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface WordRotateProps
+	extends JSX.HTMLAttributes<HTMLDivElement>,
+		Omit<MotionComponentProps, "children"> {
 	words: string[];
 	duration?: number;
-	states?: Options;
 }
 
 export const WordRotate: Component<WordRotateProps> = (props) => {
-	const [_localProps, forwardProps] = splitProps(props, [
-		"words",
-		"duration",
-		"states",
-	]);
+	const [_localProps, forwardProps] = splitProps(props, ["words", "duration"]);
 	const localProps = mergeProps(
 		{
 			duration: 2500,
-			states: {
-				initial: { opacity: 0, y: -50 },
-				animate: { opacity: 1, y: 0 },
-				exit: { opacity: 0, y: 50 },
-				transition: { duration: 0.25, easing: "ease-out" },
-			} as Options,
 		},
 		_localProps,
 	);
@@ -43,14 +34,19 @@ export const WordRotate: Component<WordRotateProps> = (props) => {
 			setIndex((prevIndex) => (prevIndex + 1) % localProps.words.length);
 		}, localProps.duration);
 
-		// Clean up interval on unmount
 		return () => clearInterval(interval);
 	});
 
 	return (
 		<Presence exitBeforeEnter>
 			<Show when={index() + 1} keyed>
-				<Motion.div {...localProps.states} {...forwardProps}>
+				<Motion.div
+					initial={{ opacity: 0, y: -50 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: 50 }}
+					transition={{ duration: 0.25, easing: "ease-out" }}
+					{...forwardProps}
+				>
 					{localProps.words[index()]}
 				</Motion.div>
 			</Show>
