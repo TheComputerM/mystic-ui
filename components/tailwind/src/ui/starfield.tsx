@@ -26,11 +26,12 @@ export const Starfield: Component<StarfieldProps> = (props) => {
 		"size",
 		"speed",
 	]);
+
 	const localProps = mergeProps(
 		{
-			background: "rgba(0, 0, 0, 0.1)",
-			color: "rgb(100, 100, 100)",
-			quantity: 500,
+			background: "rgba(0, 0, 0, 0.25)",
+			color: "rgb(255, 255, 255)",
+			quantity: 250,
 			size: 1,
 			speed: 0.04,
 		},
@@ -85,11 +86,18 @@ export const Starfield: Component<StarfieldProps> = (props) => {
 
 	createEffect(() => {
 		ctx.fillStyle = localProps.background;
+	});
+
+	createEffect(() => {
 		ctx.strokeStyle = localProps.color;
 	});
 
-	onMount(() => {
+	function setCanvasCenter() {
 		ctx.translate(canvasRef.width / 2, canvasRef.height / 2);
+	}
+
+	onMount(() => {
+		setCanvasCenter();
 	});
 
 	createEffect(() => {
@@ -119,7 +127,12 @@ export const Starfield: Component<StarfieldProps> = (props) => {
 		<canvas
 			ref={(canvas) => {
 				canvasRef = canvas;
-				ctx = canvas.getContext("2d")!;
+				const context = canvas.getContext("2d");
+				if (context) {
+					ctx = context;
+				} else {
+					console.error("Failed to get 2D context");
+				}
 			}}
 			{...forwardProps}
 		/>

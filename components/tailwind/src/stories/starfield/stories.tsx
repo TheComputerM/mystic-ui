@@ -1,19 +1,15 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
 
+import { getStory } from "@/lib/storybook";
 import { Starfield } from "@/ui/starfield";
 
 const meta: Meta<typeof Starfield> = {
-	title: "Backgrounds/Starfield",
+	title: "Effects/Starfield",
 	component: Starfield,
-	tags: ["autodocs"],
 	argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-	render: () => (
-		<Starfield width={window.innerWidth} height={window.innerHeight} />
-	),
-};
+export const Default: Story = getStory("starfield", "default");
