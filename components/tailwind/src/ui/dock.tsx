@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 import { spring } from "motion";
 import {
+	type Accessor,
 	type JSX,
-	splitProps,
 	type ParentComponent,
 	createContext,
-	useContext,
 	createSignal,
-	type Accessor,
+	splitProps,
+	useContext,
 } from "solid-js";
 import { Motion } from "solid-motionone";
 
