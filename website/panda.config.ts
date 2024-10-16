@@ -6,7 +6,16 @@ export default defineConfig({
 	include: ["./src/**/*.{js,jsx,ts,tsx}"],
 	exclude: [],
 	theme: {
-		extend: {},
+		extend: {
+			tokens: {
+				fonts: {
+					mono: {
+						value:
+							"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+					},
+				},
+			},
+		},
 	},
 	outdir: "styled-system",
 	jsxFramework: "solid",

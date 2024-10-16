@@ -1,7 +1,7 @@
 @layer reset, base, tokens, recipes, utilities;
 
 @layer base {
-  body {
-    font-family: 'Rubik Variable', sans-serif;
-  }
+	body {
+		font-family: "Rubik Variable", sans-serif;
+	}
 }
