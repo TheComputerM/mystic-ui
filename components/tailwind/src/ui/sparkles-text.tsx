@@ -2,9 +2,11 @@
 
 import { Motion } from "solid-motionone";
 
+import { cn } from "@/lib/utils";
 import {
 	type Component,
 	Index,
+	type JSX,
 	type ParentComponent,
 	createSignal,
 	mergeProps,
@@ -22,7 +24,7 @@ interface Sparkle {
 	y: string;
 }
 
-export interface SparklesTextProps {
+export interface SparklesTextProps extends JSX.HTMLAttributes<HTMLSpanElement> {
 	/** The colors of the sparkles */
 	colors?: string[];
 
@@ -86,14 +88,13 @@ export const SparklesText: ParentComponent<SparklesTextProps> = (props) => {
 	});
 
 	return (
-		<div {...forwardProps}>
-			<span class="relative inline-block">
-				<Index each={sparkles()}>
-					{(sparkle) => <Sparkle {...sparkle()} />}
-				</Index>
-				{localProps.children}
-			</span>
-		</div>
+		<span
+			class={cn("relative inline-block", localProps.class)}
+			{...forwardProps}
+		>
+			<Index each={sparkles()}>{(sparkle) => <Sparkle {...sparkle()} />}</Index>
+			{localProps.children}
+		</span>
 	);
 };
 

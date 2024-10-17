@@ -1,4 +1,4 @@
-import { dirname, join } from "path";
+import { dirname, join } from "node:path";
 import type { StorybookConfig } from "storybook-solidjs-vite";
 
 import { mergeConfig } from "vite";

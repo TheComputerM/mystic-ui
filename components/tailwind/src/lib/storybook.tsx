@@ -9,6 +9,7 @@ const sources = import.meta.glob("../stories/**/*.tsx", {
 export function getStory(name: string, example: string) {
 	const Component = lazy(() => import(`../stories/${name}/${example}.tsx`));
 	return {
+		// biome-ignore lint/suspicious/noExplicitAny: props are different for each component
 		render: (props: any) => <Component {...props} />,
 		parameters: {
 			docs: {

@@ -31,7 +31,9 @@ const Icons = {
 	),
 };
 
-const Circle: ParentComponent<any> = (props) => {
+const Circle: ParentComponent<{ class?: string; ref?: HTMLDivElement }> = (
+	props,
+) => {
 	return (
 		<div
 			ref={props.ref}

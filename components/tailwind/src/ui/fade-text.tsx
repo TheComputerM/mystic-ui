@@ -1,5 +1,3 @@
-"use client";
-
 import { type Component, mergeProps } from "solid-js";
 import { Motion, type Options } from "solid-motionone";
 
@@ -17,7 +15,7 @@ export const FadeText: Component<FadeTextProps> = (props) => {
 		{ direction: "up" as FadeTextProps["direction"] },
 		props,
 	);
-	const directionOffset = map[localProps.direction!];
+	const directionOffset = map[localProps.direction ?? "up"];
 	const axis =
 		localProps.direction === "up" || localProps.direction === "down"
 			? "y"

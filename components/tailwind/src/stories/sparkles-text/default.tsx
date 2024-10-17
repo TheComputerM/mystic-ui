@@ -2,8 +2,8 @@ import { SparklesText } from "@/ui/sparkles-text";
 
 export default function SparklesTextDemo() {
 	return (
-		<SparklesText>
-			<span class="text-6xl font-bold">Mystic UI</span>
-		</SparklesText>
+		<p class="text-4xl font-bold md:text-7xl md:leading-[5rem]">
+			<SparklesText>Mystic</SparklesText> UI
+		</p>
 	);
 }

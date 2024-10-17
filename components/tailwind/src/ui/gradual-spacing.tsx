@@ -1,6 +1,6 @@
 "use client";
 
-import { Motion } from "solid-motionone";
+import { Motion, type Options } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
 import { type Component, For, mergeProps } from "solid-js";
@@ -9,7 +9,10 @@ export interface GradualSpacingProps {
 	text: string;
 	duration?: number;
 	delayMultiple?: number;
-	states?: any;
+	states?: {
+		hidden: Options["exit"];
+		visible: Options["inView"];
+	};
 	class?: string;
 }
 

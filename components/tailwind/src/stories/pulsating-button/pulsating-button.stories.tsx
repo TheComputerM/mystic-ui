@@ -15,7 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	render: (props: any) => (
-		<PulsatingButton {...props}>Join Affiliate Program</PulsatingButton>
-	),
+	render: () => <PulsatingButton>Join Affiliate Program</PulsatingButton>,
 };
