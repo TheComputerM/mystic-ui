@@ -4,6 +4,8 @@ const sources = import.meta.glob<string>(
 	[
 		"../../../components/tailwind/src/stories/**/*.tsx",
 		"!../../../components/tailwind/src/stories/**/stories.tsx",
+		"../../../components/panda/src/stories/**/*.tsx",
+		"!../../../components/panda/src/stories/**/stories.tsx",
 	],
 	{
 		query: "?raw",
@@ -12,8 +14,8 @@ const sources = import.meta.glob<string>(
 );
 
 const stories = import.meta.glob<{ default: Component }>([
-	"../../../components/tailwind/src/stories/**/*.tsx",
-	"!../../../components/tailwind/src/stories/**/stories.tsx",
+	"../../../components/panda/src/stories/**/*.tsx",
+	"!../../../components/panda/src/stories/**/stories.tsx",
 ]);
 
 /**
@@ -34,8 +36,8 @@ export function getStorySource(
  * Get the story component that can be imported and used `lazy(getStory(...))`
  */
 export function getStory(component: string, name = "default") {
-	// TODO: change from tailwind to panda
+	// only panda stories are used cause well, the website uses panda css
 	return stories[
-		`../../../components/tailwind/src/stories/${component}/${name}.tsx`
+		`../../../components/panda/src/stories/${component}/${name}.tsx`
 	];
 }
