@@ -18,6 +18,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
 		"@pandacss/dev": "^0.46.1",
+		"@storybook/addon-themes": "^8.3.6",
 		"@types/bun": "latest",
 		"postcss": "^8.4.47",
 		"tw2panda": "^0.3.1"
@@ -29,6 +30,9 @@
 		"@storybook/addon-essentials": "^8.3.6",
 		"@storybook/builder-vite": "^8.3.6",
 		"@storybook/docs-tools": "^8.3.6",
+		"motion": "^10.18.0",
+		"solid-icons": "^1.1.0",
+		"solid-motionone": "^1.0.2",
 		"storybook": "^8.3.6",
 		"storybook-solidjs": "^1.0.0-beta.2",
 		"storybook-solidjs-vite": "^1.0.0-beta.2"

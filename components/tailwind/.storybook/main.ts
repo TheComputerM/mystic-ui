@@ -13,7 +13,7 @@ function getAbsolutePath(value: string): any {
 }
 const config: StorybookConfig = {
 	stories: ["../src/stories/**/stories.@(js|jsx|ts|tsx)"],
-	addons: [getAbsolutePath("@storybook/addon-essentials")],
+	addons: [getAbsolutePath("@storybook/addon-essentials"), getAbsolutePath("@storybook/addon-themes")],
 	framework: {
 		name: getAbsolutePath("storybook-solidjs-vite"),
 		options: {},

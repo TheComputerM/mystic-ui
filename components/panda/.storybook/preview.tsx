@@ -1,4 +1,4 @@
-import "./tailwind.css";
+import "./panda.css";
 // biome-ignore lint/correctness/noUnusedImports: needed for decorators
 import React from "react";
 import { withThemeByClassName } from "@storybook/addon-themes";
@@ -15,8 +15,15 @@ const preview: Preview = {
 			defaultTheme: "light",
 		}),
 		(Story) => (
-			// biome-ignore lint/suspicious/noReactSpecificProps: storybook uses react
-			<div className="p-2 flex items-center justify-center dark:bg-black">
+			<div
+				style={{
+					display: "flex",
+					padding: "0.5rem",
+					// @ts-ignore
+					"justify-content": "center",
+					"align-items": "center",
+				}}
+			>
 				<Story />
 			</div>
 		),
