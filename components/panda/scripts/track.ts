@@ -41,8 +41,8 @@ async function trackFile(filePath: string, writeFile: boolean) {
 			await $`tw2panda rewrite ./src/${relativePath} -w --tw ../tailwind/tailwind.config.js -c ./panda.config.ts`;
 			console.log(`Converted ${relativePath}`);
 		}
+		await updateTrackerFile();
 	}
-	await updateTrackerFile();
 }
 
 async function track(trackPath: string, writeFile = true) {

@@ -9,9 +9,8 @@ export default function WordRotateDemo() {
         class={css({
           fontSize: '4xl',
           lineHeight: '4xl',
+          md: { fontSize: '6xl' },
           fontWeight: 'bold',
-          color: 'black',
-          _dark: { color: 'white' },
         })}
         words={['Word', 'Rotate']}
       />
