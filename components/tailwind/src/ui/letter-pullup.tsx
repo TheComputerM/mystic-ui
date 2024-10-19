@@ -1,5 +1,3 @@
-"use client";
-
 import { Motion } from "solid-motionone";
 
 import { cn } from "@/lib/utils";

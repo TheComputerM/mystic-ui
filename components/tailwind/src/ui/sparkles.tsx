@@ -1,5 +1,3 @@
-"use client";
-
 import { tsParticles } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import {

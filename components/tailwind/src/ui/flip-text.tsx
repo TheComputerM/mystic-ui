@@ -1,5 +1,3 @@
-"use client";
-
 import { Motion, type VariantDefinition } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
