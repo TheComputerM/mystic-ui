@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"prepare": "panda codegen",
-		"convert": "bun scripts/convert.ts",
+		"track": "bun scripts/track.ts",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
 		"format": "biome format src",
