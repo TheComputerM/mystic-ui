@@ -3,12 +3,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import contentCollections from "@content-collections/solid-start";
 
 export default defineConfig({
-	extensions: ["tsx", "ts", "mdx"],
 	vite: {
 		plugins: [tsconfigPaths(), contentCollections()],
 	},
+
 	server: {
-		preset: "github_pages",
+		prerender: {
+			failOnError: true,
+			crawlLinks: true,
+		},
 		// see https://github.com/solidjs/solid-start/issues/1614
 		esbuild: { options: { target: "esnext" } },
 	},

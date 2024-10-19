@@ -38,7 +38,7 @@ const SideNav = () => {
 			title: "Components",
 			links: allDocs.map((doc) => ({
 				title: doc.title,
-				href: `/docs/panda/${doc._meta.path}`,
+				href: `/docs/components/${doc._meta.path}`,
 			})),
 		},
 	];

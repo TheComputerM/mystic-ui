@@ -8,10 +8,10 @@ import { Navbar } from "./components/navbar";
 
 const Layout: ParentComponent = (props) => {
 	return (
-		<main>
+		<>
 			<Navbar />
 			<Suspense>{props.children}</Suspense>
-		</main>
+		</>
 	);
 };
 

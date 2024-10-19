@@ -1,14 +1,14 @@
 import { createListCollection } from "@ark-ui/solid";
-import { TbBrandGithubFilled } from "solid-icons/tb";
+import { TbBrandGithubFilled, TbChevronDown } from "solid-icons/tb";
 import { Index } from "solid-js";
 import { css } from "styled-system/css";
-import { Box, Container, HStack } from "styled-system/jsx";
+import { Box, Container, Divider, HStack } from "styled-system/jsx";
 import { ThemeSwitcher } from "./theme-switcher";
 import { Badge } from "./ui/badge";
 import { IconButton } from "./ui/icon-button";
 import { Select } from "./ui/select";
 
-const SelectCSS = () => {
+const SelectCSSFramework = () => {
 	interface Item {
 		label: string;
 		value: string;
@@ -28,10 +28,12 @@ const SelectCSS = () => {
 			collection={collection}
 			variant="ghost"
 			defaultValue={["tailwind"]}
+			size="sm"
 		>
 			<Select.Control>
 				<Select.Trigger>
-					<Select.ValueText placeholder="Select a Framework" />
+					<Select.ValueText fontWeight="medium" />
+					<TbChevronDown />
 				</Select.Trigger>
 			</Select.Control>
 			<Select.Positioner>
@@ -60,7 +62,9 @@ export const Navbar = () => {
 						</a>
 						<Badge>alpha</Badge>
 					</HStack>
-					<HStack>
+					<HStack gap="1">
+						<SelectCSSFramework />
+						<Divider h="6" mx="2" orientation="vertical" />
 						<IconButton
 							size="sm"
 							variant="ghost"

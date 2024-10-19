@@ -1,8 +1,8 @@
 import { createAsync } from "@solidjs/router";
-import { type Component, lazy } from "solid-js";
-import { Box } from "styled-system/jsx";
+import { type Component, lazy, Show } from "solid-js";
+import { Center } from "styled-system/jsx";
 import { getStory, getStorySource } from "~/lib/stories";
-import { CodeBlock } from "./code-block";
+import { RawCodeBlock } from "./code-block";
 import { Tabs } from "./ui/tabs";
 
 interface StoryPreviewProps {
@@ -14,7 +14,6 @@ export const StoryPreview: Component<StoryPreviewProps> = (props) => {
 	const source = createAsync(() =>
 		getStorySource("tailwind", props.component, props.name),
 	);
-
 	const StoryComponent = lazy(getStory(props.component, props.name));
 
 	return (
@@ -26,12 +25,14 @@ export const StoryPreview: Component<StoryPreviewProps> = (props) => {
 			</Tabs.List>
 
 			<Tabs.Content value="preview">
-				<Box borderWidth="1px" borderColor="border.accent">
+				<Center borderWidth="1px" p="2" borderColor="border.accent">
 					<StoryComponent />
-				</Box>
+				</Center>
 			</Tabs.Content>
 			<Tabs.Content value="code">
-				<CodeBlock code={source() ?? "Error"} />
+				<Show when={source()}>
+					<RawCodeBlock html={source()!.html} code={source()!.source} />
+				</Show>
 			</Tabs.Content>
 		</Tabs.Root>
 	);
