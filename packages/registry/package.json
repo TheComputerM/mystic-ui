@@ -3,13 +3,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"check": "biome check --write src"
+		"check": "biome check src"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0"
+		"typescript": "^5.6.2"
 	}
 }
