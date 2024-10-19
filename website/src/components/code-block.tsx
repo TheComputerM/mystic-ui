@@ -1,7 +1,7 @@
 import { useClipboard } from "@ark-ui/solid";
 import type { BundledLanguage } from "shiki";
 import { TbCheck, TbCopy } from "solid-icons/tb";
-import type { Component } from "solid-js";
+import { createResource, type Component } from "solid-js";
 import { css } from "styled-system/css";
 import { Box } from "styled-system/jsx";
 import { highlight } from "~/lib/shiki";
@@ -11,7 +11,7 @@ import { IconButton } from "./ui/icon-button";
 export const CodeBlock: Component<{ code: string; lang?: BundledLanguage }> = (
 	props,
 ) => {
-	const html = highlight(props.code, props.lang);
+	const [html] = createResource(() => highlight(props.code, props.lang));
 	const clipboard = useClipboard({ value: props.code });
 
 	return (
@@ -24,12 +24,12 @@ export const CodeBlock: Component<{ code: string; lang?: BundledLanguage }> = (
 				class={css({
 					"&>pre": { padding: 4, borderRadius: "inherit", tabSize: 2 },
 				})}
-				innerHTML={html}
+				innerHTML={html()}
 			/>
-			<Clipboard.Control position="absolute" right="1" top="1">
+			<Clipboard.Control position="absolute" right="2" top="2">
 				<Clipboard.Trigger
 					asChild={(parentProps) => (
-						<IconButton size="xs" variant="ghost" {...parentProps()}>
+						<IconButton size="sm" variant="ghost" {...parentProps()}>
 							<Clipboard.Indicator copied={<TbCheck />}>
 								<TbCopy />
 							</Clipboard.Indicator>
