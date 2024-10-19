@@ -82,7 +82,7 @@ export default function Home() {
 							<Button
 								size="2xl"
 								asChild={(parentProps) => (
-									<a href="/docs/panda/word-rotate" {...parentProps()}>
+									<a href="/docs" {...parentProps()}>
 										Explore Components
 									</a>
 								)}
