@@ -1,6 +1,6 @@
 import type { RouteDefinition, RouteSectionProps } from "@solidjs/router";
 import { allDocs } from "content-collections";
-import { Show, Suspense, createMemo } from "solid-js";
+import { createMemo } from "solid-js";
 import { Divider } from "styled-system/jsx";
 import { StoryPreview } from "~/components/story-preview";
 import { Heading } from "~/components/ui/heading";
@@ -9,7 +9,8 @@ import { getStorySource } from "~/lib/stories";
 
 export const route = {
 	preload: async (args) => {
-		return getStorySource("tailwind", args.params.id, "default");
+		// preload the story source code
+		getStorySource("tailwind", args.params.id, "default");
 	},
 } satisfies RouteDefinition;
 
@@ -29,11 +30,7 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 				{doc().description}
 			</Text>
 			<Divider my="6" />
-			<Suspense>
-				<Show when={props.params.id} keyed>
-					<StoryPreview component={props.params.id} name="default" />
-				</Show>
-			</Suspense>
+			<StoryPreview component={props.params.id} name="default" />
 		</>
 	);
 }
