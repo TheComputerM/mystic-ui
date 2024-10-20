@@ -1,12 +1,5 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
-import { compile } from "@mdx-js/mdx";
-import path from "node:path";
-import { writeFile, mkdir } from "node:fs/promises";
 
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
-
-await mkdir("./.content-collections/generated/docs", { recursive: true });
 const docs = defineCollection({
 	name: "docs",
 	directory: "src/content/docs",
@@ -39,7 +32,6 @@ const docs = defineCollection({
 
 		return {
 			...document,
-			// jsxPath,
 		};
 	},
 });
