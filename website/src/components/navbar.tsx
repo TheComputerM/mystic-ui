@@ -7,7 +7,14 @@ import { IconButton } from "./ui/icon-button";
 
 export const Navbar = () => {
 	return (
-		<Flex height="12" align="center" position="sticky" top="0" zIndex="docked">
+		<Flex
+			height="12"
+			align="center"
+			position="sticky"
+			top="0"
+			zIndex="docked"
+			backgroundColor="bg.canvas"
+		>
 			<Container w="full">
 				<HStack justify="space-between">
 					<HStack>
