@@ -1,7 +1,8 @@
 import type { RouteDefinition, RouteSectionProps } from "@solidjs/router";
 import { allDocs } from "content-collections";
 import { createMemo } from "solid-js";
-import { Divider } from "styled-system/jsx";
+import { Divider, Stack } from "styled-system/jsx";
+import { InstallationInstructions } from "~/components/installation-instructions";
 import { StoryPreview } from "~/components/story-preview";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
@@ -24,13 +25,17 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 	});
 
 	return (
-		<>
+		<Stack gap="6">
 			<Heading textStyle="4xl">{doc().title}</Heading>
 			<Text color="fg.subtle" textStyle="xl">
 				{doc().description}
 			</Text>
-			<Divider my="6" />
 			<StoryPreview component={props.params.id} name="default" />
-		</>
+			<Divider my="3" />
+			<Stack>
+				<Heading textStyle="2xl">Installation</Heading>
+				<InstallationInstructions component={props.params.id} />
+			</Stack>
+		</Stack>
 	);
 }
