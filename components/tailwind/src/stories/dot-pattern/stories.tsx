@@ -21,4 +21,3 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = getStory("dot-pattern", "default");
-export const LinearGradient: Story = getStory("dot-pattern", "linear-gradient");

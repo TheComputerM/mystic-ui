@@ -2,31 +2,29 @@ import { Motion } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
 import { type Component, For, mergeProps } from "solid-js";
-import { spring } from "motion";
 
-export interface LetterPullupProps {
+export interface WordPullupProps {
 	text: string;
 	class?: string;
 	delay?: number;
 }
 
-export const LetterPullup: Component<LetterPullupProps> = (props) => {
-	const localProps = mergeProps({ delay: 0.05 }, props);
+export const WordPullup: Component<WordPullupProps> = (props) => {
+	const localProps = mergeProps({ delay: 0.2 }, props);
 
 	return (
 		<div class={cn("flex", localProps.class)}>
-			<For each={localProps.text.split("")}>
+			<For each={localProps.text.split(" ")}>
 				{(letter, i) => (
 					<Motion.div
-						initial={{ y: 100, opacity: 0 }}
+						initial={{ y: 20, opacity: 0 }}
 						inView={{ y: 0, opacity: 1 }}
 						inViewOptions={{ once: true }}
 						transition={{
-							delay: i() * localProps.delay,
-							easing: spring({ damping: 15, stiffness: 200, velocity: 5 }),
+							delay: localProps.delay * i(),
 						}}
 					>
-						{letter === " " ? <span>&nbsp;</span> : letter}
+						{letter}&nbsp;
 					</Motion.div>
 				)}
 			</For>

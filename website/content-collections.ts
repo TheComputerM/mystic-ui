@@ -7,6 +7,7 @@ const docs = defineCollection({
 	schema: (z) => ({
 		title: z.string(),
 		description: z.string(),
+		category: z.enum(["text", "backgrounds"]),
 	}),
 	async transform(document, context) {
 		// const jsxPath = await context.cache(document.content, async (content) => {

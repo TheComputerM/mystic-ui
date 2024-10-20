@@ -1,10 +1,10 @@
-import { LetterPullup } from "@/ui/letter-pullup";
+import { WordPullup } from "@/ui/word-pullup";
 
 export default function LetterPullupDemo() {
 	return (
-		<LetterPullup
+		<WordPullup
 			class="font-bold text-4xl tracking-tight my-20"
-			text="Staggered Letter Pull Up"
+			text="Staggered Word Pull Up"
 		/>
 	);
 }

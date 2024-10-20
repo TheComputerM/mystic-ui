@@ -6,6 +6,8 @@ const meta: Meta<typeof LetterPullup> = {
 	title: "Text/Letter Pullup",
 	component: LetterPullup,
 	argTypes: {
+		duration: { control: "number" },
+		blur: { control: "text" },
 	},
 };
 

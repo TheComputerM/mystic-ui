@@ -3,13 +3,13 @@ import { DotPattern } from "@/ui/dot-pattern";
 
 export default function DotPatternDemo() {
 	return (
-		<div class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-			<p class="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+		<div class="relative flex items-center justify-center h-[500px] w-full">
+			<p class="z-10 text-5xl font-bold tracking-tighter">
 				Dot Pattern
 			</p>
 			<DotPattern
 				class={cn(
-					"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+					"[mask-image:radial-gradient(350px_circle_at_center,white,transparent)]",
 				)}
 			/>
 		</div>
