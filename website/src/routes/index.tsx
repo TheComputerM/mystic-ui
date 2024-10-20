@@ -87,7 +87,7 @@ export default function Home() {
 							<Button
 								size="2xl"
 								asChild={(parentProps) => (
-									<a href="/docs" {...parentProps()}>
+									<a href="/docs/tailwind" {...parentProps()}>
 										Explore Components
 									</a>
 								)}

@@ -8,9 +8,7 @@ import {
 	For,
 	Index,
 	type ParentComponent,
-	createEffect,
 	createMemo,
-	createSignal,
 } from "solid-js";
 import { css } from "styled-system/css";
 import { Container, Divider, Grid, Stack } from "styled-system/jsx";
@@ -50,9 +48,9 @@ const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
 
 	const collection = createListCollection<Item>({
 		items: [
+			{ label: "UnoCSS", value: "unocss", disabled: true },
 			{ label: "Tailwind", value: "tailwind" },
 			{ label: "Panda", value: "panda" },
-			{ label: "UnoCSS", value: "unocss", disabled: true },
 		],
 	});
 
@@ -85,40 +83,42 @@ const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
 };
 
 const SideNav: Component<{ framework: string }> = (props) => {
-	const [framework, setFramework] = createSignal("tailwind");
+	const navigate = useNavigate();
+	const location = useLocation();
 
-	createEffect(() => {
-		if (props.framework) {
-			setFramework(props.framework);
-		}
-	});
+	const categoryMap: Record<string, string> = {
+		text: "Text Effects",
+	};
 
 	const sections = createMemo(() => [
 		{
 			title: "Overview",
-			links: [{ title: "Introduction", href: "/docs" }],
+			links: [
+				{ title: "Introduction", href: `/docs/${props.framework}` },
+				{ title: "with Panda", href: "/docs/panda/setup" },
+				{ title: "with Tailwind", href: "/docs/tailwind/setup" },
+			],
 		},
-		{
-			title: "Components",
-			links: allDocs.map((doc) => ({
-				title: doc.title,
-				href: `/docs/${framework()}/${doc._meta.path}`,
-			})),
-		},
+		...Object.entries(
+			allDocs.reduce(
+				(acc: Record<string, { title: string; href: string }[]>, doc) => {
+					const category = doc.category;
+					if (!acc[category]) {
+						acc[category] = [];
+					}
+					acc[category].push({
+						title: doc.title,
+						href: `/docs/${props.framework}/components/${doc._meta.path}`,
+					});
+					return acc;
+				},
+				{},
+			),
+		).map(([category, links]) => ({
+			title: categoryMap[category],
+			links,
+		})),
 	]);
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	createEffect(() => {
-		const newLocation = location.pathname.replace(
-			/(panda|tailwind)/,
-			framework(),
-		);
-		navigate(newLocation, {
-			replace: true,
-		});
-	});
 
 	return (
 		<aside
@@ -130,7 +130,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 				position: "sticky",
 				display: "flex",
 				flexDirection: "column",
-				paddingBottom: 2,
+				paddingY: 2,
 			})}
 		>
 			<Stack gap="6" flexGrow={1} overflowY="auto">
@@ -149,8 +149,16 @@ const SideNav: Component<{ framework: string }> = (props) => {
 			</Stack>
 			<Divider my="2" />
 			<SelectFramework
-				value={[framework()]}
-				onValueChange={({ value }) => setFramework(value[0])}
+				value={[props.framework]}
+				onValueChange={({ value }) => {
+					const newLocation = location.pathname.replace(
+						props.framework,
+						value[0],
+					);
+					navigate(newLocation, {
+						replace: true,
+					});
+				}}
 			/>
 		</aside>
 	);
