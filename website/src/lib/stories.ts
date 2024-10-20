@@ -1,5 +1,6 @@
+"use server";
+
 import { cache } from "@solidjs/router";
-import type { Component } from "solid-js";
 import { highlight } from "./shiki";
 
 /**
@@ -11,8 +12,6 @@ export const getStorySource = cache(
 		component: string,
 		name = "default",
 	) => {
-		"use server";
-
 		const source: string = await import(
 			`../../../components/${framework}/src/stories/${component}/${name}.tsx?raw`
 		).then((module) => module.default);
@@ -23,18 +22,3 @@ export const getStorySource = cache(
 	},
 	"story-source",
 );
-
-const stories = import.meta.glob<{ default: Component }>([
-	"../../../components/panda/src/stories/**/*.tsx",
-	"!../../../components/panda/src/stories/**/stories.tsx",
-]);
-
-/**
- * Get the story component that can be imported and used `lazy(getStory(...))`
- */
-export function getStory(component: string, name = "default") {
-	// only panda stories are used cause well, the website uses panda css
-	return stories[
-		`../../../components/panda/src/stories/${component}/${name}.tsx`
-	];
-}

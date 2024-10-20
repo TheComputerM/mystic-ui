@@ -4,7 +4,7 @@ import { Heading } from "~/components/ui/heading";
 export default function IntroductionPage() {
 	return (
 		<Stack>
-			<Heading textStyle="6xl">Mystic UI</Heading>
+			<Heading textStyle="4xl">Mystic UI</Heading>
 		</Stack>
 	);
 }
