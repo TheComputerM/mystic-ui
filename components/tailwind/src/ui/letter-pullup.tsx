@@ -1,8 +1,8 @@
 import { Motion } from "solid-motionone";
 
 import { cn } from "@/lib/utils";
-import { type Component, For, mergeProps } from "solid-js";
 import { spring } from "motion";
+import { type Component, For, mergeProps } from "solid-js";
 
 export interface LetterPullupProps {
 	text: string;

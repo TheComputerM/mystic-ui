@@ -1,4 +1,3 @@
-import { css, cx } from "styled-system/css";
 import { scroll } from "motion";
 import {
 	type Component,
@@ -7,6 +6,7 @@ import {
 	mergeProps,
 	onMount,
 } from "solid-js";
+import { css, cx } from "styled-system/css";
 
 interface TextRevealByWordProps {
 	text: string;

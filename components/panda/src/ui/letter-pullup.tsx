@@ -1,8 +1,8 @@
 import { css, cx } from "styled-system/css";
 
+import { spring } from "motion";
 import { type Component, For, mergeProps } from "solid-js";
 import { Motion } from "solid-motionone";
-import { spring } from "motion";
 
 export interface LetterPullupProps {
 	text: string;
