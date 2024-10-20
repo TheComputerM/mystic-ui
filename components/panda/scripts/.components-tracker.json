@@ -26,5 +26,8 @@
   "../tailwind/src/stories/text-reveal/stories.tsx": "9e7a28d0d2e3bb2e905e22b16163f9b1b9520d5ca2461669c66db5079ce98770",
   "../tailwind/src/ui/word-pullup.tsx": "b9f222bf23797dce8fa02df9c5d4c0f9a89be368f8331227be63818d2fae3d33",
   "../tailwind/src/stories/word-pullup/default.tsx": "11809e7314246490dd6da24f06a7de1ba73fdcfcaddafebf5df017e2af2fd181",
-  "../tailwind/src/stories/word-pullup/stories.tsx": "3dd616f0b7e8ccfedf307b6d62c2a18adf46efc8014dab53a19ecb27bd97118f"
+  "../tailwind/src/stories/word-pullup/stories.tsx": "3dd616f0b7e8ccfedf307b6d62c2a18adf46efc8014dab53a19ecb27bd97118f",
+  "../tailwind/src/ui/animated-shiny-text.tsx": "334bc306b5b6cf439af0d4086eaf84a51c47ae1f511b3b08b89a1ac8ed841add",
+  "../tailwind/src/stories/animated-shiny-text/default.tsx": "296bae3e6e79201d003e86e7d75877bab32dfeafd7525a1685c45f348ec8e02b",
+  "../tailwind/src/stories/animated-shiny-text/stories.tsx": "82684356b60e8bd3fe3977ce2735eae3ac17d25005964177ef6259317452ad98"
 }

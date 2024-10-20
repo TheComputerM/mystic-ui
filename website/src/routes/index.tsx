@@ -1,4 +1,4 @@
-import { WordRotate } from "@mystic-ui/panda/ui/word-rotate";
+import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";

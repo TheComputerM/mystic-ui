@@ -19,8 +19,3 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = getStory("grid-pattern", "default");
-
-export const LinearGradient: Story = getStory(
-	"grid-pattern",
-	"linear-gradient",
-);

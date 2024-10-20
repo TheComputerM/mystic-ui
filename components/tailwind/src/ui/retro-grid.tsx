@@ -1,9 +1,12 @@
 import { cn } from "@/lib/utils";
 import { type Component, mergeProps } from "solid-js";
 
-export const RetroGrid: Component<{ angle?: number; class?: string }> = (
-	props,
-) => {
+export interface RetroGridProps {
+	angle?: number;
+	class?: string;
+}
+
+export const RetroGrid: Component<RetroGridProps> = (props) => {
 	const localProps = mergeProps({ angle: 65 }, props);
 	return (
 		<div
