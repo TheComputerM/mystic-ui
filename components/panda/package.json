@@ -11,10 +11,6 @@
 		"lint": "biome lint src",
 		"check": "biome check src"
 	},
-	"exports": {
-		"./ui/*": "./src/ui/*.tsx",
-		"./stories/*": "./src/stories/*.tsx"
-	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
 		"@pandacss/dev": "^0.47.0",
