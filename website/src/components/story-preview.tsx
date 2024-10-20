@@ -6,6 +6,7 @@ import { Center } from "styled-system/jsx";
 import { getStory, getStorySource } from "~/lib/stories";
 import { RawCodeBlock } from "./code-block";
 import { IconButton } from "./ui/icon-button";
+import { Spinner } from "./ui/spinner";
 import { Tabs } from "./ui/tabs";
 
 interface StoryPreviewProps {
@@ -42,11 +43,11 @@ export const StoryPreview: Component<StoryPreviewProps> = (props) => {
 					p="2"
 					borderColor="border.accent"
 				>
-					<Show when={reload()} keyed>
-						<Suspense>
+					<Suspense fallback={<Spinner size="lg" my="6" />}>
+						<Show when={reload()} keyed>
 							<Dynamic component={StoryComponent()} />
-						</Suspense>
-					</Show>
+						</Show>
+					</Suspense>
 					<IconButton
 						variant="outline"
 						position="absolute"

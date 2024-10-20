@@ -1,6 +1,6 @@
 import type { Component } from "solid-js";
-import { Tabs } from "./ui/tabs";
 import { CodeBlock } from "./code-block";
+import { Tabs } from "./ui/tabs";
 
 export const InstallationInstructions: Component<{ component: string }> = (
 	props,

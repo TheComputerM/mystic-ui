@@ -2,7 +2,7 @@ import { WordRotate } from "@mystic-ui/panda/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";
-import { Container, Flex, HStack, Stack } from "styled-system/jsx";
+import { Container, Flex, HStack, Stack, Wrap } from "styled-system/jsx";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
@@ -37,7 +37,12 @@ const CompatileEcosystem = () => {
 	];
 
 	return (
-		<HStack gap="6" color="fg.subtle" textStyle="lg" fontWeight="medium">
+		<HStack
+			gap="6"
+			color="fg.muted"
+			textStyle={{ base: "md", md: "lg" }}
+			fontWeight="medium"
+		>
 			<For each={ecosystem}>
 				{({ icon, label }) => (
 					<HStack gap="2">
@@ -78,7 +83,7 @@ export default function Home() {
 							components and use them without having to worry about styling and
 							animations.
 						</Text>
-						<HStack>
+						<Wrap>
 							<Button
 								size="2xl"
 								asChild={(parentProps) => (
@@ -101,7 +106,7 @@ export default function Home() {
 									</a>
 								)}
 							/>
-						</HStack>
+						</Wrap>
 						<CompatileEcosystem />
 					</Stack>
 				</Flex>
