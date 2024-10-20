@@ -1,9 +1,12 @@
+import { makePersisted } from "@solid-primitives/storage";
 import { TbMoon, TbSun } from "solid-icons/tb";
 import { Show, createEffect, createSignal } from "solid-js";
 import { IconButton } from "./ui/icon-button";
 
 export const ThemeSwitcher = () => {
-	const [darkMode, setDarkMode] = createSignal(false);
+	const [darkMode, setDarkMode] = makePersisted(createSignal(false), {
+		name: "darkMode",
+	});
 
 	createEffect(() => {
 		if (darkMode()) {

@@ -10,13 +10,14 @@ import { Spinner } from "./ui/spinner";
 import { Tabs } from "./ui/tabs";
 
 interface StoryPreviewProps {
+	framework: "tailwind" | "panda";
 	component: string;
 	name: string;
 }
 
 export const StoryPreview: Component<StoryPreviewProps> = (props) => {
 	const highlightedStorySource = createAsync(
-		() => getStorySource("tailwind", props.component, props.name),
+		() => getStorySource(props.framework, props.component, props.name),
 		{
 			name: "story-source",
 			initialValue: {
