@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
-		"@pandacss/dev": "^0.46.1",
+		"@pandacss/dev": "^0.47.0",
 		"@storybook/addon-themes": "^8.3.6",
 		"@types/bun": "latest",
 		"postcss": "^8.4.47",
