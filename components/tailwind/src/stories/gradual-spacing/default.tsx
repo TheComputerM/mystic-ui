@@ -3,7 +3,7 @@ import { GradualSpacing } from "@/ui/gradual-spacing";
 export default function GradualSpacingDemo() {
 	return (
 		<GradualSpacing
-			class="text-center text-4xl font-bold tracking-tight md:text-7xl md:leading-[5rem]"
+			class="text-4xl md:text-6xl font-bold tracking-tight"
 			text="Gradual Spacing"
 		/>
 	);

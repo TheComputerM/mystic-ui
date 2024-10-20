@@ -20,6 +20,7 @@ export const LetterPullup: Component<LetterPullupProps> = (props) => {
 					<Motion.div
 						initial={{ y: 100, opacity: 0 }}
 						inView={{ y: 0, opacity: 1 }}
+						inViewOptions={{ once: true }}
 						transition={{
 							delay: i() * localProps.delay,
 						}}

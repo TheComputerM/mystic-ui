@@ -1,17 +1,17 @@
 import { css } from "styled-system/css";
 
-import { WordFadeIn } from "@/ui/word-fade-in";
+import { FlipText } from "@/ui/flip-text";
 
-export default function WordFadeInDemo() {
+export default function FlipTextDemo() {
 	return (
-		<WordFadeIn
+		<FlipText
 			class={css({
 				textStyle: "4xl",
 				md: { textStyle: "6xl" },
-				letterSpacing: "tight",
 				fontWeight: "bold",
+				letterSpacing: "tight",
 			})}
-			text="Word Fade In"
+			text="Flip Text"
 		/>
 	);
 }
