@@ -123,10 +123,12 @@ const SideNav: Component<{ framework: string }> = (props) => {
 				},
 				{},
 			),
-		).map(([category, links]) => ({
-			title: categoryMap[category],
-			links,
-		})),
+		)
+			.sort()
+			.map(([category, links]) => ({
+				title: categoryMap[category],
+				links,
+			})),
 	]);
 
 	return (

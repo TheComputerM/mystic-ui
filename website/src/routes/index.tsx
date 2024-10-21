@@ -2,7 +2,15 @@ import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";
-import { Container, Flex, HStack, Stack, Wrap } from "styled-system/jsx";
+import {
+	Center,
+	Container,
+	Flex,
+	HStack,
+	Stack,
+	Wrap,
+} from "styled-system/jsx";
+import { CodeBlock } from "~/components/code-block";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
 import { Text } from "~/components/ui/text";
@@ -59,7 +67,7 @@ export default function Home() {
 	return (
 		<>
 			<Container minHeight="screen" display="grid" alignItems="center">
-				<Flex direction={{ base: "column", lg: "row" }}>
+				<Flex direction={{ base: "column", lg: "row" }} gap="12">
 					<Stack flexBasis="3/5" gap="8">
 						<Heading
 							as="h1"
@@ -109,6 +117,13 @@ export default function Home() {
 						</Wrap>
 						<CompatileEcosystem />
 					</Stack>
+					<Center flexBasis="2/5">
+						<CodeBlock
+							code="npx @mystic-ui/cli init"
+							lang="shell"
+							class={css({ minWidth: "xs" })}
+						/>
+					</Center>
 				</Flex>
 			</Container>
 		</>

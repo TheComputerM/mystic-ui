@@ -13,7 +13,9 @@ export const Navbar = () => {
 			position="sticky"
 			top="0"
 			zIndex="docked"
-			backgroundColor="bg.canvas"
+			backgroundColor="bg.canvas/75"
+			backdropFilter="auto"
+			backdropBlur="md"
 		>
 			<Container w="full">
 				<HStack justify="space-between">
