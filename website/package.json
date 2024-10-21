@@ -8,6 +8,8 @@
 		"build": "vinxi build",
 		"start": "vinxi start",
 		"version": "vinxi version",
+		"format": "biome format src",
+		"lint": "biome lint src",
 		"check": "biome check src"
 	},
 	"dependencies": {

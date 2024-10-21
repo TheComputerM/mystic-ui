@@ -3,7 +3,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"registry": "bun run src/build.ts",
+		"format": "biome format src",
+		"lint": "biome lint src",
 		"check": "biome check src"
+	},
+	"dependencies": {
+		"@mystic-ui/tailwind": "workspace:*"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
