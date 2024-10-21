@@ -25,6 +25,8 @@ export const RawCodeBlock: Component<CodeBlockProps & { html?: string }> = (
 				textStyle="sm"
 				class={css({
 					"&>pre": {
+						// TODO: need to use a scrollbar instead of wrapping
+						whiteSpace: "pre-wrap",
 						padding: 4,
 						borderWidth: "1px",
 						borderColor: "border.accent",
