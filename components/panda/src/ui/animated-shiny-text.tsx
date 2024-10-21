@@ -1,10 +1,10 @@
-import { css, cx } from "styled-system/css";
 import {
 	type JSX,
 	type ParentComponent,
 	mergeProps,
 	splitProps,
 } from "solid-js";
+import { css, cx } from "styled-system/css";
 
 export interface AnimatedShinyTextProps
 	extends JSX.HTMLAttributes<HTMLParagraphElement> {
