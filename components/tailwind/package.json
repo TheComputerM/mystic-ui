@@ -33,6 +33,7 @@
 		"clsx": "^2.1.1",
 		"motion": "^10.18.0",
 		"solid-icons": "^1.1.0",
+		"solid-js": "^1.9.2",
 		"solid-motionone": "^1.0.2",
 		"tailwind-merge": "^2.5.4"
 	}

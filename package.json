@@ -3,6 +3,9 @@
 	"version": "0.0.1",
 	"workspaces": ["components/*", "packages/*", "website"],
 	"type": "module",
+	"scripts": {
+		"check": "bun --filter '*' check"
+	},
 	"devDependencies": {
 		"@types/bun": "latest"
 	},
