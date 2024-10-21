@@ -1,15 +1,15 @@
-# @mystic-ui/solid
+# PandaCSS + Mystic UI
 
-To install dependencies:
+You can use Mystic UI with your PandaCSS projects, also works with panda based frameworks like [Park UI](https://park-ui.com/).
 
-```bash
-bun install
+## Setup
+
+Run `npx @mystic-ui/cli init` with whatever package manager you prefer and make sure you choose *panda* as your css framework.
+
+**panda.config.ts**
+```ts
+export default defineConfig({
+  //...
+  presets: ["@pandacss/preset-panda"] // make sure the panda preset is included in your config
+})
 ```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

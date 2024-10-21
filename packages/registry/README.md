@@ -1,15 +1,3 @@
-# registry
+# Mystic UI Registry
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Used to build and store the json registry files which are used by the Mystic UI cli to add components to your project.
