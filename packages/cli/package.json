@@ -1,0 +1,21 @@
+{
+  "name": "@mystic-ui/cli",
+  "version": "0.0.1",
+  "type": "module",
+  "bin": {
+    "mystic-ui": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
+    "format": "biome format src",
+    "lint": "biome lint src",
+    "check": "biome check src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
