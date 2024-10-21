@@ -11,8 +11,8 @@ export default defineConfig({
 	preflight: true,
 	presets: ["@pandacss/preset-base", "@park-ui/panda-preset"],
 	include: [
+		"../components/panda/src/**/*.tsx",
 		"./src/**/*.{js,jsx,ts,tsx,mdx}",
-		"../node_modules/@mystic-ui/panda/src/**/*.tsx",
 	],
 	exclude: [],
 	theme: merge(pandaConfig.theme, {

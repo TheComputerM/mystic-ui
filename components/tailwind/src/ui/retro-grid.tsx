@@ -22,7 +22,7 @@ export const RetroGrid: Component<RetroGridProps> = (props) => {
 					class={cn(
 						"animate-grid",
 
-						"bg-repeat [background-size:60px_60px] h-[300vh] [margin-left:-50%] [margin-left:-50%] [transform-origin:100%_0_0] w-[600vw]",
+						"bg-repeat [background-size:60px_60px] h-[300vh] [margin-left:-50%] [transform-origin:100%_0_0] w-[600vw]",
 
 						// Light Styles
 						"[background-image:linear-gradient(to_right,rgba(0,0,0,0.3)_1px,transparent_0),linear-gradient(to_bottom,rgba(0,0,0,0.3)_1px,transparent_0)]",

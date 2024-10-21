@@ -29,5 +29,13 @@
   "../tailwind/src/stories/word-pullup/stories.tsx": "3dd616f0b7e8ccfedf307b6d62c2a18adf46efc8014dab53a19ecb27bd97118f",
   "../tailwind/src/ui/animated-shiny-text.tsx": "334bc306b5b6cf439af0d4086eaf84a51c47ae1f511b3b08b89a1ac8ed841add",
   "../tailwind/src/stories/animated-shiny-text/default.tsx": "296bae3e6e79201d003e86e7d75877bab32dfeafd7525a1685c45f348ec8e02b",
-  "../tailwind/src/stories/animated-shiny-text/stories.tsx": "82684356b60e8bd3fe3977ce2735eae3ac17d25005964177ef6259317452ad98"
+  "../tailwind/src/stories/animated-shiny-text/stories.tsx": "82684356b60e8bd3fe3977ce2735eae3ac17d25005964177ef6259317452ad98",
+  "../tailwind/src/stories/dot-pattern/default.tsx": "843998e35f3530a65afb4fc6ae5a477c30d0550f682edf46f7f457e61ed73688",
+  "../tailwind/src/stories/dot-pattern/stories.tsx": "c5ef705413132f42b491749b0f7d55244427cba6a3132aceca87b10c18d74b1b",
+  "../tailwind/src/ui/grid-pattern.tsx": "86d5fdf934f37f7bfd8684cc7721544828924e1b92496f61689709e3ff40273f",
+  "../tailwind/src/stories/grid-pattern/default.tsx": "8b952997a892099fb3bbab7fc18df2b7b6eb4387df4037d692f96f0b0c97ca99",
+  "../tailwind/src/stories/grid-pattern/stories.tsx": "f6768833556239eeed37b29ba5d5e0b23a3fbd549663d4f08d277f4948307231",
+  "../tailwind/src/stories/retro-grid/default.tsx": "ee1b4d0a32ef0eadabd89ef273a6666686aaea1998832c751e95c795a6d53cf5",
+  "../tailwind/src/stories/retro-grid/stories.tsx": "875ad94d6d4bd31584ee3d496f47643ce3c08e081b221730550c566bbdeaaf50",
+  "../tailwind/src/ui/retro-grid.tsx": "c3b6f9fb76ae0f2ce09e965481f66546d3d31f8a2b735363d974099771163137"
 }

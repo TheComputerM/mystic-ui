@@ -37,9 +37,7 @@ const SideNavLink: ParentComponent<{ href: string }> = (props) => {
 	);
 };
 
-const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
-	props,
-) => {
+const SelectFramework: Component<{ value: string }> = (props) => {
 	interface Item {
 		label: string;
 		value: string;
@@ -54,11 +52,21 @@ const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
 		],
 	});
 
+	const navigate = useNavigate();
+	const location = useLocation();
+
 	return (
 		<Select.Root
 			size="sm"
 			positioning={{ sameWidth: true }}
-			{...props}
+			value={[props.value]}
+			onValueChange={({ value }) => {
+				// Replace the current path with the new framework
+				const newLocation = location.pathname.replace(props.value, value[0]);
+				navigate(newLocation, {
+					replace: true,
+				});
+			}}
 			collection={collection}
 		>
 			<Select.Control>
@@ -71,7 +79,7 @@ const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
 				<Select.Content>
 					<Index each={collection.items}>
 						{(item) => (
-							<Select.Item item={item()}>
+							<Select.Item item={item()} justifyContent="start" gap="2">
 								<Select.ItemText> {item().label}</Select.ItemText>
 							</Select.Item>
 						)}
@@ -83,11 +91,9 @@ const SelectFramework: Component<Omit<Select.RootProps, "collection">> = (
 };
 
 const SideNav: Component<{ framework: string }> = (props) => {
-	const navigate = useNavigate();
-	const location = useLocation();
-
 	const categoryMap: Record<string, string> = {
 		text: "Text Effects",
+		background: "Backgrounds",
 	};
 
 	const sections = createMemo(() => [
@@ -148,18 +154,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 				</For>
 			</Stack>
 			<Divider my="2" />
-			<SelectFramework
-				value={[props.framework]}
-				onValueChange={({ value }) => {
-					const newLocation = location.pathname.replace(
-						props.framework,
-						value[0],
-					);
-					navigate(newLocation, {
-						replace: true,
-					});
-				}}
-			/>
+			<SelectFramework value={props.framework} />
 		</aside>
 	);
 };
