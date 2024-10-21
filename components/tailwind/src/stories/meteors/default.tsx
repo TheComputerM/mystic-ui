@@ -2,11 +2,9 @@ import { Meteors } from "@/ui/meteors";
 
 export default function MeteorDemo() {
 	return (
-		<div class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+		<div class="relative h-[300px] w-full flex items-center justify-center overflow-hidden rounded-lg border shadow-lg">
 			<Meteors number={30} />
-			<span class="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-				Meteors
-			</span>
+			<span class="text-4xl md:text-6xl font-bold">Meteors</span>
 		</div>
 	);
 }

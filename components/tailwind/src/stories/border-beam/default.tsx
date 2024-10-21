@@ -1,13 +1,10 @@
-import { BorderBeam, type BorderBeamProps } from "@/ui/border-beam";
-import type { Component } from "solid-js";
+import { BorderBeam } from "@/ui/border-beam";
 
-const Demo: Component<BorderBeamProps> = (props) => (
-	<div class="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-		<span class="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-			Border Beam
-		</span>
-		<BorderBeam {...props} />
-	</div>
-);
-
-export default Demo;
+export default function BorderBeamDemo() {
+	return (
+		<div class="relative h-[300px] w-full flex items-center justify-center overflow-hidden rounded-lg border shadow-lg">
+			<span class="text-4xl md:text-6xl font-bold">Border Beam</span>
+			<BorderBeam />
+		</div>
+	);
+}
