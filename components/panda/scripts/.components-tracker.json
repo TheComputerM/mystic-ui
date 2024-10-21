@@ -49,5 +49,8 @@
   "../tailwind/src/stories/safari/stories.tsx": "4a31c1e2bc7342a263c784f465e74fe03d1c3b543b245bff089408b003e1395b",
   "../tailwind/src/ui/iphone-15.tsx": "4ad3078f21f42012de8f4dd1ef68fa7cdb57bcf76f3fb99a9620d11ee74f0b24",
   "../tailwind/src/stories/iphone-15/default.tsx": "2d4e171ae9b3d97cf128a0868de34891e30ea0d6f840c58be0d8a0a960856d5b",
-  "../tailwind/src/stories/iphone-15/stories.tsx": "b8f781b9f8c34e439475a9f49a7c06ea5eb485c5126b64ead75bbc9b42bffb0c"
+  "../tailwind/src/stories/iphone-15/stories.tsx": "b8f781b9f8c34e439475a9f49a7c06ea5eb485c5126b64ead75bbc9b42bffb0c",
+  "../tailwind/src/stories/ripple/default.tsx": "e87dd56bb77e49f6ddc0c78b453899a3a3d46dc5fd128154bf3da70366c6ada9",
+  "../tailwind/src/stories/ripple/stories.tsx": "169339b12355b8eda724cfc2f38aa04d9cc361331b0183297f90023ecaef398f",
+  "../tailwind/src/ui/ripple.tsx": "1128557f5b58e580899b4f95d21cb945058815d39e38ef91971989fb91d598ca"
 }
