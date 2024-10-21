@@ -16,7 +16,7 @@ const preview: Preview = {
 		}),
 		(Story) => (
 			// biome-ignore lint/suspicious/noReactSpecificProps: storybook uses react
-			<div className="p-2 flex items-center justify-center dark:bg-black">
+			<div className="p-2 flex items-center justify-center dark:bg-black dark:text-black">
 				<Story />
 			</div>
 		),
