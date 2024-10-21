@@ -40,5 +40,8 @@
   "../tailwind/src/ui/retro-grid.tsx": "c3b6f9fb76ae0f2ce09e965481f66546d3d31f8a2b735363d974099771163137",
   "../tailwind/src/ui/dock.tsx": "a6f7b65225f1792b9f0edca04f7753348ab5c37dd5d37ddf52aaf9c65c7e5972",
   "../tailwind/src/stories/dock/default.tsx": "91d8791fe8be89f7ebffb3d8ff04a625cc09afd629b91d12f98ad22f2677a786",
-  "../tailwind/src/stories/dock/stories.tsx": "cb0c51dba3ae38cb5173bded08489ae93f0a852721b7b7edadad6ac377374457"
+  "../tailwind/src/stories/dock/stories.tsx": "cb0c51dba3ae38cb5173bded08489ae93f0a852721b7b7edadad6ac377374457",
+  "../tailwind/src/ui/sparkles-text.tsx": "edc82ad4872f60a72ec53496bdc605541b169e40ed9f92ab17f0aa366bb4c33a",
+  "../tailwind/src/stories/sparkles-text/default.tsx": "3d0b8469095d51dbf0eff9a994e6014571c4bbe02bc31da44440672ad9e8839c",
+  "../tailwind/src/stories/sparkles-text/stories.tsx": "74e4bf130209a6b650ada8cab268871987bd0d7a6f8457c7a952762615d254bb"
 }

@@ -56,7 +56,8 @@ export const StoryPreview: Component<StoryPreviewProps> = (props) => {
 				<Center
 					position="relative"
 					borderWidth="1px"
-					p="2"
+					py={6}
+					px={{ base: 2, md: 6 }}
 					borderColor="border.accent"
 				>
 					<Suspense fallback={<Spinner size="lg" my="6" />}>
