@@ -37,5 +37,8 @@
   "../tailwind/src/stories/grid-pattern/stories.tsx": "f6768833556239eeed37b29ba5d5e0b23a3fbd549663d4f08d277f4948307231",
   "../tailwind/src/stories/retro-grid/default.tsx": "ee1b4d0a32ef0eadabd89ef273a6666686aaea1998832c751e95c795a6d53cf5",
   "../tailwind/src/stories/retro-grid/stories.tsx": "875ad94d6d4bd31584ee3d496f47643ce3c08e081b221730550c566bbdeaaf50",
-  "../tailwind/src/ui/retro-grid.tsx": "c3b6f9fb76ae0f2ce09e965481f66546d3d31f8a2b735363d974099771163137"
+  "../tailwind/src/ui/retro-grid.tsx": "c3b6f9fb76ae0f2ce09e965481f66546d3d31f8a2b735363d974099771163137",
+  "../tailwind/src/ui/dock.tsx": "a6f7b65225f1792b9f0edca04f7753348ab5c37dd5d37ddf52aaf9c65c7e5972",
+  "../tailwind/src/stories/dock/default.tsx": "91d8791fe8be89f7ebffb3d8ff04a625cc09afd629b91d12f98ad22f2677a786",
+  "../tailwind/src/stories/dock/stories.tsx": "cb0c51dba3ae38cb5173bded08489ae93f0a852721b7b7edadad6ac377374457"
 }

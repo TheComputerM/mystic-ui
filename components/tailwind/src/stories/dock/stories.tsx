@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "storybook-solidjs";
 
 import { getStory } from "@/lib/storybook";
-import { DockIcon } from "@/ui/dock";
+import { Dock } from "@/ui/dock";
 
-const meta: Meta<typeof DockIcon> = {
+const meta: Meta<typeof Dock> = {
 	title: "Dock",
-	component: DockIcon,
+	component: Dock,
 	argTypes: {},
 };
 

@@ -3,8 +3,10 @@ import { merge } from "ts-deepmerge";
 
 import pandaConfig from "@mystic-ui/panda/panda.config";
 
-if (!pandaConfig.theme) {
-	throw new Error("Somehow the panda.config.ts file is missing the theme object??");
+if (!pandaConfig.theme?.extend) {
+	throw new Error(
+		"Somehow the panda.config.ts file is missing the theme object??",
+	);
 }
 
 export default defineConfig({
@@ -15,8 +17,8 @@ export default defineConfig({
 		"./src/**/*.{js,jsx,ts,tsx,mdx}",
 	],
 	exclude: [],
-	theme: merge(pandaConfig.theme, {
-		extend: {
+	theme: {
+		extend: merge(pandaConfig.theme.extend, {
 			tokens: {
 				fonts: {
 					mono: {
@@ -25,8 +27,8 @@ export default defineConfig({
 					},
 				},
 			},
-		},
-	}),
+		}),
+	},
 	outdir: "styled-system",
 	jsxFramework: "solid",
 });

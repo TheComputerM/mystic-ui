@@ -3,6 +3,7 @@ import "./panda.css";
 import React from "react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "storybook-solidjs";
+import { css } from "../styled-system/css";
 
 const preview: Preview = {
 	tags: ["autodocs"],
@@ -16,13 +17,14 @@ const preview: Preview = {
 		}),
 		(Story) => (
 			<div
-				style={{
+				// biome-ignore lint/suspicious/noReactSpecificProps: storybook uses react
+				className={css({
+					_dark: { backgroundColor: "black", color: "white" },
 					display: "flex",
-					padding: "0.5rem",
-					// @ts-ignore
-					"justify-content": "center",
-					"align-items": "center",
-				}}
+					alignItems: "center",
+					justifyContent: "center",
+					p: '2',
+				})}
 			>
 				<Story />
 			</div>

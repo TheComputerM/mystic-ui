@@ -94,6 +94,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 	const categoryMap: Record<string, string> = {
 		text: "Text Effects",
 		background: "Backgrounds",
+		component: "Components",
 	};
 
 	const sections = createMemo(() => [
