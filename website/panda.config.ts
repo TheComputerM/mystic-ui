@@ -11,7 +11,7 @@ if (!pandaConfig.theme?.extend) {
 
 export default defineConfig({
 	preflight: true,
-	presets: ["@pandacss/preset-base", "@park-ui/panda-preset"],
+	presets: ["@pandacss/preset-panda", "@park-ui/panda-preset"],
 	include: [
 		"../components/panda/src/**/*.tsx",
 		"./src/**/*.{js,jsx,ts,tsx,mdx}",
