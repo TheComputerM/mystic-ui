@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import type { RouteDefinition, RouteSectionProps } from "@solidjs/router";
 import { allDocs } from "content-collections";
 import { createMemo } from "solid-js";
@@ -29,21 +30,24 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 	});
 
 	return (
-		<Stack gap="6">
-			<Heading textStyle="4xl">{doc().title}</Heading>
-			<Text color="fg.subtle" textStyle="xl">
-				{doc().description}
-			</Text>
-			<StoryPreview
-				framework={props.params.framework as "tailwind" | "panda"}
-				component={props.params.id}
-				name="default"
-			/>
-			<Divider my="3" />
-			<Stack>
-				<Heading textStyle="2xl">Installation</Heading>
-				<InstallationInstructions component={props.params.id} />
+		<>
+			<Title>{doc().title} | Mystic UI</Title>
+			<Stack gap="6">
+				<Heading textStyle="4xl">{doc().title}</Heading>
+				<Text color="fg.subtle" textStyle="xl">
+					{doc().description}
+				</Text>
+				<StoryPreview
+					framework={props.params.framework as "tailwind" | "panda"}
+					component={props.params.id}
+					name="default"
+				/>
+				<Divider my="3" />
+				<Stack>
+					<Heading textStyle="2xl">Installation</Heading>
+					<InstallationInstructions component={props.params.id} />
+				</Stack>
 			</Stack>
-		</Stack>
+		</>
 	);
 }
