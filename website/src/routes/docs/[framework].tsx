@@ -95,6 +95,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 		text: "Text Effects",
 		background: "Backgrounds",
 		component: "Components",
+		"device-mock": "Device Mocks",
 	};
 
 	const sections = createMemo(() => [
