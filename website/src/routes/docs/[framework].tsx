@@ -165,7 +165,7 @@ export default function DocsLayout(props: RouteSectionProps) {
 		<Container>
 			<Grid gridTemplateColumns="224px 1fr" gap="12">
 				<SideNav framework={props.params.framework} />
-				<main>{props.children}</main>
+				<main class={css({ overflowX: "auto" })}>{props.children}</main>
 			</Grid>
 		</Container>
 	);

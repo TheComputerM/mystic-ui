@@ -22,12 +22,16 @@ export const RawCodeBlock: Component<CodeBlockProps & { html?: string }> = (
 	return (
 		<Clipboard.RootProvider value={clipboard} position="relative" class="dark">
 			<Box
-				borderWidth="1px"
-				borderColor="border.accent"
-				borderRadius="l3"
 				textStyle="sm"
 				class={css({
-					"&>pre": { padding: 4, borderRadius: "inherit", tabSize: 2 },
+					"&>pre": {
+						padding: 4,
+						borderWidth: "1px",
+						borderColor: "border.accent",
+						borderRadius: "l3",
+						tabSize: 2,
+						overflowX: "auto",
+					},
 				})}
 				innerHTML={props.html}
 			/>
