@@ -62,5 +62,8 @@
   "../tailwind/src/ui/marquee.tsx": "472ddba5e725d5119f83738629cf73d8051fa53aad9e8712e1d85111eb70ebcc",
   "../tailwind/src/ui/meteors.tsx": "222f17bb4036abaa4d1fc9958b6a8aa33d601fc22284f0f12bf9407e1f90d37c",
   "../tailwind/src/stories/meteors/default.tsx": "d9f6f88fe85a333447a4107f6b4eadb93d9e900cd0b7920a87f0a890abd204c2",
-  "../tailwind/src/stories/meteors/stories.tsx": "3d38dd1f365508dfec07a50591768538a2a067d9f4a50b9ffb654a2accb3c85a"
+  "../tailwind/src/stories/meteors/stories.tsx": "3d38dd1f365508dfec07a50591768538a2a067d9f4a50b9ffb654a2accb3c85a",
+  "../tailwind/src/ui/spotlight.tsx": "39a6fe4766ba141e8e1597488b579ccb12eeee4d2ae3634771ebda8c49e6f809",
+  "../tailwind/src/stories/spotlight/default.tsx": "4fa5a96623fbe6f2620231772aeb51d6fe85e69b4ba3b4f0ffce58e0d6512a9d",
+  "../tailwind/src/stories/spotlight/stories.tsx": "a71a041be20672854d678285ff256bd0ffd88a1f28ba5cf1cf63a53515a1e51c"
 }

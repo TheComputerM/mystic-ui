@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { css, cx } from "styled-system/css";
+
 import type { Component } from "solid-js";
 
 export interface SpotlightProps {
@@ -9,8 +10,18 @@ export interface SpotlightProps {
 export const Spotlight: Component<SpotlightProps> = (props) => {
 	return (
 		<svg
-			class={cn(
-				"animate-spotlight pointer-events-none absolute z-1 h-[169%] w-[138%] lg:w-[84%] opacity-0",
+			class={cx(
+				css({
+					opacity: "0",
+					// transform: 'translate(-50%,-40%) scale(1)',
+					animation: "spotlight",
+					pointerEvents: "none",
+					position: "absolute",
+					height: "169%",
+					width: "138%",
+					zIndex: 1,
+					lg: { width: "84%" },
+				}),
 				props.class,
 			)}
 			xmlns="http://www.w3.org/2000/svg"
