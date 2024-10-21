@@ -45,7 +45,7 @@ export const RetroGrid: Component<RetroGridProps> = (props) => {
 						width: "600vw",
 
 						backgroundImage:
-							"linear-gradient(to_right,rgba(0,0,0,0.3) 1px,transparent 0),linear-gradient(to bottom,rgba(0,0,0,0.3) 1px,transparent 0)",
+							"linear-gradient(to right,rgba(0,0,0,0.3) 1px,transparent 0),linear-gradient(to bottom,rgba(0,0,0,0.3) 1px,transparent 0)",
 						_dark: {
 							backgroundImage:
 								"linear-gradient(to right,rgba(255,255,255,0.2) 1px,transparent 0),linear-gradient(to bottom,rgba(255,255,255,0.2) 1px,transparent 0)",
@@ -61,6 +61,10 @@ export const RetroGrid: Component<RetroGridProps> = (props) => {
 					inset: "0",
 					bgGradient: "to-t",
 					gradientFrom: "white",
+					_dark: {
+						gradientFrom: "black",
+					},
+					gradientToPosition: "90%",
 					gradientTo: "transparent",
 				})}
 			/>
