@@ -1,4 +1,5 @@
 import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
+import { ShineBorder } from "@mystic-ui/panda/src/ui/shine-border";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";
@@ -118,11 +119,16 @@ export default function Home() {
 						<CompatileEcosystem />
 					</Stack>
 					<Center flexBasis="2/5">
-						<CodeBlock
-							code="npx @mystic-ui/cli init"
-							lang="shell"
-							class={css({ minWidth: "xs" })}
-						/>
+						<ShineBorder
+							class={css({ p: 0.5, boxShadow: "md" })}
+							color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+						>
+							<CodeBlock
+								code="npx @mystic-ui/cli init"
+								lang="shell"
+								class={css({ minWidth: "xs" })}
+							/>
+						</ShineBorder>
 					</Center>
 				</Flex>
 			</Container>

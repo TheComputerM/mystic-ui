@@ -1,14 +1,12 @@
 import { ShineBorder } from "@/ui/shine-border";
 
-export default function ShimeBeamDemo() {
+export default function ShineBorderDemo() {
 	return (
 		<ShineBorder
-			class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+			class="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg shadow-lg"
 			color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
 		>
-			<span class="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-				Shine Border
-			</span>
+			<span class="text-4xl md:text-6xl font-bold">Shine Border</span>
 		</ShineBorder>
 	);
 }

@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { css, cx } from "styled-system/css";
+
 import { type ParentComponent, mergeProps } from "solid-js";
 
 type TColorProp = string | string[];
@@ -21,7 +22,10 @@ export const ShineBorder: ParentComponent<ShineBorderProps> = (props) => {
 			style={{
 				"--border-radius": `${localProps.borderRadius}px`,
 			}}
-			class={cn("relative rounded-[--border-radius]", localProps.class)}
+			class={cx(
+				css({ position: "relative", borderRadius: "var(--border-radius)" }),
+				localProps.class,
+			)}
 		>
 			<div
 				style={{
@@ -36,7 +40,28 @@ export const ShineBorder: ParentComponent<ShineBorderProps> = (props) => {
 							: localProps.color
 					},transparent,transparent)`,
 				}}
-				class="pointer-events-none before:absolute before:inset-0 before:size-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[''] before:![-webkit-mask-composite:xor] before:![mask-composite:exclude] before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine"
+				class={css({
+					pointerEvents: "none",
+					_before: {
+						content: "''",
+						position: "absolute",
+						inset: "0",
+						width: "full",
+						height: "full",
+						borderRadius: "var(--border-radius)",
+						padding: "var(--border-width)",
+						willChange: "background-position",
+						WebkitMaskComposite: "xor!",
+						maskComposite: "exclude!",
+						backgroundImage: "var(--background-radial-gradient)",
+						backgroundSize: "300% 300%",
+						mask: "var(--mask-linear-gradient)",
+						_motionSafe: {
+							// TODO: doesn't recognise the css var for some reason
+							animation: "shine var(--duration) infinite linear",
+						}
+					},
+				})}
 			/>
 			{localProps.children}
 		</div>
