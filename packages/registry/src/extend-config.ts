@@ -49,7 +49,7 @@ const config: ConfigModifications = {
 	},
 	"border-beam": {
 		animation: {
-			"border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+			"border-beam": "border-beam var(--duration) infinite linear",
 		},
 		keyframes: {
 			"border-beam": {

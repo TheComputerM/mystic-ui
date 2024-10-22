@@ -21,7 +21,7 @@ export default defineConfig({
 						value: "marquee-vertical var(--duration) linear infinite",
 					},
 					"border-beam": {
-						value: "border-beam calc(var(--duration)*1s) infinite linear",
+						value: "border-beam var(--duration) infinite linear",
 					},
 					shine: { value: "shine var(--duration) infinite linear" },
 					grid: { value: "grid 15s linear infinite" },
@@ -69,7 +69,7 @@ export default defineConfig({
 				},
 				"border-beam": {
 					"100%": {
-						backgroundPosition: "100%",
+						offsetDistance: "100%",
 					},
 				},
 				shine: {
