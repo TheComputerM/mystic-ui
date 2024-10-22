@@ -1,11 +1,42 @@
-import type { Component } from "solid-js";
+import { createAsync, useParams } from "@solidjs/router";
+import { type Component, For, Show } from "solid-js";
+import { type RegistryEntry, getRegistryEntry } from "~/lib/registry";
 import { CodeBlock } from "./code-block";
 import { Step, Steps } from "./ui/stepper";
 import { Tabs } from "./ui/tabs";
 
+const instructions: {
+	title: string;
+	condition: (entry: RegistryEntry) => boolean;
+	component: Component<{ entry: RegistryEntry }>;
+}[] = [
+	{
+		title: "Install dependencies",
+		condition: (entry) => entry.dependencies,
+		component: (props) => (
+			<CodeBlock
+				code={`npm i ${props.entry.dependencies.join(" ")}`}
+				lang="shell"
+			/>
+		),
+	},
+	{
+		title: "Copy and paste the component.",
+		condition: (entry) => entry.files,
+		component: (props) => {
+			const params = useParams();
+			return (
+				<CodeBlock code={props.entry.files[0][params.framework]} lang="tsx" />
+			);
+		},
+	},
+];
+
 export const InstallationInstructions: Component<{ component: string }> = (
 	props,
 ) => {
+	const entry = createAsync(() => getRegistryEntry(props.component));
+
 	return (
 		<Tabs.Root defaultValue="cli">
 			<Tabs.List>
@@ -18,12 +49,17 @@ export const InstallationInstructions: Component<{ component: string }> = (
 			</Tabs.Content>
 			<Tabs.Content value="manual">
 				<Steps>
-					<Step number="1" title="Step 1">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iure
-						vel inventore eveniet possimus nihil natus illum perspiciatis cumque
-						facere exercitationem iste accusantium recusandae fuga, vitae esse
-						neque quisquam ducimus!
-					</Step>
+					<Show when={entry()}>
+						<For
+							each={instructions.filter(({ condition }) => condition(entry()))}
+						>
+							{(instruction, i) => (
+								<Step number={i() + 1} title={instruction.title}>
+									<instruction.component entry={entry()} />
+								</Step>
+							)}
+						</For>
+					</Show>
 				</Steps>
 			</Tabs.Content>
 		</Tabs.Root>
