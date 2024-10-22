@@ -3,13 +3,7 @@ import type { RouteSectionProps } from "@solidjs/router";
 import { A, useLocation, useNavigate } from "@solidjs/router";
 import { allDocs } from "content-collections";
 import { TbChevronDown } from "solid-icons/tb";
-import {
-	type Component,
-	For,
-	Index,
-	type ParentComponent,
-	createMemo,
-} from "solid-js";
+import { type Component, For, Index, type ParentComponent } from "solid-js";
 import { css } from "styled-system/css";
 import { Container, Divider, Grid, Stack } from "styled-system/jsx";
 import { Heading } from "~/components/ui/heading";
@@ -99,11 +93,11 @@ const SideNav: Component<{ framework: string }> = (props) => {
 		effect: "Effects",
 	};
 
-	const sections = createMemo(() => [
+	const sections = [
 		{
 			title: "Overview",
 			links: [
-				{ title: "Introduction", href: `/docs/${props.framework}` },
+				{ title: "Introduction", href: "/docs/{{framework}}" },
 				{ title: "with Panda", href: "/docs/panda/setup" },
 				{ title: "with Tailwind", href: "/docs/tailwind/setup" },
 			],
@@ -117,7 +111,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 					}
 					acc[category].push({
 						title: doc.title,
-						href: `/docs/${props.framework}/components/${doc._meta.path}`,
+						href: `/docs/{{framework}}/components/${doc._meta.path}`,
 					});
 					return acc;
 				},
@@ -127,9 +121,9 @@ const SideNav: Component<{ framework: string }> = (props) => {
 			.sort()
 			.map(([category, links]) => ({
 				title: categoryMap[category],
-				links,
+				links: links.sort(),
 			})),
-	]);
+	];
 
 	return (
 		<aside
@@ -145,13 +139,17 @@ const SideNav: Component<{ framework: string }> = (props) => {
 			})}
 		>
 			<Stack gap="6" flexGrow={1} overflowY="auto">
-				<For each={sections()}>
+				<For each={sections}>
 					{(section) => (
 						<Stack gap="2">
 							<SideNavHeading>{section.title}</SideNavHeading>
 							<For each={section.links}>
 								{(link) => (
-									<SideNavLink href={link.href}>{link.title}</SideNavLink>
+									<SideNavLink
+										href={link.href.replace("{{framework}}", props.framework)}
+									>
+										{link.title}
+									</SideNavLink>
 								)}
 							</For>
 						</Stack>
