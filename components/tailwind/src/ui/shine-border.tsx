@@ -1,13 +1,11 @@
 import { cn } from "@/lib/utils";
 import { type ParentComponent, mergeProps } from "solid-js";
 
-type TColorProp = string | string[];
-
 export interface ShineBorderProps {
 	borderRadius?: number;
 	borderWidth?: number;
 	class?: string;
-	color?: TColorProp;
+	color?: string | string[];
 	duration?: number;
 }
 

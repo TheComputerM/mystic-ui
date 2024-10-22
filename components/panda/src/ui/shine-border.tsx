@@ -2,13 +2,11 @@ import { css, cx } from "styled-system/css";
 
 import { type ParentComponent, mergeProps } from "solid-js";
 
-type TColorProp = string | string[];
-
 export interface ShineBorderProps {
 	borderRadius?: number;
 	borderWidth?: number;
 	class?: string;
-	color?: TColorProp;
+	color?: string | string[];
 	duration?: number;
 }
 
@@ -59,7 +57,7 @@ export const ShineBorder: ParentComponent<ShineBorderProps> = (props) => {
 						_motionSafe: {
 							// TODO: doesn't recognise the css var for some reason
 							animation: "shine var(--duration) infinite linear",
-						}
+						},
 					},
 				})}
 			/>
