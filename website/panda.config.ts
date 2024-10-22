@@ -12,6 +12,8 @@ if (!pandaConfig.theme?.extend) {
 export default defineConfig({
 	preflight: true,
 	presets: ["@pandacss/preset-panda", "@park-ui/panda-preset"],
+	minify: process.env.NODE_ENV === "production",
+	hash: process.env.NODE_ENV === "production",
 	include: [
 		"../components/panda/src/**/*.tsx",
 		"./src/**/*.{js,jsx,ts,tsx,mdx}",
