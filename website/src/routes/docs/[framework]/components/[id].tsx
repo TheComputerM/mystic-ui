@@ -2,12 +2,10 @@ import { Title } from "@solidjs/meta";
 import type { RouteDefinition, RouteSectionProps } from "@solidjs/router";
 import { allDocs } from "content-collections";
 import { createMemo } from "solid-js";
-import { Divider, Stack } from "styled-system/jsx";
 import { InstallationInstructions } from "~/components/installation-instructions";
 import { StoryPreview } from "~/components/story-preview";
-import { Heading } from "~/components/ui/heading";
-import { Text } from "~/components/ui/text";
 import { getStorySource } from "~/lib/stories";
+import { useMDXComponents } from "~/tools/solid-mdx";
 
 export const route = {
 	preload: async (args) => {
@@ -19,6 +17,8 @@ export const route = {
 		);
 	},
 } satisfies RouteDefinition;
+
+const MDXComponents = useMDXComponents();
 
 export default function PandaDocsPage(props: RouteSectionProps) {
 	const doc = createMemo(() => {
@@ -32,27 +32,17 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 	return (
 		<>
 			<Title>{doc().title} | Mystic UI</Title>
-			<Heading textStyle="4xl">{doc().title}</Heading>
-			<br />
-			<Text color="fg.subtle" textStyle="xl">
-				{doc().description}
-			</Text>
-			<br />
-			<Divider my="3" />
-			<br />
+			<MDXComponents.h1>{doc().title}</MDXComponents.h1>
+			<MDXComponents.p textStyle="xl">{doc().description}</MDXComponents.p>
+			<MDXComponents.hr />
 			<StoryPreview
 				framework={props.params.framework as "tailwind" | "panda"}
 				component={props.params.id}
 				name="default"
 			/>
-			<br />
-
-			<Divider my="3" />
-			<br />
-			<Stack>
-				<Heading textStyle="2xl">Installation</Heading>
-				<InstallationInstructions component={props.params.id} />
-			</Stack>
+			<MDXComponents.hr />
+			<MDXComponents.h2>Installation</MDXComponents.h2>
+			<InstallationInstructions component={props.params.id} />
 		</>
 	);
 }

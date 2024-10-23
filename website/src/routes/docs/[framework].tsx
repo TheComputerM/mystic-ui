@@ -59,7 +59,7 @@ const SelectFramework: Component<{ value: string }> = (props) => {
 				const newLocation = location.pathname.replace(props.value, value[0]);
 				navigate(newLocation, {
 					replace: true,
-					scroll: false
+					scroll: false,
 				});
 			}}
 			collection={collection}

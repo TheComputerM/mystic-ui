@@ -1,6 +1,4 @@
 import { defineConfig } from "@pandacss/dev";
-import { merge } from "ts-deepmerge";
-
 import pandaConfig from "@mystic-ui/panda/panda.config";
 
 if (!pandaConfig.theme?.extend) {
@@ -21,16 +19,13 @@ export default defineConfig({
 	],
 	exclude: [],
 	theme: {
-		extend: merge(pandaConfig.theme.extend, {
-			tokens: {
-				fonts: {
-					mono: {
-						value:
-							"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
-					},
-				},
-			},
-		}),
+		extend: pandaConfig.theme.extend,
+	},
+	globalCss: {
+		html: {
+			'--global-font-body': '"Rubik Variable", sans-serif',
+			'--global-font-mono': 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace'
+		}
 	},
 	outdir: "styled-system",
 	jsxFramework: "solid",

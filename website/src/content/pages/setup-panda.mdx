@@ -1,0 +1,18 @@
+---
+title: Setup PandaCSS
+---
+
+# Setup with PandaCSS
+
+You can use Mystic UI with your PandaCSS projects, also works with panda based frameworks like [Park UI](https://park-ui.com/).
+
+Run `npx @mystic-ui/cli init` with whatever package manager you prefer and make sure you choose *panda* as your css framework.
+
+And finally make sure you include the panda preset in your config.
+
+```js
+export default defineConfig({
+  //...
+  presets: ["@pandacss/preset-panda"] // make sure the panda preset is included in your config
+})
+```

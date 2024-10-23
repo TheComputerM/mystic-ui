@@ -1,3 +1,4 @@
+import { DotPattern } from "@mystic-ui/panda/src/ui/dot-pattern";
 import { ShineBorder } from "@mystic-ui/panda/src/ui/shine-border";
 import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
@@ -118,7 +119,13 @@ export default function Home() {
 						</Wrap>
 						<CompatileEcosystem />
 					</Stack>
-					<Center flexBasis="2/5">
+					<Center flexBasis="2/5" position="relative">
+						<DotPattern
+							class={css({
+								maskImage:
+									"radial-gradient(250px circle at center,white,transparent)",
+							})}
+						/>
 						<ShineBorder
 							class={css({ p: 0.5, boxShadow: "md" })}
 							color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
