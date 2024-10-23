@@ -21,6 +21,7 @@ export const ThemeSwitcher = () => {
 			onClick={() => setDarkMode((theme) => !theme)}
 			variant="ghost"
 			size="sm"
+			aria-label="Toggle dark mode"
 		>
 			<Show when={darkMode()} fallback={<TbMoon />}>
 				<TbSun />

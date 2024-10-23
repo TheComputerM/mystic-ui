@@ -22,7 +22,7 @@ const SideNavLink: ParentComponent<{ href: string }> = (props) => {
 		<A
 			href={props.href}
 			class={css({ textStyle: "sm" })}
-			inactiveClass={css({ color: "fg.subtle" })}
+			inactiveClass={css({ color: "fg.disabled" })}
 			activeClass={css({ fontWeight: "medium" })}
 			end
 		>

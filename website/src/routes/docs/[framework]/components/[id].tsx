@@ -31,7 +31,7 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 
 	return (
 		<>
-			<Title>{doc().title} | Mystic UI</Title>
+			<Title>{doc().title} component | Mystic UI</Title>
 			<MDXComponents.h1>{doc().title}</MDXComponents.h1>
 			<MDXComponents.p textStyle="xl">{doc().description}</MDXComponents.p>
 			<MDXComponents.hr />

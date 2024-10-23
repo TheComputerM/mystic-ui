@@ -33,6 +33,7 @@ export const Navbar = () => {
 								<a
 									href="https://github.com/TheComputerM/mystic-ui"
 									target="_blank"
+									aria-label="GitHub"
 									{...parentProps()}
 								>
 									<TbBrandGithubFilled />
