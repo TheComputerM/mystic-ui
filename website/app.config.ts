@@ -69,7 +69,6 @@ export default defineConfig({
 	},
 	server: {
 		prerender: {
-			failOnError: true,
 			crawlLinks: true,
 		},
 		// see https://github.com/solidjs/solid-start/issues/1614
