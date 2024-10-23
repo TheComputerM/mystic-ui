@@ -3,7 +3,7 @@
   "../tailwind/src/ui/dot-pattern.tsx": "89462da48f004c16b7d3bc9ef89b6628901cd9c8a3d5ae86abc9cf8dce73a089",
   "../tailwind/src/stories/word-rotate/default.tsx": "d45e76ebbd0bf7979f973df797a87414fefe42ab81e34a1915705cbc2014791b",
   "../tailwind/src/stories/word-rotate/stories.tsx": "42917d8e45ef7471ee3109bb5ba3fbca25e6d4d8f8d05eeddff18966fa7f10a7",
-  "../tailwind/src/ui/word-fade-in.tsx": "52f0d9c9b99dd041a13a58f30247467b23e50c009e7919edd93cc1d65173e87b",
+  "../tailwind/src/ui/word-fade-in.tsx": "b4cf0dd5b64225e3d5ed45a3167da136085272385d4d91e64af46712f6c90889",
   "../tailwind/src/stories/word-fade-in/default.tsx": "08a51e638b7659e2dca1db39ba9da92da973c1d09f12aaf780ef21f28b4dc1ae",
   "../tailwind/src/stories/word-fade-in/stories.tsx": "ac408242019b383a15bbbdc68b99af0e65590c6187135c81641fe66321ae2d05",
   "../tailwind/src/ui/flip-text.tsx": "3fb69fa20b5555a6ddf5045f08ad6173e0a3a6e503198d268477df751191fa0b",

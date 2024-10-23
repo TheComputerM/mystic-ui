@@ -5,17 +5,14 @@ import {
 	mergeProps,
 	splitProps,
 } from "solid-js";
-import { Motion, type VariantDefinition } from "solid-motionone";
+import { Motion } from "solid-motionone";
 import { css, cx } from "styled-system/css";
 
 export interface WordFadeInProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	text: string;
 	delay?: number;
 	duration?: number;
-	states?: {
-		initial: VariantDefinition;
-		animate: VariantDefinition;
-	};
+	blur?: number;
 }
 
 export const WordFadeIn: Component<WordFadeInProps> = (props) => {
@@ -23,16 +20,14 @@ export const WordFadeIn: Component<WordFadeInProps> = (props) => {
 		"text",
 		"delay",
 		"duration",
+		"blur",
 		"class",
 	]);
 	const localProps = mergeProps(
 		{
 			delay: 0.15,
 			duration: 1,
-			states: {
-				initial: { opacity: 0, filter: "blur(8px)" },
-				animate: { opacity: 1, filter: "blur(0px)" },
-			},
+			blur: 8,
 		},
 		_localProps,
 	);
@@ -45,8 +40,9 @@ export const WordFadeIn: Component<WordFadeInProps> = (props) => {
 			<For each={localProps.text.split(" ")}>
 				{(word, i) => (
 					<Motion.div
-						initial={localProps.states.initial}
-						inView={localProps.states.animate}
+						initial={{ opacity: 0, filter: `blur(${localProps.blur}px)` }}
+						inView={{ opacity: 1, filter: "blur(0px)" }}
+						inViewOptions={{ once: true }}
 						transition={{
 							delay: localProps.delay + i() * localProps.delay,
 							duration: localProps.duration,
