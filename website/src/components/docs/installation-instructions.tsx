@@ -1,7 +1,6 @@
 import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
-import { createAsync, useParams } from "@solidjs/router";
-import { type Component, For, Show } from "solid-js";
-import { getRegistryEntry } from "~/lib/registry";
+import { useParams } from "@solidjs/router";
+import { type Component, For, Show, createResource } from "solid-js";
 import { CodeBlock } from "../code-block";
 import { Step, Steps } from "../ui/stepper";
 import { Tabs } from "../ui/tabs";
@@ -33,11 +32,20 @@ const instructions: {
 	},
 ];
 
+async function fetchRegistryEntry(component: string) {
+	const response = await fetch(
+		`https://raw.githubusercontent.com/TheComputerM/mystic-ui/main/packages/registry/build/${component}.json`,
+	);
+	return (await response.json()) as RegistryEntry;
+}
+
 export const InstallationInstructions: Component<{ component: string }> = (
 	props,
 ) => {
-	const entry = createAsync(() => getRegistryEntry(props.component));
-
+	const [entry] = createResource(() => props.component, fetchRegistryEntry, {
+		name: "fetch registry component",
+	});
+	
 	return (
 		<Tabs.Root defaultValue="cli">
 			<Tabs.List>
@@ -46,7 +54,10 @@ export const InstallationInstructions: Component<{ component: string }> = (
 				<Tabs.Indicator />
 			</Tabs.List>
 			<Tabs.Content value="cli">
-				<CodeBlock code={`npx mystic-ui add ${props.component}`} lang="shell" />
+				<CodeBlock
+					code={`npx @mystic-ui/cli components add ${props.component}`}
+					lang="shell"
+				/>
 			</Tabs.Content>
 			<Tabs.Content value="manual">
 				<Steps>
