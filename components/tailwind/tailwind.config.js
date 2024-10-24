@@ -1,13 +1,6 @@
-import _config, {
-	componentTailwindConfig,
-} from "@mystic-ui/registry/src/extend-config";
+import { tailwindConfig as mysticConfig } from "@mystic-ui/registry/src/tailwind";
 import { merge } from "ts-deepmerge";
 
-const mysticConfig = merge(
-	...Object.keys(_config)
-		.map((key) => componentTailwindConfig(key))
-		.filter((x) => x !== undefined),
-);
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -19,4 +12,4 @@ const config = {
 	plugins: [],
 };
 
-export default merge(mysticConfig, config);
+export default merge(mysticConfig(), config);

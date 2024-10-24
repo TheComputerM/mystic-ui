@@ -1,9 +1,9 @@
 import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 import { useParams } from "@solidjs/router";
 import { type Component, For, Show, createResource } from "solid-js";
-import { CodeBlock } from "../code-block";
-import { Step, Steps } from "../ui/stepper";
-import { Tabs } from "../ui/tabs";
+import { CodeBlock } from "~/components/code-block";
+import { Step, Steps } from "~/components/ui/stepper";
+import { Tabs } from "~/components/ui/tabs";
 
 const instructions: {
 	title: string;
@@ -45,7 +45,7 @@ export const InstallationInstructions: Component<{ component: string }> = (
 	const [entry] = createResource(() => props.component, fetchRegistryEntry, {
 		name: "fetch registry component",
 	});
-	
+
 	return (
 		<Tabs.Root defaultValue="cli">
 			<Tabs.List>

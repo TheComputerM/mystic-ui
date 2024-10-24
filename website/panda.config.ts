@@ -1,13 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
-import pandaConfig from "@mystic-ui/panda/panda.config";
+import { pandaConfig as mysticConfig } from "@mystic-ui/registry/src/panda";
+import { merge } from "ts-deepmerge";
 
-if (!pandaConfig.theme?.extend) {
-	throw new Error(
-		"Somehow the panda.config.ts file is missing the theme object??",
-	);
-}
-
-export default defineConfig({
+const config = defineConfig({
 	preflight: true,
 	presets: ["@pandacss/preset-panda", "@park-ui/panda-preset"],
 	minify: process.env.NODE_ENV === "production",
@@ -19,14 +14,17 @@ export default defineConfig({
 	],
 	exclude: [],
 	theme: {
-		extend: pandaConfig.theme.extend,
+		extend: {},
 	},
 	globalCss: {
 		html: {
-			'--global-font-body': '"Rubik Variable", sans-serif',
-			'--global-font-mono': 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace'
-		}
+			"--global-font-body": '"Rubik Variable", sans-serif',
+			"--global-font-mono":
+				"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+		},
 	},
 	outdir: "styled-system",
 	jsxFramework: "solid",
 });
+
+export default merge(mysticConfig(), config);

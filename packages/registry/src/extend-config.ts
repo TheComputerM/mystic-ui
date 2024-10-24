@@ -1,7 +1,10 @@
-import type { CustomThemeConfig } from "tailwindcss/types/config";
+import type { CssKeyframes } from "@pandacss/types";
 
 interface ConfigModifications {
-	[k: string]: Partial<CustomThemeConfig>;
+	[k: string]: Partial<{
+		animation: Record<string, string>;
+		keyframes: CssKeyframes;
+	}>;
 }
 
 const config: ConfigModifications = {
@@ -155,41 +158,3 @@ const config: ConfigModifications = {
 };
 
 export default config;
-
-export function componentTailwindConfig(component: string) {
-	if (!(component in config)) {
-		return undefined;
-	}
-
-	return {
-		theme: {
-			extend: config[component],
-		},
-	} as import("tailwindcss").Config;
-}
-
-export function componentPandaConfig(component: string) {
-	if (!(component in config)) {
-		return undefined;
-	}
-
-	return {
-		theme: {
-			extend: {
-				tokens: {
-					animations: Object.entries(config[component].animation ?? {}).reduce(
-						(
-							acc: Record<string, { value: string }>,
-							[animationName, value],
-						) => {
-							acc[animationName] = { value };
-							return acc;
-						},
-						{},
-					),
-				},
-				keyframes: config[component].keyframes,
-			},
-		},
-	};
-}
