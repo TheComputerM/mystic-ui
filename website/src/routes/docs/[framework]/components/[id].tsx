@@ -43,7 +43,7 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 			/>
 			<MDXComponents.hr />
 			<MDXComponents.h2>Installation</MDXComponents.h2>
-			<InstallationInstructions component={props.params.id} />
+			<InstallationInstructions />
 		</>
 	);
 }

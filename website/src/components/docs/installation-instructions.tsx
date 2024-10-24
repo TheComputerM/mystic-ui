@@ -23,28 +23,30 @@ const instructions: {
 	{
 		title: "Copy and paste the component.",
 		condition: () => true,
-		component: (props) => {
-			const params = useParams() satisfies {
-				framework: "tailwind" | "panda";
-			};
-			return <CodeBlock code={props.entry[params.framework].file} lang="tsx" />;
-		},
+		component: (props) => <CodeBlock code={props.entry.content} lang="tsx" />,
 	},
 ];
 
-async function fetchRegistryEntry(component: string) {
+async function fetchRegistryEntry([framework, component]: [string, string]) {
 	const response = await fetch(
-		`https://raw.githubusercontent.com/TheComputerM/mystic-ui/main/packages/registry/build/${component}.json`,
+		`https://raw.githubusercontent.com/TheComputerM/mystic-ui/main/packages/registry/${framework}/${component}.json`,
 	);
 	return (await response.json()) as RegistryEntry;
 }
 
-export const InstallationInstructions: Component<{ component: string }> = (
-	props,
-) => {
-	const [entry] = createResource(() => props.component, fetchRegistryEntry, {
-		name: "fetch registry component",
-	});
+export const InstallationInstructions: Component = () => {
+	const params = useParams() satisfies {
+		framework: "tailwind" | "panda";
+		id: string;
+	};
+
+	const [entry] = createResource(
+		() => [params.framework, params.id] satisfies [string, string],
+		fetchRegistryEntry,
+		{
+			name: "fetch registry component",
+		},
+	);
 
 	return (
 		<Tabs.Root defaultValue="cli">
@@ -55,7 +57,7 @@ export const InstallationInstructions: Component<{ component: string }> = (
 			</Tabs.List>
 			<Tabs.Content value="cli">
 				<CodeBlock
-					code={`npx @mystic-ui/cli components add ${props.component}`}
+					code={`npx @mystic-ui/cli components add ${params.id}`}
 					lang="shell"
 				/>
 			</Tabs.Content>
