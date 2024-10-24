@@ -8,14 +8,14 @@
 		"lint": "biome lint src",
 		"check": "biome check src"
 	},
-	"dependencies": {
-		"@mystic-ui/tailwind": "workspace:*"
-	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
+		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {
-		"typescript": "^5.6.2"
+		"typescript": "^5.6.3"
+	},
+	"dependencies": {
+		"ts-deepmerge": "^7.0.1"
 	}
 }

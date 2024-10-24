@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
+		"@mystic-ui/registry": "workspace:*",
 		"@pandacss/dev": "^0.47.0",
 		"@storybook/addon-essentials": "^8.3.6",
 		"@storybook/addon-themes": "^8.3.6",
@@ -27,12 +28,12 @@
 		"vite-tsconfig-paths": "^5.0.1"
 	},
 	"peerDependencies": {
-		"typescript": "^5.6.2"
+		"typescript": "^5.3.3"
 	},
 	"dependencies": {
 		"motion": "^10.18.0",
 		"solid-icons": "^1.1.0",
-		"solid-js": "^1.9.2",
+		"solid-js": "^1.9.3",
 		"solid-motionone": "^1.0.2"
 	}
 }
