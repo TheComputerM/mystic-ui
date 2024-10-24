@@ -36,6 +36,8 @@ export const RawCodeBlock: Component<CodeBlockProps & { html?: string }> = (
 						borderRadius: "l3",
 						tabSize: 2,
 						overflowX: "auto",
+						maxHeight: "md",
+						overflowY: "auto",
 					},
 				})}
 				innerHTML={props.html}

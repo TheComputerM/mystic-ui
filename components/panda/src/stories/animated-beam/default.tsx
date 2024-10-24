@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/ui/animated-beam";
 import {
 	TbBrand4chan,
@@ -10,6 +9,7 @@ import {
 	TbBrandGithubFilled,
 } from "solid-icons/tb";
 import type { ParentComponent } from "solid-js";
+import { css, cx } from "styled-system/css";
 
 const Circle: ParentComponent<{ class?: string; ref?: HTMLDivElement }> = (
 	props,
@@ -17,8 +17,25 @@ const Circle: ParentComponent<{ class?: string; ref?: HTMLDivElement }> = (
 	return (
 		<div
 			ref={props.ref}
-			class={cn(
-				"z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+			class={cx(
+				css({
+					zIndex: "10",
+					display: "flex",
+					width: "12",
+					height: "12",
+					alignItems: "center",
+					justifyContent: "center",
+					borderRadius: "full",
+					borderWidth: "2px",
+					padding: "3",
+					boxShadow: "sm",
+					backgroundColor: "white",
+					borderColor: "neutral.200",
+					_dark: {
+						backgroundColor: "black",
+						borderColor: "neutral.900",
+					},
+				}),
 				props.class,
 			)}
 		>
@@ -38,9 +55,39 @@ export default function AnimatedBeamDemo() {
 	let div7Ref!: HTMLDivElement;
 
 	return (
-		<div class="relative w-full mx-auto max-w-sm my-6" ref={containerRef}>
-			<div class="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-between gap-10">
-				<div class="flex flex-row items-center justify-between">
+		<div
+			class={css({
+				position: "relative",
+				width: "full",
+				marginLeft: "auto",
+				marginRight: "auto",
+				maxWidth: "sm",
+				marginTop: "6",
+				marginBottom: "6",
+			})}
+			ref={containerRef}
+		>
+			<div
+				class={css({
+					display: "flex",
+					width: "full",
+					height: "full",
+					flexDirection: "column",
+					maxWidth: "lg",
+					maxHeight: "200px",
+					alignItems: "stretch",
+					justifyContent: "space-between",
+					gap: "10",
+				})}
+			>
+				<div
+					class={css({
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "space-between",
+					})}
+				>
 					<Circle ref={div1Ref}>
 						<TbBrandAdobe />
 					</Circle>
@@ -48,7 +95,14 @@ export default function AnimatedBeamDemo() {
 						<TbBrandGithubFilled />
 					</Circle>
 				</div>
-				<div class="flex flex-row items-center justify-between">
+				<div
+					class={css({
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "space-between",
+					})}
+				>
 					<Circle ref={div2Ref}>
 						<TbBrandApple />
 					</Circle>
@@ -59,7 +113,14 @@ export default function AnimatedBeamDemo() {
 						<TbBrandAppstore />
 					</Circle>
 				</div>
-				<div class="flex flex-row items-center justify-between">
+				<div
+					class={css({
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent: "space-between",
+					})}
+				>
 					<Circle ref={div3Ref}>
 						<TbBrand4chan />
 					</Circle>

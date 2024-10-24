@@ -14,8 +14,6 @@ const stories = import.meta.glob<{ default: Component }>([
 	"!../../../../components/panda/src/stories/**/stories.tsx",
 ]);
 
-console.log(stories);
-
 /**
  * Get the story component that can be imported and used `lazy(getStory(...))`
  */

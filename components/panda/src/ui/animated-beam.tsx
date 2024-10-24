@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { animate } from "motion";
 import {
 	type Component,
@@ -8,6 +7,7 @@ import {
 	mergeProps,
 	onMount,
 } from "solid-js";
+import { css, cx } from "styled-system/css";
 
 export interface AnimatedBeamProps {
 	class?: string;
@@ -33,7 +33,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 	const localProps = mergeProps(
 		{
 			curvature: 0,
-			reverse: false,
+			reverse: false, // Include the reverse prop
 			duration: Math.random() * 3 + 4,
 			delay: 0,
 			pathColor: "gray",
@@ -104,9 +104,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 					localProps.endYOffset;
 
 				const controlY = startY - localProps.curvature;
-				const d = `M ${startX},${startY} Q ${
-					(startX + endX) / 2
-				},${controlY} ${endX},${endY}`;
+				const d = `M ${startX},${startY} Q ${(startX + endX) / 2},${controlY} ${endX},${endY}`;
 				setPathD(d);
 			}
 		};
@@ -139,27 +137,19 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 			(p) => {
 				linearGradient.setAttribute(
 					"x1",
-					`${
-						gradientCoordinates.x1[1] * p + gradientCoordinates.x1[0] * (1 - p)
-					}%`,
+					`${gradientCoordinates.x1[1] * p + gradientCoordinates.x1[0] * (1 - p)}%`,
 				);
 				linearGradient.setAttribute(
 					"x2",
-					`${
-						gradientCoordinates.x2[1] * p + gradientCoordinates.x2[0] * (1 - p)
-					}%`,
+					`${gradientCoordinates.x2[1] * p + gradientCoordinates.x2[0] * (1 - p)}%`,
 				);
 				linearGradient.setAttribute(
 					"y1",
-					`${
-						gradientCoordinates.y1[1] * p + gradientCoordinates.y1[0] * (1 - p)
-					}%`,
+					`${gradientCoordinates.y1[1] * p + gradientCoordinates.y1[0] * (1 - p)}%`,
 				);
 				linearGradient.setAttribute(
 					"y2",
-					`${
-						gradientCoordinates.y2[1] * p + gradientCoordinates.y2[0] * (1 - p)
-					}%`,
+					`${gradientCoordinates.y2[1] * p + gradientCoordinates.y2[0] * (1 - p)}%`,
 				);
 			},
 			{
@@ -180,8 +170,14 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 			width={svgDimensions().width}
 			height={svgDimensions().height}
 			xmlns="http://www.w3.org/2000/svg"
-			class={cn(
-				"pointer-events-none absolute left-0 top-0 transform-gpu stroke-2",
+			class={cx(
+				css({
+					pointerEvents: "none",
+					position: "absolute",
+					left: "0",
+					top: "0",
+					strokeWidth: "2",
+				}),
 				localProps.class,
 			)}
 			viewBox={`0 0 ${svgDimensions().width} ${svgDimensions().height}`}
@@ -202,7 +198,6 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 			/>
 			<defs>
 				<linearGradient
-					class="transform-gpu"
 					id={id}
 					gradientUnits="userSpaceOnUse"
 					ref={linearGradient}

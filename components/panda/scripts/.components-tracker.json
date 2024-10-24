@@ -67,5 +67,8 @@
   "../tailwind/src/stories/spotlight/default.tsx": "4fa5a96623fbe6f2620231772aeb51d6fe85e69b4ba3b4f0ffce58e0d6512a9d",
   "../tailwind/src/stories/spotlight/stories.tsx": "a71a041be20672854d678285ff256bd0ffd88a1f28ba5cf1cf63a53515a1e51c",
   "../tailwind/src/stories/marquee/default.tsx": "e5d31654612ad05c597cf00a1b4befbaebdbdf8df3abeb207facc69dcf04aa17",
-  "../tailwind/src/stories/marquee/stories.tsx": "a3dfd8dc0ee6a5bb8750350842bc951ed4274252211e0ade292003d29c123796"
+  "../tailwind/src/stories/marquee/stories.tsx": "a3dfd8dc0ee6a5bb8750350842bc951ed4274252211e0ade292003d29c123796",
+  "../tailwind/src/ui/animated-beam.tsx": "129e89386442b418197a1c7d71ebbb1ade064690a6d333e3cec03845f4cfa87f",
+  "../tailwind/src/stories/animated-beam/default.tsx": "25413231434689291aebb2bda738318e1368e3845065eb8485d3de8c058190b5",
+  "../tailwind/src/stories/animated-beam/stories.tsx": "8e7121987c06b394fb711142cbafcbdbdd1d07f1a0eb3dc4272bef6b5b48ee7c"
 }
