@@ -70,7 +70,7 @@ export default function Home() {
 		<>
 			<Container minHeight="screen" display="grid" alignItems="center">
 				<Flex direction={{ base: "column", lg: "row" }} gap="12">
-					<Stack flexBasis="3/5" gap="8">
+					<Stack flexBasis="3/5" gap="8" py="2">
 						<Heading
 							as="h1"
 							textStyle={{ base: "4xl", sm: "6xl" }}
@@ -119,7 +119,7 @@ export default function Home() {
 						</Wrap>
 						<CompatileEcosystem />
 					</Stack>
-					<Center flexBasis="2/5" position="relative">
+					<Center flexBasis="2/5" position="relative" minHeight="sm">
 						<DotPattern
 							class={css({
 								maskImage:

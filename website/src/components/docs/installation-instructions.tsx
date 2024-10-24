@@ -2,9 +2,9 @@ import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 import { createAsync, useParams } from "@solidjs/router";
 import { type Component, For, Show } from "solid-js";
 import { getRegistryEntry } from "~/lib/registry";
-import { CodeBlock } from "./code-block";
-import { Step, Steps } from "./ui/stepper";
-import { Tabs } from "./ui/tabs";
+import { CodeBlock } from "../code-block";
+import { Step, Steps } from "../ui/stepper";
+import { Tabs } from "../ui/tabs";
 
 const instructions: {
 	title: string;

@@ -1,7 +1,7 @@
 // Acts like a JSX factory for compiling MDX documents.
 
 import type { Component } from "solid-js";
-import { Box, Divider } from "styled-system/jsx";
+import { Box, Divider, styled } from "styled-system/jsx";
 import { RawCodeBlock } from "~/components/code-block";
 import { Code } from "~/components/ui/code";
 import { Heading } from "~/components/ui/heading";
@@ -27,6 +27,6 @@ export const useMDXComponents: () => Record<string, Component<any>> = () => ({
 	b: (props) => <b {...props} />,
 	em: (props) => <em {...props} />,
 	strong: (props) => <strong {...props} />,
-	ul: (props) => <ul {...props} />,
-	li: (props) => <li {...props} />,
+	ul: (props) => <styled.ul spaceY="2" listStyleType="disc" {...props} />,
+	li: (props) => <styled.li color="fg.muted"  {...props} />,
 });

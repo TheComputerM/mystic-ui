@@ -4,10 +4,10 @@ import { type Component, Show, Suspense, createSignal, lazy } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { Center } from "styled-system/jsx";
 import { getStorySource } from "~/lib/stories";
-import { RawCodeBlock } from "./code-block";
-import { IconButton } from "./ui/icon-button";
-import { Spinner } from "./ui/spinner";
-import { Tabs } from "./ui/tabs";
+import { RawCodeBlock } from "../code-block";
+import { IconButton } from "../ui/icon-button";
+import { Spinner } from "../ui/spinner";
+import { Tabs } from "../ui/tabs";
 
 const stories = import.meta.glob<{ default: Component }>([
 	"../../../components/panda/src/stories/**/*.tsx",
