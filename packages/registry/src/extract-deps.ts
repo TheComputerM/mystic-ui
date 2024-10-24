@@ -28,5 +28,5 @@ export function extractDependencies(content: string) {
 		}
 	}
 
-	return npmDependencies.length ? npmDependencies : undefined;
+	return npmDependencies.length ? npmDependencies.sort() : undefined;
 }

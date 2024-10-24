@@ -2,6 +2,7 @@ import path from "node:path";
 import { type BunFile, Glob, fileURLToPath } from "bun";
 import { componentPandaConfig, componentTailwindConfig } from "./extend-config";
 import { extractDependencies } from "./extract-deps";
+import { registryEntrySchema } from "./schema";
 
 const tailwindDirectory = path.join(
 	path.dirname(
@@ -27,7 +28,7 @@ async function getContent(file: BunFile) {
 }
 
 const tsxGlob = new Glob("*.tsx");
-for await (const fileName of tsxGlob.scan(tailwindDirectory)) {
+for await (const fileName of tsxGlob.scan(pandaDirectory)) {
 	const tailwindComponentFile = await Bun.file(
 		path.join(tailwindDirectory, fileName),
 	);
@@ -42,16 +43,17 @@ for await (const fileName of tsxGlob.scan(tailwindDirectory)) {
 	const entry = {
 		name: componentName,
 		dependencies: npmDependencies,
-		tailwind: componentTailwindConfig(componentName),
-		panda: componentPandaConfig(componentName),
-		files: [
-			{
-				name: fileName,
-				tailwind: await getContent(tailwindComponentFile),
-				panda: await getContent(pandaComponentFile),
-			},
-		],
+		tailwind: {
+			config: componentTailwindConfig(componentName),
+			file: await getContent(tailwindComponentFile),
+		},
+		panda: {
+			config: componentPandaConfig(componentName),
+			file: await getContent(pandaComponentFile),
+		},
 	};
+
+	registryEntrySchema.parse(entry);
 
 	await Bun.write(
 		path.join(buildDirectory, `${componentName}.json`),

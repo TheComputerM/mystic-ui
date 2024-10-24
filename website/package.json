@@ -16,6 +16,7 @@
 		"@ark-ui/solid": "^4.2.1",
 		"@fontsource-variable/rubik": "^5.1.0",
 		"@mystic-ui/panda": "workspace:*",
+		"@mystic-ui/registry": "workspace:*",
 		"@solid-primitives/memo": "^1.3.9",
 		"@solid-primitives/storage": "^4.2.1",
 		"@solidjs/meta": "^0.29.4",

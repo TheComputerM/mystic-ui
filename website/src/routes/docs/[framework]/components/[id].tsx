@@ -4,17 +4,22 @@ import { allDocs } from "content-collections";
 import { createMemo } from "solid-js";
 import { InstallationInstructions } from "~/components/installation-instructions";
 import { StoryPreview } from "~/components/story-preview";
+import { getRegistryEntry } from "~/lib/registry";
 import { getStorySource } from "~/lib/stories";
 import { useMDXComponents } from "~/tools/solid-mdx";
 
 export const route = {
 	preload: async (args) => {
-		// preload the story source code
-		getStorySource(
-			args.params.framework as "tailwind" | "panda",
-			args.params.id,
-			"default",
-		);
+		await Promise.all([
+			// preload the story source code
+			getStorySource(
+				args.params.framework as "tailwind" | "panda",
+				args.params.id,
+				"default",
+			),
+			// preload the component registry entry
+			getRegistryEntry(args.params.id),
+		]);
 	},
 } satisfies RouteDefinition;
 

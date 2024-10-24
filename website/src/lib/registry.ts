@@ -1,9 +1,7 @@
 "use server";
 
+import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 import { cache } from "@solidjs/router";
-
-// biome-ignore lint/suspicious/noExplicitAny: This is a temporary type
-export type RegistryEntry = any;
 
 /**
  * Get the registry entry for a component

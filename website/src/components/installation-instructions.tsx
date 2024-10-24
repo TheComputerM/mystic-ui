@@ -1,6 +1,7 @@
+import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 import { createAsync, useParams } from "@solidjs/router";
 import { type Component, For, Show } from "solid-js";
-import { type RegistryEntry, getRegistryEntry } from "~/lib/registry";
+import { getRegistryEntry } from "~/lib/registry";
 import { CodeBlock } from "./code-block";
 import { Step, Steps } from "./ui/stepper";
 import { Tabs } from "./ui/tabs";
@@ -12,22 +13,22 @@ const instructions: {
 }[] = [
 	{
 		title: "Install dependencies",
-		condition: (entry) => entry.dependencies,
+		condition: (entry) => !!entry.dependencies,
 		component: (props) => (
 			<CodeBlock
-				code={`npm i ${props.entry.dependencies.join(" ")}`}
+				code={`npm i ${props.entry.dependencies?.join(" ")}`}
 				lang="shell"
 			/>
 		),
 	},
 	{
 		title: "Copy and paste the component.",
-		condition: (entry) => entry.files,
+		condition: () => true,
 		component: (props) => {
-			const params = useParams();
-			return (
-				<CodeBlock code={props.entry.files[0][params.framework]} lang="tsx" />
-			);
+			const params = useParams() satisfies {
+				framework: "tailwind" | "panda";
+			};
+			return <CodeBlock code={props.entry[params.framework].file} lang="tsx" />;
 		},
 	},
 ];
@@ -51,11 +52,11 @@ export const InstallationInstructions: Component<{ component: string }> = (
 				<Steps>
 					<Show when={entry()}>
 						<For
-							each={instructions.filter(({ condition }) => condition(entry()))}
+							each={instructions.filter(({ condition }) => condition(entry()!))}
 						>
 							{(instruction, i) => (
 								<Step number={i() + 1} title={instruction.title}>
-									<instruction.component entry={entry()} />
+									<instruction.component entry={entry()!} />
 								</Step>
 							)}
 						</For>
