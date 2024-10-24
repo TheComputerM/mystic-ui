@@ -1,6 +1,6 @@
-import { css } from "styled-system/css";
 import { Marquee } from "@/ui/marquee";
 import { For } from "solid-js";
+import { css } from "styled-system/css";
 
 const reviews = [
 	{

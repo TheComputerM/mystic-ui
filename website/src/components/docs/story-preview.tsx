@@ -10,9 +10,11 @@ import { Spinner } from "../ui/spinner";
 import { Tabs } from "../ui/tabs";
 
 const stories = import.meta.glob<{ default: Component }>([
-	"../../../components/panda/src/stories/**/*.tsx",
-	"!../../../components/panda/src/stories/**/stories.tsx",
+	"../../../../components/panda/src/stories/**/*.tsx",
+	"!../../../../components/panda/src/stories/**/stories.tsx",
 ]);
+
+console.log(stories);
 
 /**
  * Get the story component that can be imported and used `lazy(getStory(...))`
@@ -20,7 +22,7 @@ const stories = import.meta.glob<{ default: Component }>([
 function getStory(component: string, name = "default") {
 	// only panda stories are used cause well, the website uses panda css
 	return stories[
-		`../../../components/panda/src/stories/${component}/${name}.tsx`
+		`../../../../components/panda/src/stories/${component}/${name}.tsx`
 	];
 }
 

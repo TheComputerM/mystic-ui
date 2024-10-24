@@ -28,5 +28,5 @@ export const useMDXComponents: () => Record<string, Component<any>> = () => ({
 	em: (props) => <em {...props} />,
 	strong: (props) => <strong {...props} />,
 	ul: (props) => <styled.ul spaceY="2" listStyleType="disc" {...props} />,
-	li: (props) => <styled.li color="fg.muted"  {...props} />,
+	li: (props) => <styled.li color="fg.muted" {...props} />,
 });

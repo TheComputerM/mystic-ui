@@ -70,8 +70,11 @@ export const Marquee: ParentComponent<MarqueeProps> = (props) => {
 							gap: "var(--gap)",
 						})}
 						classList={{
-							[css({ animation: "marquee var(--duration) linear infinite" })]: !localProps.vertical,
-							[css({ animation: "marquee-vertical var(--duration) linear infinite" })]: localProps.vertical,
+							[css({ animation: "marquee var(--duration) linear infinite" })]:
+								!localProps.vertical,
+							[css({
+								animation: "marquee-vertical var(--duration) linear infinite",
+							})]: localProps.vertical,
 							[css({ _groupHover: { animationPlayState: "paused" } })]:
 								localProps.pauseOnHover,
 							[css({ animationDirection: "reverse" })]: localProps.reverse,
