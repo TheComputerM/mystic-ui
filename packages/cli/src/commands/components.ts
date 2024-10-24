@@ -1,5 +1,4 @@
-// biome-ignore lint/suspicious/noExplicitAny: need to update it later
-type RegistryEntry = any;
+import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 
 async function getRegistryEntry(component: string) {
 	const res = await fetch(

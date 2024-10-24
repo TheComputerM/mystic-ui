@@ -21,27 +21,7 @@ const reviews = [
 		body: "I'm at a loss for words. This is amazing. I love it.",
 		img: "https://avatar.vercel.sh/john",
 	},
-	{
-		name: "Jane",
-		username: "@jane",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://avatar.vercel.sh/jane",
-	},
-	{
-		name: "Jenny",
-		username: "@jenny",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://avatar.vercel.sh/jenny",
-	},
-	{
-		name: "James",
-		username: "@james",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://avatar.vercel.sh/james",
-	},
 ];
-
-const firstRow = reviews.slice(0, reviews.length / 2);
 
 const ReviewCard = ({
 	img,
@@ -65,7 +45,13 @@ const ReviewCard = ({
 			)}
 		>
 			<div class="flex flex-row items-center gap-2">
-				<img class="rounded-full" width="32" height="32" alt="" src={img} />
+				<img
+					class="rounded-full"
+					width="32"
+					height="32"
+					alt="avatar-img"
+					src={img}
+				/>
 				<div class="flex flex-col">
 					<span class="text-sm font-medium dark:text-white">{name}</span>
 					<p class="text-xs font-medium dark:text-white/40">{username}</p>
@@ -78,9 +64,12 @@ const ReviewCard = ({
 
 export default function MarqueeDemo() {
 	return (
-		<div class="relative flex py-16 w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-			<Marquee class="[--duration:20s]">
-				<For each={firstRow}>{(review) => <ReviewCard {...review} />}</For>
+		<div class="relative overflow-hidden">
+			<Marquee pauseOnHover duration={20}>
+				<For each={reviews}>{(review) => <ReviewCard {...review} />}</For>
+			</Marquee>
+			<Marquee reverse pauseOnHover>
+				<For each={reviews}>{(review) => <ReviewCard {...review} />}</For>
 			</Marquee>
 			<div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background" />
 			<div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background" />

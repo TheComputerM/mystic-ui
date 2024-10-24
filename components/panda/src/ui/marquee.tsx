@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils";
+import { css, cx } from "styled-system/css";
+
 import {
 	For,
 	type JSX,
@@ -40,9 +41,17 @@ export const Marquee: ParentComponent<MarqueeProps> = (props) => {
 	);
 	return (
 		<div
-			class={cn(
-				"group flex overflow-hidden p-2 [gap:var(--gap)]",
-				localProps.vertical ? "flex-col" : "flex-row",
+			class={cx(
+				"group",
+				css({
+					display: "flex",
+					overflow: "hidden",
+					padding: "2",
+					gap: "var(--gap)",
+				}),
+				localProps.vertical
+					? css({ flexDirection: "column" })
+					: css({ flexDirection: "row" }),
 				localProps.class,
 			)}
 			style={{
@@ -54,13 +63,18 @@ export const Marquee: ParentComponent<MarqueeProps> = (props) => {
 			<For each={Array(localProps.repeat).fill(0)}>
 				{() => (
 					<div
-						class="flex shrink-0 justify-around [gap:var(--gap)]"
+						class={css({
+							display: "flex",
+							flexShrink: "0",
+							justifyContent: "space-around",
+							gap: "var(--gap)",
+						})}
 						classList={{
-							"animate-marquee flex-row": !localProps.vertical,
-							"animate-marquee-vertical flex-col": localProps.vertical,
-							"group-hover:[animation-play-state:paused]":
+							[css({ animation: "marquee var(--duration) linear infinite" })]: !localProps.vertical,
+							[css({ animation: "marquee-vertical var(--duration) linear infinite" })]: localProps.vertical,
+							[css({ _groupHover: { animationPlayState: "paused" } })]:
 								localProps.pauseOnHover,
-							"[animation-direction:reverse]": localProps.reverse,
+							[css({ animationDirection: "reverse" })]: localProps.reverse,
 						}}
 					>
 						{localProps.children}
