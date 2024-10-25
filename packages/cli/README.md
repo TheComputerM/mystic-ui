@@ -1,4 +1,4 @@
-# @mystic-ui/cli
+# mystic-ui CLI
 
 Start a project:
 

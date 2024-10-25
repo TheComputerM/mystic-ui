@@ -21,6 +21,16 @@ const instructions: {
 		),
 	},
 	{
+		title: "Modify/extend config",
+		condition: (entry) => !!entry.config,
+		component: (props) => (
+			<CodeBlock
+				code={`export default ${JSON.stringify(props.entry.config, null, 2)}`}
+				lang="ts"
+			/>
+		),
+	},
+	{
 		title: "Copy and paste the component.",
 		condition: () => true,
 		component: (props) => <CodeBlock code={props.entry.content} lang="tsx" />,
@@ -56,7 +66,10 @@ export const InstallationInstructions: Component = () => {
 				<Tabs.Indicator />
 			</Tabs.List>
 			<Tabs.Content value="cli">
-				<CodeBlock code={`npx @mystic-ui/cli add ${params.id}`} lang="shell" />
+				<CodeBlock
+					code={`npx mystic-ui@latest add ${params.id}`}
+					lang="shell"
+				/>
 			</Tabs.Content>
 			<Tabs.Content value="manual">
 				<Steps>

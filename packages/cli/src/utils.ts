@@ -17,7 +17,7 @@ export const configSchema = z
 			})
 			.optional(),
 	})
-	.refine((data) => data.framework === "tailwind" && !data.tailwind, {
+	.refine((data) => data.framework === "tailwind" && data.tailwind, {
 		message: "Additional config is required for tailwind framework",
 		path: ["tailwind"],
 	});

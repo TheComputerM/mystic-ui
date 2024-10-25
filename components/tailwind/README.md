@@ -4,4 +4,4 @@ You can use Mystic UI with your Tailwind projects, also works with tailwind base
 
 ## Setup
 
-Run `npx @mystic-ui/cli init` with whatever package manager you prefer and make sure you choose *tailwind* as your css framework. This will add the `cn` utility, otherwise you will have to add it manually.
+Run `npx mystic-ui@latest init` with whatever package manager you prefer and make sure you choose *tailwind* as your css framework. This will add the `cn` utility, otherwise you will have to add it manually.

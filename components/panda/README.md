@@ -4,7 +4,7 @@ You can use Mystic UI with your PandaCSS projects, also works with panda based f
 
 ## Setup
 
-Run `npx @mystic-ui/cli init` with whatever package manager you prefer and make sure you choose *panda* as your css framework.
+Run `npx mystic-ui@latest init` with whatever package manager you prefer and make sure you choose *panda* as your css framework.
 
 **panda.config.ts**
 ```ts

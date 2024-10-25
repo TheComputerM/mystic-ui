@@ -35,7 +35,7 @@ async function getRegistryEntry(
 async function updateConfig(filePath: string, config: object) {
 	try {
 		const mod = await loadFile(filePath);
-		mod.exports.default = deepMergeObject(mod.exports.default, config);
+		deepMergeObject(mod.exports.default, config);
 		await writeFile(mod, filePath);
 	} catch {
 		console.error(`Unable to update ${filePath}`);

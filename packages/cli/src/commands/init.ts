@@ -74,7 +74,7 @@ async function createConfig() {
 				return undefined;
 			}
 			return promptGroup({
-				alias: () =>
+				aliases: () =>
 					promptGroup({
 						utils: () =>
 							p.text({
@@ -88,7 +88,7 @@ async function createConfig() {
 			});
 		},
 	});
-
+	
 	configSchema.parse(config);
 
 	fs.writeFileSync("mystic.config.json", JSON.stringify(config, null, 2));

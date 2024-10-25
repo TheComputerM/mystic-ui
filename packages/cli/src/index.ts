@@ -7,9 +7,9 @@ import initCommand from "./commands/init";
 export const program = new Command();
 
 program
-	.name("@mystic-ui/cli")
+	.name("mystic-ui")
 	.description("CLI to add mystic components to your project")
-	.version("0.0.1")
+	.version("0.0.0-alpha")
 	.showHelpAfterError("(add --help for additional information)");
 
 program

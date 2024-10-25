@@ -2,12 +2,14 @@ import { createListCollection } from "@ark-ui/solid";
 import type { RouteSectionProps } from "@solidjs/router";
 import { A, useLocation, useNavigate } from "@solidjs/router";
 import { allDocs } from "content-collections";
-import { TbChevronDown } from "solid-icons/tb";
+import { TbChevronDown, TbStarFilled } from "solid-icons/tb";
 import { type Component, For, Index, type ParentComponent } from "solid-js";
 import { css } from "styled-system/css";
-import { Container, Divider, Grid, Stack } from "styled-system/jsx";
+import { Container, Divider, Grid, HStack, Stack } from "styled-system/jsx";
 import { Heading } from "~/components/ui/heading";
+import { Link } from "~/components/ui/link";
 import { Select } from "~/components/ui/select";
+import { Text } from "~/components/ui/text";
 
 const SideNavHeading: ParentComponent = (props) => {
 	return (
@@ -170,6 +172,27 @@ export default function DocsLayout(props: RouteSectionProps) {
 				<SideNav framework={props.params.framework} />
 				<main class={css({ width: "full", minWidth: "0" })}>
 					{props.children}
+
+					<footer class={css({ textStyle: "sm", color: "fg.muted" })}>
+						<HStack
+							marginTop="12"
+							borderTopWidth="1px"
+							borderColor="border.default"
+							py="2"
+							justify="space-between"
+						>
+							<Text>
+								Made by{" "}
+								<Link href="https://github.com/TheComputerM">TheComputerM</Link>
+							</Text>
+							<a
+								href="https://github.com/TheComputerM/mystic-ui/stargazers"
+								class={css({ _hover: { color: "yellow.300" } })}
+							>
+								<TbStarFilled />
+							</a>
+						</HStack>
+					</footer>
 				</main>
 			</Grid>
 		</Container>
