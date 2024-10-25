@@ -1,24 +1,26 @@
-import yargs from "yargs";
-import { hideBin } from "yargs/helpers";
+#! /usr/bin/env node
 
-yargs(hideBin(process.argv))
-	.command("init", "create a mystic config file", () => {
-		console.log("init");
-	})
-	.command(
-		"components add <component>",
-		"add a component to your project",
-		(yargs) => {
-			return yargs.positional("component", {
-				type: "string",
-				describe: "the name of the component",
-				demandOption: true,
-			});
-		},
-		(argv) => {
-			console.log("Adding component", argv.component);
-		},
-	)
-	.demandCommand()
-	.help()
-	.parse();
+import { Command } from "commander";
+import addComponentCommand from "./commands/components";
+import initCommand from "./commands/init";
+
+export const program = new Command();
+
+program
+	.name("@mystic-ui/cli")
+	.description("CLI to add mystic components to your project")
+	.version("0.0.1")
+	.showHelpAfterError("(add --help for additional information)");
+
+program
+	.command("init")
+	.description("Configures your project to work with mystic components")
+	.action(initCommand);
+
+program
+	.command("add")
+	.description("Add a component to your project")
+	.argument("<component>", "name of component to add")
+	.action(addComponentCommand);
+
+await program.parseAsync(process.argv);

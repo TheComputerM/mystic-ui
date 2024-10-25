@@ -2,6 +2,7 @@
   "name": "@mystic-ui/cli",
   "version": "0.0.1",
   "type": "module",
+  "module": "dist/index.js",
   "bin": {
     "mystic-ui": "./dist/index.js"
   },
@@ -13,16 +14,19 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@mystic-ui/registry": "workspace:*"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@types/yargs": "^17.0.33",
+    "commander": "^12.1.0",
     "cosmiconfig": "^9.0.0",
-    "yargs": "^17.7.2",
+    "magicast": "^0.3.5",
+    "nypm": "^0.3.12",
+    "ts-deepmerge": "^7.0.1",
     "zod": "^3.23.8"
   }
 }

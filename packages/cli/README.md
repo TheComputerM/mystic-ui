@@ -1,15 +1,13 @@
 # @mystic-ui/cli
 
-To install dependencies:
+Start a project:
 
 ```bash
-bun install
+mystic-ui init
 ```
 
-To run:
+Add components to your project:
 
 ```bash
-bun run index.ts
+mystic-ui add word-rotate
 ```
-
-This project was created using `bun init` in bun v1.1.31. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
