@@ -28,7 +28,7 @@
 				"noUnusedImports": "warn"
 			},
 			"style": {
-				"noNonNullAssertion": "info"
+				"noNonNullAssertion": "off"
 			}
 		}
 	},

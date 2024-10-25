@@ -13,7 +13,7 @@
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {
-		"typescript": "^5.6.3"
+		"typescript": "^5.3.3"
 	},
 	"dependencies": {
 		"ts-deepmerge": "^7.0.1"
