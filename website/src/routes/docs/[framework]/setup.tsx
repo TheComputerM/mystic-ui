@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import type { RouteSectionProps } from "@solidjs/router";
 import { type Component, lazy } from "solid-js";
 import { Dynamic } from "solid-js/web";
@@ -8,5 +9,10 @@ export default function SetupPage(props: RouteSectionProps) {
 		tailwind: lazy(() => import("~/content/pages/setup-tailwind.mdx")),
 	};
 
-	return <Dynamic component={pages[props.params.framework]} />;
+	return (
+		<>
+			<Title>Using Mystic UI with {props.params.framework}</Title>
+			<Dynamic component={pages[props.params.framework]} />
+		</>
+	);
 }

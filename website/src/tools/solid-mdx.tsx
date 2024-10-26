@@ -10,7 +10,9 @@ import { Text } from "~/components/ui/text";
 
 // biome-ignore lint/suspicious/noExplicitAny: different components have different props
 export const useMDXComponents: () => Record<string, Component<any>> = () => ({
-	h1: (props) => <Heading as="h1" textStyle="5xl" mb="6" {...props} />,
+	h1: (props) => (
+		<Heading as="h1" textStyle={{ base: "4xl", md: "5xl" }} mb="6" {...props} />
+	),
 	h2: (props) => <Heading as="h2" textStyle="3xl" mb="3" {...props} />,
 	h3: (props) => <Heading as="h3" textStyle="2xl" {...props} />,
 	h4: (props) => <Heading as="h4" textStyle="xl" {...props} />,

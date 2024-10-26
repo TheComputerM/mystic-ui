@@ -1,4 +1,4 @@
-import { Title } from "@solidjs/meta";
+import { Meta, Title } from "@solidjs/meta";
 import type { RouteDefinition, RouteSectionProps } from "@solidjs/router";
 import { allDocs } from "content-collections";
 import { createMemo } from "solid-js";
@@ -33,6 +33,7 @@ export default function PandaDocsPage(props: RouteSectionProps) {
 	return (
 		<>
 			<Title>{doc().title} component | Mystic UI</Title>
+			<Meta name="description" content={doc().description} />
 			<MDXComponents.h1>{doc().title}</MDXComponents.h1>
 			<MDXComponents.p textStyle="xl">{doc().description}</MDXComponents.p>
 			<MDXComponents.hr />
