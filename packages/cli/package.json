@@ -17,6 +17,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest",
+    "@mystic-ui/registry": "workspace:*",
     "@clack/prompts": "^0.7.0",
     "commander": "^12.1.0",
     "cosmiconfig": "^9.0.0",

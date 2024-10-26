@@ -88,7 +88,7 @@ async function createConfig() {
 			});
 		},
 	});
-	
+
 	configSchema.parse(config);
 
 	fs.writeFileSync("mystic.config.json", JSON.stringify(config, null, 2));
