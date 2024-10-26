@@ -27,6 +27,14 @@ export const useMDXComponents: () => Record<string, Component<any>> = () => ({
 	b: (props) => <b {...props} />,
 	em: (props) => <em {...props} />,
 	strong: (props) => <strong {...props} />,
-	ul: (props) => <styled.ul spaceY="2" listStyleType="disc" {...props} />,
+	ul: (props) => (
+		<styled.ul
+			marginInlineStart="4"
+			spaceY="2"
+			listStyleType="disc"
+			{...props}
+		/>
+	),
 	li: (props) => <styled.li color="fg.muted" {...props} />,
+	br: (props) => <br {...props} />,
 });

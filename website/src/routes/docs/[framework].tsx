@@ -1,15 +1,17 @@
 import { createListCollection } from "@ark-ui/solid";
 import type { RouteSectionProps } from "@solidjs/router";
 import { A, useLocation, useNavigate } from "@solidjs/router";
+import { useStore } from "@tanstack/solid-store";
 import { allDocs } from "content-collections";
 import { TbChevronDown, TbStarFilled } from "solid-icons/tb";
 import { type Component, For, Index, type ParentComponent } from "solid-js";
 import { css } from "styled-system/css";
-import { Container, Divider, Grid, HStack, Stack } from "styled-system/jsx";
+import { Box, Container, Divider, HStack, Stack } from "styled-system/jsx";
 import { Heading } from "~/components/ui/heading";
 import { Link } from "~/components/ui/link";
 import { Select } from "~/components/ui/select";
 import { Text } from "~/components/ui/text";
+import { store } from "~/lib/store";
 
 const SideNavHeading: ParentComponent = (props) => {
 	return (
@@ -128,6 +130,8 @@ const SideNav: Component<{ framework: string }> = (props) => {
 			})),
 	];
 
+	const open = useStore(store, (state) => state.sideNavOpen);
+
 	return (
 		<aside
 			style={{
@@ -135,11 +139,19 @@ const SideNav: Component<{ framework: string }> = (props) => {
 				top: "3rem",
 			}}
 			class={css({
-				position: "sticky",
+				position: { base: "fixed", md: "sticky" },
+				insetX: 0,
 				display: "flex",
 				flexDirection: "column",
-				paddingY: 2,
+				paddingY: "2",
+				paddingX: { base: "4", md: "unset" },
+				backgroundColor: "bg.canvas",
+				zIndex: "modal",
+				hideBelow: "md",
 			})}
+			classList={{
+				[css({ hideBelow: "md" })]: !open(),
+			}}
 		>
 			<Stack gap="6" flexGrow={1} overflowY="auto">
 				<For each={sections}>
@@ -168,7 +180,7 @@ const SideNav: Component<{ framework: string }> = (props) => {
 export default function DocsLayout(props: RouteSectionProps) {
 	return (
 		<Container>
-			<Grid gridTemplateColumns="224px 1fr" gap="12">
+			<Box display={{ md: "grid" }} gridTemplateColumns="224px 1fr" gap="12">
 				<SideNav framework={props.params.framework} />
 				<main class={css({ width: "full", minWidth: "0" })}>
 					{props.children}
@@ -183,7 +195,7 @@ export default function DocsLayout(props: RouteSectionProps) {
 						>
 							<Text>
 								Made by{" "}
-								<Link href="https://github.com/TheComputerM">TheComputerM</Link>
+								<Link target="_blank" href="https://github.com/TheComputerM">TheComputerM</Link>
 							</Text>
 							<a
 								href="https://github.com/TheComputerM/mystic-ui/stargazers"
@@ -194,7 +206,7 @@ export default function DocsLayout(props: RouteSectionProps) {
 						</HStack>
 					</footer>
 				</main>
-			</Grid>
+			</Box>
 		</Container>
 	);
 }
