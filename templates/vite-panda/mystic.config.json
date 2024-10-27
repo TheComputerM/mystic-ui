@@ -1,0 +1,5 @@
+{
+  "framework": "panda",
+  "configPath": "panda.config.ts",
+  "outputPath": "./src/components/mystic-ui/"
+}

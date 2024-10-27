@@ -1,0 +1,22 @@
+{
+  "name": "vite-panda",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.2"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.47.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.9",
+    "vite-plugin-solid": "^2.10.2",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
