@@ -17,9 +17,15 @@ export const configSchema = z
 			})
 			.optional(),
 	})
-	.refine((data) => data.framework === "tailwind" && data.tailwind, {
-		message: "Additional config is required for tailwind framework",
-		path: ["tailwind"],
+	.superRefine((val, ctx) => {
+		// If the framework is tailwind, the tailwind config is required
+		if (val.framework === "tailwind" && !val.tailwind) {
+			ctx.addIssue({
+				code: "custom",
+				message: "Additional config is required for tailwind framework",
+				path: ["tailwind"],
+			});
+		}
 	});
 
 export type ConfigSchema = z.infer<typeof configSchema>;

@@ -1,6 +1,6 @@
 {
   "name": "@mystic-ui/cli",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "description": "A CLI for adding beautiful mystic components to your SolidJS apps.",
   "type": "module",
   "module": "dist/index.js",
@@ -10,6 +10,8 @@
   "files": ["/dist"],
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
+    "release": "np",
+    "version": "bun run ./src/version.ts && bun run build && git add -A",
     "start": "bun run ./src/index.ts",
     "format": "biome format src",
     "lint": "biome lint src",
@@ -17,17 +19,22 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest",
-    "@mystic-ui/registry": "workspace:*",
     "@clack/prompts": "^0.7.0",
+    "@mystic-ui/registry": "workspace:*",
+    "@types/bun": "latest",
     "commander": "^12.1.0",
     "cosmiconfig": "^9.0.0",
     "magicast": "^0.3.5",
+    "np": "^10.0.7",
     "nypm": "^0.3.12",
     "ts-deepmerge": "^7.0.1",
     "zod": "^3.23.8"
   },
   "peerDependencies": {
     "typescript": "^5.3.3"
+  },
+  "np": {
+    "contents": "dist",
+    "releaseDraft": false
   }
 }
