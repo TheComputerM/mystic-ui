@@ -1,15 +1,16 @@
 {
-  "name": "mystic-ui",
-  "version": "0.0.0-alpha",
+  "name": "@mystic-ui/cli",
+  "version": "0.0.1-alpha",
   "description": "A CLI for adding beautiful mystic components to your SolidJS apps.",
   "type": "module",
   "module": "dist/index.js",
   "bin": {
-    "mystic-ui": "./dist/index.js"
+    "mysticui": "./dist/index.js"
   },
   "files": ["/dist"],
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
+    "start": "bun run ./src/index.ts",
     "format": "biome format src",
     "lint": "biome lint src",
     "check": "biome check src"

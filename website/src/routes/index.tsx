@@ -131,7 +131,7 @@ export default function Home() {
 							color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
 						>
 							<CodeBlock
-								code="npx mystic-ui@latest init"
+								code="npx @mystic-ui/cli init"
 								lang="shell"
 								class={css({ minWidth: "xs" })}
 							/>

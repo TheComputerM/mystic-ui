@@ -195,7 +195,9 @@ export default function DocsLayout(props: RouteSectionProps) {
 						>
 							<Text>
 								Made by{" "}
-								<Link target="_blank" href="https://github.com/TheComputerM">TheComputerM</Link>
+								<Link target="_blank" href="https://github.com/TheComputerM">
+									TheComputerM
+								</Link>
 							</Text>
 							<a
 								href="https://github.com/TheComputerM/mystic-ui/stargazers"
