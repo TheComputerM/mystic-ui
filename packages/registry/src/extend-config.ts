@@ -15,10 +15,10 @@ const config: ConfigModifications = {
 		keyframes: {
 			"shiny-text": {
 				"0%, 90%, 100%": {
-					backgroundPosition: "calc(-100% - var(--shimmer-width)) 0",
+					backgroundPosition: "calc(-100% - var(--shiny-width)) 0",
 				},
 				"30%, 60%": {
-					backgroundPosition: "calc(100% + var(--shimmer-width)) 0",
+					backgroundPosition: "calc(100% + var(--shiny-width)) 0",
 				},
 			},
 		},
