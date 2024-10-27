@@ -1,0 +1,10 @@
+{
+  "framework": "tailwind",
+  "configPath": "tailwind.config.js",
+  "outputPath": "./src/components/mystic-ui/",
+  "tailwind": {
+    "aliases": {
+      "utils": "@/lib/utils"
+    }
+  }
+}
