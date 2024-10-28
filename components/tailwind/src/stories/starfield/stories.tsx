@@ -6,7 +6,6 @@ import { Starfield } from "@/ui/starfield";
 const meta: Meta<typeof Starfield> = {
 	title: "Effects/Starfield",
 	component: Starfield,
-	argTypes: {},
 };
 
 export default meta;

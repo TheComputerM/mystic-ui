@@ -5,9 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof RetroGrid> = {
 	title: "Backgrounds/Retro Grid",
 	component: RetroGrid,
-	argTypes: {
-		angle: { control: "number" },
-	},
 };
 
 export default meta;

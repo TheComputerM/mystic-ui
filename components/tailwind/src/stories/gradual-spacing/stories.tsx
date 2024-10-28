@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof GradualSpacing> = {
 	title: "Text/Gradual Spacing",
 	component: GradualSpacing,
-	argTypes: {},
 };
 
 export default meta;

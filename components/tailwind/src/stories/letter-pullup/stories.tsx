@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof LetterPullup> = {
 	title: "Text/Letter Pullup",
 	component: LetterPullup,
-	argTypes: {},
 };
 
 export default meta;

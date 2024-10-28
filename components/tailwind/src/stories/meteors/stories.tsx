@@ -5,9 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof Meteors> = {
 	title: "Effects/Meteors",
 	component: Meteors,
-	argTypes: {
-		number: { control: "number" },
-	},
 };
 
 export default meta;

@@ -6,7 +6,6 @@ import { Safari } from "@/ui/safari";
 const meta: Meta<typeof Safari> = {
 	title: "Mocks/Safari",
 	component: Safari,
-	argTypes: {},
 };
 
 export default meta;

@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof TypingAnimation> = {
 	title: "Text/Typing Animation",
 	component: TypingAnimation,
-	argTypes: {},
 };
 
 export default meta;

@@ -4,9 +4,8 @@ import { getStory } from "@/lib/storybook";
 import { Dock } from "@/ui/dock";
 
 const meta: Meta<typeof Dock> = {
-	title: "Dock",
+	title: "Component/Dock",
 	component: Dock,
-	argTypes: {},
 };
 
 export default meta;

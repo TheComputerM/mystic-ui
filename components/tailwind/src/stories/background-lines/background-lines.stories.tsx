@@ -5,7 +5,6 @@ const meta: Meta<typeof BackgroundLines> = {
 	title: "Backgrounds/Background Lines",
 	component: BackgroundLines,
 	tags: ["autodocs"],
-	argTypes: {},
 };
 
 export default meta;

@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof Ripple> = {
 	title: "Backgrounds/Ripple",
 	component: Ripple,
-	argTypes: {},
 };
 
 export default meta;

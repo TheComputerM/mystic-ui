@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof TextReveal> = {
 	title: "Text/Text Reveal",
 	component: TextReveal,
-	argTypes: {},
 };
 
 export default meta;

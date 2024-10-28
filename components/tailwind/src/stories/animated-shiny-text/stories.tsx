@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof AnimatedShinyText> = {
 	title: "Text/Animated Shiny Text",
 	component: AnimatedShinyText,
-	argTypes: {},
 };
 
 export default meta;

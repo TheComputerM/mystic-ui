@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof SparklesText> = {
 	title: "Text/Sparkles Text",
 	component: SparklesText,
-	argTypes: {},
 };
 
 export default meta;

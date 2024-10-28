@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof NumberTicker> = {
 	title: "Text/Number Ticker",
 	component: NumberTicker,
-	argTypes: {},
 };
 
 export default meta;

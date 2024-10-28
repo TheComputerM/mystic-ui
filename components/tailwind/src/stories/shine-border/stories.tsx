@@ -5,10 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof ShineBorder> = {
 	title: "Effects/Shine Border",
 	component: ShineBorder,
-	argTypes: {
-		duration: { control: "number" },
-		color: { control: "color" },
-	},
 };
 
 export default meta;

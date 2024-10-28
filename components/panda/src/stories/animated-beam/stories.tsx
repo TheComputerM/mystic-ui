@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof AnimatedBeam> = {
 	title: "Effects/Animated Beam",
 	component: AnimatedBeam,
-	argTypes: {},
 };
 
 export default meta;

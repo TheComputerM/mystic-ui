@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof AnimatedGradientText> = {
 	title: "Text/Animated Gradient Text",
 	component: AnimatedGradientText,
-	argTypes: {},
 };
 
 export default meta;

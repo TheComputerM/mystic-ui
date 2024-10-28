@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof WordFadeIn> = {
 	title: "Text/Word Fade In",
 	component: WordFadeIn,
-	argTypes: {},
 };
 
 export default meta;

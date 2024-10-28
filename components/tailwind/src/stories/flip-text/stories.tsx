@@ -5,10 +5,6 @@ import type { Meta, StoryObj } from "storybook-solidjs";
 const meta: Meta<typeof FlipText> = {
 	title: "Text/Flip Text",
 	component: FlipText,
-	argTypes: {
-		duration: { control: "number" },
-		delayMultiple: { control: "number" },
-	},
 };
 
 export default meta;
