@@ -3,7 +3,7 @@ import path from "node:path";
 import { intro, outro, spinner } from "@clack/prompts";
 import type { RegistryEntry } from "@mystic-ui/registry/src/schema";
 import { CommanderError } from "commander";
-import { loadFile, writeFile } from "magicast";
+import { type ProxifiedModule, loadFile, writeFile } from "magicast";
 import { deepMergeObject } from "magicast/helpers";
 import { addDependency, installDependencies } from "nypm";
 import { type ConfigSchema, getMysticConfig } from "../utils";
@@ -32,10 +32,23 @@ async function getRegistryEntry(
 	}
 }
 
+export async function mergeConfig(mod: ProxifiedModule, config: object) {
+	const options =
+		mod.exports.default.$type === "function-call"
+			? mod.exports.default.$args[0]
+			: mod.exports.default;
+	deepMergeObject(options, config);
+}
+
+/**
+ *
+ * @param filePath path to the css framework config file
+ * @param config object to merge with the config
+ */
 async function updateConfig(filePath: string, config: object) {
 	try {
 		const mod = await loadFile(filePath);
-		deepMergeObject(mod.exports.default, config);
+		mergeConfig(mod, config);
 		await writeFile(mod, filePath);
 	} catch {
 		console.error(`Unable to update ${filePath}`);
@@ -68,7 +81,7 @@ export function transform(content: string, config: ConfigSchema) {
 export default async function addComponentCommand(component: string) {
 	intro(`Adding ${component}`);
 
-	const config = await getMysticConfig();
+	const { config, filepath } = await getMysticConfig();
 	const s = spinner();
 
 	s.start("Fetching component details");
@@ -84,19 +97,16 @@ export default async function addComponentCommand(component: string) {
 
 	if (entry.config) {
 		s.start("Updating config file");
-		await updateConfig(
-			path.join(process.cwd(), config.configPath),
-			entry.config,
-		);
+		await updateConfig(path.join(filepath, config.configPath), entry.config);
 		s.stop("Updated config file");
 	}
 
 	s.start("Writing component files");
-	await fs.mkdir(path.join(process.cwd(), config.outputPath), {
+	await fs.mkdir(path.join(filepath, config.outputPath), {
 		recursive: true,
 	});
 	await fs.writeFile(
-		path.join(process.cwd(), config.outputPath, `${component}.tsx`),
+		path.join(filepath, config.outputPath, `${component}.tsx`),
 		transform(entry.content, config),
 	);
 	s.stop("Wrote component files");

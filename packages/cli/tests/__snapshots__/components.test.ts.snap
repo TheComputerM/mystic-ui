@@ -1,0 +1,75 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mergeConfig() tailwind.config.js: tailwind.config.js 1`] = `
+"/** @type {import('tailwindcss').Config} */
+export default {
+  content: [],
+  theme: {
+    extend: {
+      animation: {
+        grid: 'grid 15s linear infinite',
+      },
+
+      keyframes: {
+        grid: {
+          '0%': {
+            transform: 'translateY(-50%)',
+          },
+
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+      },
+    },
+  },
+  plugins: [],
+}"
+`;
+
+exports[`mergeConfig() panda.config.ts: panda.config.ts 1`] = `
+"import { defineConfig } from "@pandacss/dev";
+
+export default defineConfig({
+				// Whether to use css reset
+				preflight: true,
+
+				presets: ["@pandacss/preset-panda"],
+
+				// Where to look for your css declarations
+				include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+
+				// Files to exclude
+				exclude: [],
+
+				// Useful for theme customization
+				theme: {
+				 extend: {
+					 tokens: {
+						 animations: {
+							 grid: {
+								 value: "grid 15s linear infinite",
+								},
+							},
+						},
+
+					 keyframes: {
+						 grid: {
+							 "0%": {
+								 transform: "translateY(-50%)",
+								},
+
+							 "100%": {
+								 transform: "translateY(0)",
+								},
+							},
+						},
+					},
+				},
+
+				// The output directory for your css system
+				outdir: "styled-system",
+
+				jsxFramework: "solid",
+});"
+`;

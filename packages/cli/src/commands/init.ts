@@ -36,22 +36,20 @@ async function promptGroup<T>(prompts: p.PromptGroup<T>) {
  * Creates a mystic.config.json file by asking prompts
  */
 async function createConfig() {
-	p.intro("Welcome to Mystic UI");
-
-	const resolvedConfig = await detectFramework();
+	const frameworkConfig = await detectFramework();
 
 	const config = await promptGroup({
 		framework: () =>
 			p.select({
 				message: "Which CSS framework are you using?",
 				options: FRAMEWORKS.map((value) => ({ label: value, value })),
-				initialValue: resolvedConfig?.framework,
+				initialValue: frameworkConfig?.framework,
 			}),
 		configPath: ({ results }) =>
 			p.text({
 				message: "Where is your CSS framework config?",
-				initialValue: resolvedConfig?.result
-					? path.relative(process.cwd(), resolvedConfig.result.filepath)
+				initialValue: frameworkConfig?.result
+					? path.relative(process.cwd(), frameworkConfig.result.filepath)
 					: `${results.framework}.config.ts`,
 				validate(value) {
 					if (!value) return "Please enter a path.";
@@ -91,9 +89,7 @@ async function createConfig() {
 
 	configSchema.parse(config);
 
-	fs.writeFileSync("mystic.config.json", JSON.stringify(config, null, 2));
-
-	p.outro("You're all set!");
+	return config;
 }
 
 export default async function initCommand() {
@@ -104,7 +100,12 @@ export default async function initCommand() {
 			"A valid config is already present. Delete it if you want to regenerate the config.",
 		);
 	} catch {
+		p.intro("Welcome to Mystic UI");
+
 		// create a new config file
-		await createConfig();
+		const config = await createConfig();
+		fs.writeFileSync("mystic.config.json", JSON.stringify(config, null, 2));
+
+		p.outro("You're all set!");
 	}
 }

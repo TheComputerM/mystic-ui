@@ -1,18 +1,26 @@
 import { describe, expect, test } from "bun:test";
-import { configSchema } from "./utils";
+import { configSchema } from "../src/utils";
 
 describe("validate schema", () => {
-	test("valid panda schema", () => {
+	test("panda", () => {
 		expect(() =>
 			configSchema.parse({
 				framework: "panda",
-				outputPath: "./dist",
+				outputPath: "./src/components/mystic-ui/",
 				configPath: "panda.config.ts",
 			}),
 		).not.toThrowError();
 	});
 
-	test("valid tailwind schema", () => {
+	test("tailwind", () => {
+		expect(() =>
+			configSchema.parse({
+				framework: "tailwind",
+				outputPath: "./src/components/mystic-ui/",
+				configPath: "tailwind.config.js",
+			}),
+		).toThrowError();
+
 		expect(() =>
 			configSchema.parse({
 				framework: "tailwind",

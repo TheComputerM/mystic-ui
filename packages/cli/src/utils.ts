@@ -4,29 +4,41 @@ import { z } from "zod";
 
 export const FRAMEWORKS = ["panda", "tailwind"] as const;
 
-export const configSchema = z
-	.object({
-		framework: z.enum(FRAMEWORKS),
-		outputPath: z.string(),
-		configPath: z.string(),
-		tailwind: z
-			.object({
-				aliases: z.object({
-					utils: z.string(),
-				}),
-			})
-			.optional(),
-	})
-	.superRefine((val, ctx) => {
-		// If the framework is tailwind, the tailwind config is required
-		if (val.framework === "tailwind" && !val.tailwind) {
-			ctx.addIssue({
-				code: "custom",
-				message: "Additional config is required for tailwind framework",
-				path: ["tailwind"],
-			});
-		}
-	});
+const baseSchema = z.object({ outputPath: z.string(), configPath: z.string() });
+
+export const configSchema = z.discriminatedUnion("framework", [
+	z.object({ framework: z.literal("panda") }).merge(baseSchema),
+	z
+		.object({
+			framework: z.literal("tailwind"),
+			tailwind: z.object({ aliases: z.object({ utils: z.string() }) }),
+		})
+		.merge(baseSchema),
+]);
+
+// export const configSchema = z
+// 	.object({
+// 		framework: z.enum(FRAMEWORKS),
+// 		outputPath: z.string(),
+// 		configPath: z.string(),
+// 		tailwind: z
+// 			.object({
+// 				aliases: z.object({
+// 					utils: z.string(),
+// 				}),
+// 			})
+// 			.optional(),
+// 	})
+// 	.superRefine((val, ctx) => {
+// 		// If the framework is tailwind, the tailwind config is required
+// 		if (val.framework === "tailwind" && !val.tailwind) {
+// 			ctx.addIssue({
+// 				code: "custom",
+// 				message: "Additional config is required for tailwind framework",
+// 				path: ["tailwind"],
+// 			});
+// 		}
+// 	});
 
 export type ConfigSchema = z.infer<typeof configSchema>;
 
@@ -58,5 +70,5 @@ export async function getMysticConfig() {
 		);
 	}
 
-	return parsed.data;
+	return { config: parsed.data, filepath: result.filepath };
 }
