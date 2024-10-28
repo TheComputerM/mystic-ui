@@ -66,10 +66,7 @@ export const InstallationInstructions: Component = () => {
 				<Tabs.Indicator />
 			</Tabs.List>
 			<Tabs.Content value="cli">
-				<CodeBlock
-					code={`npx @mystic-ui/cli add ${params.id}`}
-					lang="shell"
-				/>
+				<CodeBlock code={`npx @mystic-ui/cli add ${params.id}`} lang="shell" />
 			</Tabs.Content>
 			<Tabs.Content value="manual">
 				<Steps>
