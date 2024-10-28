@@ -1,13 +1,15 @@
 {
 	"name": "@mystic-ui/cli",
-	"version": "0.0.2-alpha",
+	"version": "0.0.0-1",
 	"description": "A CLI for adding beautiful mystic components to your SolidJS apps.",
 	"type": "module",
 	"module": "dist/index.js",
 	"bin": {
 		"mystic-ui": "./dist/index.js"
 	},
-	"files": ["/dist"],
+	"files": [
+		"/dist"
+	],
 	"scripts": {
 		"build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
 		"version": "bun run ./src/scripts/bump.ts && git add ./src/version.ts && bun run build",
