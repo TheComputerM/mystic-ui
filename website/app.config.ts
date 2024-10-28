@@ -31,7 +31,7 @@ function remarkCodeBlock() {
 					},
 					{
 						type: "mdxJsxAttribute",
-						name: "codde",
+						name: "code",
 						value: node.value,
 					},
 					{
