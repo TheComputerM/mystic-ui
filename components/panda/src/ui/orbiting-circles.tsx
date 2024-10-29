@@ -63,7 +63,7 @@ export const OrbitingCircles: ParentComponent<OrbitingCirclesProps> = (
 						display: "flex",
 						width: "full",
 						height: "full",
-						animation: "orbit",
+						animation: "orbit var(--duration) linear infinite",
 						alignItems: "center",
 						justifyContent: "center",
 						borderRadius: "full",
