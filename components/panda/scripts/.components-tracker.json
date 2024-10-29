@@ -70,5 +70,8 @@
   "../tailwind/src/stories/marquee/stories.tsx": "a3dfd8dc0ee6a5bb8750350842bc951ed4274252211e0ade292003d29c123796",
   "../tailwind/src/ui/animated-beam.tsx": "129e89386442b418197a1c7d71ebbb1ade064690a6d333e3cec03845f4cfa87f",
   "../tailwind/src/stories/animated-beam/default.tsx": "25413231434689291aebb2bda738318e1368e3845065eb8485d3de8c058190b5",
-  "../tailwind/src/stories/animated-beam/stories.tsx": "8e7121987c06b394fb711142cbafcbdbdd1d07f1a0eb3dc4272bef6b5b48ee7c"
+  "../tailwind/src/stories/animated-beam/stories.tsx": "8e7121987c06b394fb711142cbafcbdbdd1d07f1a0eb3dc4272bef6b5b48ee7c",
+  "../tailwind/src/ui/orbiting-circles.tsx": "dc4af22f8cbfdaeeb353ad5af21cd3a3f63fae47e9a1da132a3b011f7c8a8632",
+  "../tailwind/src/stories/orbiting-circles/default.tsx": "93e637c8ec89af963f95eb5040568e98ed2532b4c57c5cd10cda62ea8772252c",
+  "../tailwind/src/stories/orbiting-circles/stories.tsx": "ef3a9c1e0e2dcb29d99a0d8c9206b923c4730f7df8fd05f830fd42d41a5bb2b5"
 }
