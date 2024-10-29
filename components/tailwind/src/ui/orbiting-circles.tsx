@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { mergeProps, Show, type ParentComponent } from "solid-js";
+import { type ParentComponent, Show, mergeProps } from "solid-js";
 
 export interface OrbitingCirclesProps {
 	duration?: number;
