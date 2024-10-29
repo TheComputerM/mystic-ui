@@ -7,12 +7,10 @@
 	"bin": {
 		"mystic-ui": "./dist/index.js"
 	},
-	"files": [
-		"/dist"
-	],
+	"files": ["/dist"],
 	"scripts": {
 		"build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
-		"version": "bun run ./src/scripts/bump.ts && git add ./src/version.ts && bun run build",
+		"version": "bun run ./scripts/bump.ts && git add ./src/version.ts && bun run build",
 		"start": "bun --bun run ./src/index.ts",
 		"format": "biome format src",
 		"lint": "biome lint src",
