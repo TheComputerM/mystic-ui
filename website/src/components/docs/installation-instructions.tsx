@@ -37,11 +37,22 @@ const instructions: {
 	},
 ];
 
-async function fetchRegistryEntry([framework, component]: [string, string]) {
+async function fetchRegistryEntry([framework, component]: [
+	string,
+	string,
+]): Promise<RegistryEntry> {
 	const response = await fetch(
 		`https://raw.githubusercontent.com/TheComputerM/mystic-ui/main/packages/registry/${framework}/${component}.json`,
 	);
-	return (await response.json()) as RegistryEntry;
+
+	if (response.ok) {
+		return (await response.json()) as RegistryEntry;
+	}
+
+	return {
+		id: "not-found",
+		content: "Component not found",
+	};
 }
 
 export const InstallationInstructions: Component = () => {

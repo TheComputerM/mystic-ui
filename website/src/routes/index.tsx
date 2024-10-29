@@ -1,10 +1,12 @@
 import { DotPattern } from "@mystic-ui/panda/src/ui/dot-pattern";
+import { Marquee } from "@mystic-ui/panda/src/ui/marquee";
 import { ShineBorder } from "@mystic-ui/panda/src/ui/shine-border";
 import { WordRotate } from "@mystic-ui/panda/src/ui/word-rotate";
 import { TbBrandGithub, TbBrandSolidjs, TbBrandTailwind } from "solid-icons/tb";
 import { For } from "solid-js";
 import { css } from "styled-system/css";
 import {
+	Box,
 	Center,
 	Container,
 	Flex,
@@ -12,6 +14,7 @@ import {
 	Stack,
 	Wrap,
 } from "styled-system/jsx";
+import { linkOverlay } from "styled-system/patterns";
 import { CodeBlock } from "~/components/code-block";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/heading";
@@ -20,17 +23,17 @@ import { Text } from "~/components/ui/text";
 const CompatileEcosystem = () => {
 	const ecosystem = [
 		{
-			icon: <TbBrandSolidjs size="28" />,
+			icon: <TbBrandSolidjs size="26" />,
 			label: "SolidJS",
 		},
 		{
-			icon: <TbBrandTailwind size="28" />,
+			icon: <TbBrandTailwind size="26" />,
 			label: "TailwindCSS",
 		},
 		{
 			icon: (
 				<svg
-					height="28"
+					height="26"
 					viewBox="0 0 15 15"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +51,9 @@ const CompatileEcosystem = () => {
 
 	return (
 		<HStack
-			gap="6"
+			gap={{ base: "3", md: "6" }}
 			color="fg.muted"
-			textStyle={{ base: "md", md: "lg" }}
+			textStyle={{ base: "sm", md: "lg" }}
 			fontWeight="medium"
 		>
 			<For each={ecosystem}>
@@ -139,6 +142,36 @@ export default function Home() {
 					</Center>
 				</Flex>
 			</Container>
+			<Box position="relative">
+				<Marquee repeat={10} duration={4}>
+					<Heading
+						as="h3"
+						fontWeight="black"
+						textStyle="4xl"
+						textTransform="uppercase"
+					>
+						Leave a Star
+					</Heading>
+				</Marquee>
+				<Marquee repeat={10} duration={4} reverse>
+					<Heading
+						as="h3"
+						fontWeight="black"
+						textStyle="4xl"
+						textTransform="uppercase"
+					>
+						Leave a Star
+					</Heading>
+				</Marquee>
+				<a
+					href="https://github.com/TheComputerM/mystic-ui"
+					target="_blank"
+					rel="noreferrer"
+					class={linkOverlay()}
+				>
+					<Text display="none">Leave a Star</Text>
+				</a>
+			</Box>
 		</>
 	);
 }
