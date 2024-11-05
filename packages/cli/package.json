@@ -33,5 +33,10 @@
 	"publishConfig": {
 		"access": "public",
 		"tag": "latest"
+	},
+	"author": {
+		"name": "Mudit Somani",
+		"email": "mudit.somani00@gmail.com",
+		"url": "https://thecomputerm.dev/"
 	}
 }

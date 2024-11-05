@@ -1,5 +1,6 @@
 {
 	"name": "mystic-ui",
+	"description": "Monorepo for Mystic UI",
 	"version": "0.0.1",
 	"workspaces": ["components/*", "packages/*", "website"],
 	"type": "module",
@@ -11,5 +12,10 @@
 	},
 	"peerDependencies": {
 		"typescript": "^5.3.3"
+	},
+	"author": {
+		"name": "Mudit Somani",
+		"email": "mudit.somani00@gmail.com",
+		"url": "https://thecomputerm.dev/"
 	}
 }
