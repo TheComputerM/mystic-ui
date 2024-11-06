@@ -1,12 +1,12 @@
 "use server";
 
-import { cache } from "@solidjs/router";
+import { query } from "@solidjs/router";
 import { highlight } from "./shiki";
 
 /**
  * Get the source code of a story
  */
-export const getStorySource = cache(
+export const getStorySource = query(
 	async (
 		framework: "tailwind" | "panda",
 		component: string,
