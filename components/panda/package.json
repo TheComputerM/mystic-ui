@@ -12,20 +12,20 @@
 		"check": "biome check src"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
+		"@biomejs/biome": "1.9.4",
 		"@mystic-ui/registry": "workspace:*",
-		"@pandacss/dev": "^0.47.0",
-		"@storybook/addon-essentials": "^8.3.6",
-		"@storybook/addon-themes": "^8.3.6",
-		"@storybook/builder-vite": "^8.3.6",
-		"@storybook/docs-tools": "^8.3.6",
+		"@pandacss/dev": "^0.47.1",
+		"@storybook/addon-essentials": "^8.4.2",
+		"@storybook/addon-themes": "^8.4.2",
+		"@storybook/builder-vite": "^8.4.2",
+		"@storybook/docs-tools": "^8.4.2",
 		"@types/bun": "latest",
 		"postcss": "^8.4.47",
-		"storybook": "^8.3.6",
-		"storybook-solidjs": "^1.0.0-beta.2",
-		"storybook-solidjs-vite": "^1.0.0-beta.2",
+		"storybook": "^8.4.2",
+		"storybook-solidjs": "^1.0.0-beta.3",
+		"storybook-solidjs-vite": "^1.0.0-beta.3",
 		"tw2panda": "^0.3.1",
-		"vite-tsconfig-paths": "^5.0.1"
+		"vite-tsconfig-paths": "^5.1.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5.3.3"
