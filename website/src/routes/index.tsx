@@ -23,17 +23,29 @@ import { Text } from "~/components/ui/text";
 const CompatileEcosystem = () => {
 	const ecosystem = [
 		{
-			icon: <TbBrandSolidjs size="26" />,
+			icon: <TbBrandSolidjs size="1.5em" />,
 			label: "SolidJS",
 		},
 		{
-			icon: <TbBrandTailwind size="26" />,
+			icon: (
+				<svg height="1em" viewBox="0 0 90 32">
+					<title>Motion</title>
+					<path
+						d="M 33.982 0 L 16.2 31.972 L 0 31.972 L 13.885 7.007 C 16.038 3.137 21.409 0 25.882 0 Z M 73.709 7.993 C 73.709 3.579 77.336 0 81.809 0 C 86.283 0 89.909 3.579 89.909 7.993 C 89.909 12.407 86.283 15.986 81.809 15.986 C 77.336 15.986 73.709 12.407 73.709 7.993 Z M 37.02 0 L 53.22 0 L 35.438 31.972 L 19.238 31.972 Z M 56.153 0 L 72.354 0 L 58.468 24.965 C 56.316 28.835 50.945 31.972 46.471 31.972 L 38.371 31.972 Z"
+						fill="currentColor"
+					/>
+				</svg>
+			),
+			label: "Motion",
+		},
+		{
+			icon: <TbBrandTailwind size="1.5em" />,
 			label: "TailwindCSS",
 		},
 		{
 			icon: (
 				<svg
-					height="26"
+					height="1.5em"
 					viewBox="0 0 15 15"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +62,12 @@ const CompatileEcosystem = () => {
 	];
 
 	return (
-		<HStack
+		<Wrap
 			gap={{ base: "3", md: "6" }}
 			color="fg.muted"
 			textStyle={{ base: "sm", md: "lg" }}
 			fontWeight="medium"
+			justify={{ base: "center", md: "start" }}
 		>
 			<For each={ecosystem}>
 				{({ icon, label }) => (
@@ -64,7 +77,7 @@ const CompatileEcosystem = () => {
 					</HStack>
 				)}
 			</For>
-		</HStack>
+		</Wrap>
 	);
 };
 
