@@ -18,7 +18,7 @@ export default function DotPatternDemo() {
 					zIndex: "10",
 					textStyle: "5xl",
 					fontWeight: "bold",
-					mixBlendMode: "overlay"
+					mixBlendMode: "overlay",
 				})}
 			>
 				No Signal

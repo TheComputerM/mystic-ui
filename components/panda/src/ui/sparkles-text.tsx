@@ -9,6 +9,7 @@ import {
 	type ParentComponent,
 	createSignal,
 	mergeProps,
+	onCleanup,
 	onMount,
 	splitProps,
 } from "solid-js";
@@ -83,7 +84,7 @@ export const SparklesText: ParentComponent<SparklesTextProps> = (props) => {
 		initializeStars();
 		const interval = setInterval(updateStars, 100);
 
-		return () => clearInterval(interval);
+		onCleanup(() => clearInterval(interval));
 	});
 
 	return (

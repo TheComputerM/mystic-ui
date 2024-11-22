@@ -5,6 +5,7 @@ import {
 	createEffect,
 	createSignal,
 	mergeProps,
+	onCleanup,
 	splitProps,
 } from "solid-js";
 import { Motion, type MotionComponentProps, Presence } from "solid-motionone";
@@ -32,7 +33,7 @@ export const WordRotate: Component<WordRotateProps> = (props) => {
 			setIndex((prevIndex) => (prevIndex + 1) % localProps.words.length);
 		}, localProps.duration);
 
-		return () => clearInterval(interval);
+		onCleanup(() => clearInterval(interval));
 	});
 
 	return (
