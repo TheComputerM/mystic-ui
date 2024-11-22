@@ -129,7 +129,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 		updatePath();
 
 		// Clean up the observer on component unmount
-		onCleanup(resizeObserver.disconnect);
+		onCleanup(() => resizeObserver.disconnect());
 	});
 
 	let linearGradient!: SVGLinearGradientElement;
@@ -169,7 +169,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 			},
 		);
 
-		onCleanup(controls.stop);
+		onCleanup(() => controls.stop());
 	});
 
 	return (
