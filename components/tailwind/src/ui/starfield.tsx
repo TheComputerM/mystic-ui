@@ -3,6 +3,7 @@ import {
 	type JSX,
 	createEffect,
 	mergeProps,
+	onCleanup,
 	onMount,
 	splitProps,
 } from "solid-js";
@@ -120,7 +121,7 @@ export const Starfield: Component<StarfieldProps> = (props) => {
 
 		draw();
 
-		return () => cancelAnimationFrame(animationHandle);
+		onCleanup(() => cancelAnimationFrame(animationHandle));
 	});
 
 	return (

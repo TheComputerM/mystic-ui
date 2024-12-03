@@ -6,6 +6,7 @@ import {
 	createSignal,
 	createUniqueId,
 	mergeProps,
+	onCleanup,
 	onMount,
 } from "solid-js";
 
@@ -128,9 +129,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 		updatePath();
 
 		// Clean up the observer on component unmount
-		return () => {
-			resizeObserver.disconnect();
-		};
+		onCleanup(() => resizeObserver.disconnect());
 	});
 
 	let linearGradient!: SVGLinearGradientElement;
@@ -170,7 +169,7 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 			},
 		);
 
-		return () => controls.stop();
+		onCleanup(() => controls.stop());
 	});
 
 	return (

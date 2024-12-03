@@ -3,6 +3,7 @@ import {
 	createEffect,
 	createSignal,
 	mergeProps,
+	onCleanup,
 } from "solid-js";
 
 export interface TypingAnimationProps {
@@ -25,9 +26,9 @@ export const TypingAnimation: Component<TypingAnimationProps> = (props) => {
 			}
 		}, localProps.duration);
 
-		return () => {
+		onCleanup(() => {
 			clearInterval(typingEffect);
-		};
+		});
 	});
 
 	return <>{displayedText()}</>;

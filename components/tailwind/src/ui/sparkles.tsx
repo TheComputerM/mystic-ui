@@ -5,6 +5,7 @@ import {
 	createSignal,
 	createUniqueId,
 	mergeProps,
+	onCleanup,
 	onMount,
 } from "solid-js";
 import { Motion } from "solid-motionone";
@@ -417,9 +418,7 @@ export const SparklesCore: Component<SparklesProps> = (props) => {
 		});
 		setOpacity(1);
 
-		return () => {
-			container?.destroy();
-		};
+		onCleanup(() => container?.destroy());
 	});
 
 	return (

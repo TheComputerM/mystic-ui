@@ -1,11 +1,12 @@
-import { cx, css } from "styled-system/css";
 import {
-	createEffect,
-	mergeProps,
-	splitProps,
 	type Component,
 	type JSX,
+	createEffect,
+	mergeProps,
+	onCleanup,
+	splitProps,
 } from "solid-js";
+import { css, cx } from "styled-system/css";
 
 export interface NoSignalScreenProps
 	extends JSX.CanvasHTMLAttributes<HTMLCanvasElement> {
@@ -58,10 +59,10 @@ export const NoSignalScreen: Component<NoSignalScreenProps> = (props) => {
 
 		animationFrameId = requestAnimationFrame(drawNoise);
 
-		return () => {
+		onCleanup(() => {
 			window.removeEventListener("resize", resizeCanvas);
 			cancelAnimationFrame(animationFrameId);
-		};
+		});
 	});
 
 	return (
@@ -73,8 +74,8 @@ export const NoSignalScreen: Component<NoSignalScreenProps> = (props) => {
 					opacity: 0.5,
 					position: "absolute",
 					inset: 0,
-          width: "full",
-          height: "full",
+					width: "full",
+					height: "full",
 				}),
 				localProps.class,
 			)}
