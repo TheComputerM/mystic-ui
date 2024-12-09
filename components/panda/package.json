@@ -15,17 +15,17 @@
 		"@biomejs/biome": "1.9.4",
 		"@mystic-ui/registry": "workspace:*",
 		"@pandacss/dev": "^0.47.1",
-		"@storybook/addon-essentials": "^8.4.3",
-		"@storybook/addon-themes": "^8.4.3",
-		"@storybook/builder-vite": "^8.4.3",
-		"@storybook/docs-tools": "^8.4.3",
+		"@storybook/addon-essentials": "^8.4.7",
+		"@storybook/addon-themes": "^8.4.7",
+		"@storybook/builder-vite": "^8.4.7",
+		"@storybook/docs-tools": "^8.4.7",
 		"@types/bun": "latest",
 		"postcss": "^8.4.49",
-		"storybook": "^8.4.3",
+		"storybook": "^8.4.7",
 		"storybook-solidjs": "^1.0.0-beta.6",
 		"storybook-solidjs-vite": "^1.0.0-beta.6",
 		"tw2panda": "^0.3.1",
-		"vite-tsconfig-paths": "^5.1.2"
+		"vite-tsconfig-paths": "^5.1.4"
 	},
 	"peerDependencies": {
 		"typescript": "^5.3.3"

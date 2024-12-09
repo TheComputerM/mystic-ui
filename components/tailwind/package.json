@@ -5,19 +5,19 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@mystic-ui/registry": "workspace:*",
-		"@storybook/addon-essentials": "^8.4.3",
-		"@storybook/addon-themes": "^8.4.3",
-		"@storybook/builder-vite": "^8.4.3",
-		"@storybook/docs-tools": "^8.4.3",
+		"@storybook/addon-essentials": "^8.4.7",
+		"@storybook/addon-themes": "^8.4.7",
+		"@storybook/builder-vite": "^8.4.7",
+		"@storybook/docs-tools": "^8.4.7",
 		"@types/bun": "latest",
 		"autoprefixer": "^10.4.20",
 		"postcss": "^8.4.49",
-		"storybook": "^8.4.3",
+		"storybook": "^8.4.7",
 		"storybook-solidjs": "^1.0.0-beta.6",
 		"storybook-solidjs-vite": "^1.0.0-beta.6",
-		"tailwindcss": "^3.4.14",
-		"ts-deepmerge": "^7.0.1",
-		"vite-tsconfig-paths": "^5.1.2"
+		"tailwindcss": "^3.4.16",
+		"ts-deepmerge": "^7.0.2",
+		"vite-tsconfig-paths": "^5.1.4"
 	},
 	"scripts": {
 		"storybook": "storybook dev -p 6006",
@@ -27,13 +27,13 @@
 		"check": "biome check src"
 	},
 	"dependencies": {
-		"@tsparticles/engine": "^3.5.0",
-		"@tsparticles/slim": "^3.5.0",
+		"@tsparticles/engine": "^3.7.1",
+		"@tsparticles/slim": "^3.7.1",
 		"clsx": "^2.1.1",
 		"motion": "^10.18.0",
 		"solid-icons": "^1.1.0",
 		"solid-js": "^1.9.3",
 		"solid-motionone": "^1.0.2",
-		"tailwind-merge": "^2.5.4"
+		"tailwind-merge": "^2.5.5"
 	}
 }
