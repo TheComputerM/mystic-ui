@@ -1,4 +1,4 @@
-import { animate, inView, spring } from "motion";
+import { animate, inView } from "motion";
 import {
 	type Component,
 	type JSX,
@@ -29,8 +29,12 @@ export const NumberTicker: Component<NumberTickerProps> = (props) => {
 
 	onMount(() => {
 		inView(ref, () => {
-			animate(
-				(progress) => {
+			animate(0, 1, {
+				delay: localProps.delay,
+				type: "spring",
+				damping: 65,
+				stiffness: 100,
+				onUpdate: (progress) => {
 					let latest = progress * localProps.value;
 					if (localProps.direction === "down") {
 						latest = localProps.value - latest;
@@ -40,11 +44,7 @@ export const NumberTicker: Component<NumberTickerProps> = (props) => {
 						maximumFractionDigits: localProps.decimalPlaces,
 					}).format(Number(latest.toFixed(localProps.decimalPlaces)));
 				},
-				{
-					delay: localProps.delay,
-					easing: spring({ stiffness: 100, damping: 60 }),
-				},
-			);
+			});
 		});
 	});
 

@@ -4,6 +4,7 @@ import {
 	For,
 	createSignal,
 	mergeProps,
+	onCleanup,
 	onMount,
 } from "solid-js";
 import { css, cx } from "styled-system/css";
@@ -21,14 +22,11 @@ export const TextReveal: Component<TextRevealByWordProps> = (props) => {
 
 	let targetRef!: HTMLDivElement;
 	onMount(() => {
-		scroll(
-			(info) => {
-				setScrollY(info.y.progress);
-			},
-			{
-				target: targetRef,
-			},
-		);
+		const cancel = scroll((progress: number) => setScrollY(progress), {
+			target: targetRef,
+		});
+
+		onCleanup(() => cancel());
 	});
 
 	return (

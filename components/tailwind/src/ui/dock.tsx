@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { spring } from "motion";
 import {
 	type Accessor,
 	type JSX,
@@ -10,7 +9,6 @@ import {
 	splitProps,
 	useContext,
 } from "solid-js";
-import { Motion } from "solid-motionone";
 
 export interface DockProps extends JSX.HTMLAttributes<HTMLDivElement> {
 	magnification?: number;
@@ -86,20 +84,16 @@ export const DockIcon: ParentComponent<DockIconProps> = (props) => {
 		baseWidth;
 
 	return (
-		<Motion.div
+		<div
 			ref={ref}
 			class={cn(
 				"flex aspect-square cursor-pointer items-center justify-center rounded-full",
 				localProps.class,
 			)}
-			initial={{ width: `${baseWidth}px` }}
-			animate={{ width: `${width()}px` }}
-			transition={{
-				easing: spring({ mass: 0.1, stiffness: 150, damping: 12 }),
-			}}
+			style={{ width: `${width()}px` }}
 			{...forwardProps}
 		>
 			{localProps.children}
-		</Motion.div>
+		</div>
 	);
 };

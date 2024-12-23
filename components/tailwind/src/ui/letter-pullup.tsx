@@ -1,8 +1,6 @@
-import { Motion } from "solid-motionone";
-
 import { cn } from "@/lib/utils";
-import { spring } from "motion";
-import { type Component, For, mergeProps } from "solid-js";
+import { animate, inView, stagger } from "motion";
+import { type Component, For, mergeProps, onCleanup, onMount } from "solid-js";
 
 export interface LetterPullupProps {
 	text: string;
@@ -12,22 +10,39 @@ export interface LetterPullupProps {
 
 export const LetterPullup: Component<LetterPullupProps> = (props) => {
 	const localProps = mergeProps({ delay: 0.05 }, props);
+	let container!: HTMLDivElement;
+
+	onMount(() => {
+		const stop = inView(container, (info) => {
+			animate(
+				Array.from(info.target.children),
+				{
+					y: [100, 0],
+					opacity: [0, 1],
+				},
+				{
+					delay: stagger(localProps.delay),
+				},
+			);
+		});
+
+		onCleanup(() => stop());
+	});
 
 	return (
-		<div class={cn("flex", localProps.class)}>
+		<div class={cn("flex", localProps.class)} ref={container}>
 			<For each={localProps.text.split("")}>
 				{(letter, i) => (
-					<Motion.div
-						initial={{ y: 100, opacity: 0 }}
-						inView={{ y: 0, opacity: 1 }}
-						inViewOptions={{ once: true }}
-						transition={{
-							delay: i() * localProps.delay,
-							easing: spring({ damping: 15, stiffness: 200, velocity: 5 }),
-						}}
+					<div
+					// initial={{ y: 100, opacity: 0 }}
+					// inView={{ y: 0, opacity: 1 }}
+					// inViewOptions={{ once: true }}
+					// transition={{
+					// 	delay: i() * localProps.delay,
+					// }}
 					>
 						{letter === " " ? <span>&nbsp;</span> : letter}
-					</Motion.div>
+					</div>
 				)}
 			</For>
 		</div>

@@ -60,16 +60,16 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 	// Calculate the gradient coordinates based on the reverse prop
 	const gradientCoordinates = localProps.reverse
 		? {
-				x1: [90, -10],
-				x2: [100, 0],
-				y1: [0, 0],
-				y2: [0, 0],
+				x1: ["90%", "-10%"],
+				x2: ["100%", "0%"],
+				y1: ["0%", "0%"],
+				y2: ["0%", "0%"],
 			}
 		: {
-				x1: [10, 110],
-				x2: [0, 100],
-				y1: [0, 0],
-				y2: [0, 0],
+				x1: ["10%", "110%"],
+				x2: ["0%", "100%"],
+				y1: ["0%", "0%"],
+				y2: ["0%", "0%"],
 			};
 
 	createEffect(() => {
@@ -132,32 +132,12 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 
 	let linearGradient!: SVGLinearGradientElement;
 	onMount(() => {
-		const controls = animate(
-			(p) => {
-				linearGradient.setAttribute(
-					"x1",
-					`${gradientCoordinates.x1[1] * p + gradientCoordinates.x1[0] * (1 - p)}%`,
-				);
-				linearGradient.setAttribute(
-					"x2",
-					`${gradientCoordinates.x2[1] * p + gradientCoordinates.x2[0] * (1 - p)}%`,
-				);
-				linearGradient.setAttribute(
-					"y1",
-					`${gradientCoordinates.y1[1] * p + gradientCoordinates.y1[0] * (1 - p)}%`,
-				);
-				linearGradient.setAttribute(
-					"y2",
-					`${gradientCoordinates.y2[1] * p + gradientCoordinates.y2[0] * (1 - p)}%`,
-				);
-			},
-			{
-				delay: localProps.delay,
-				duration: localProps.duration,
-				easing: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
-				repeat: Number.POSITIVE_INFINITY,
-			},
-		);
+		const controls = animate(linearGradient, gradientCoordinates, {
+			duration: localProps.duration,
+			delay: localProps.delay,
+			ease: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
+			repeat: Number.POSITIVE_INFINITY,
+		});
 
 		onCleanup(() => controls.stop());
 	});
@@ -200,6 +180,10 @@ export const AnimatedBeam: Component<AnimatedBeamProps> = (props) => {
 					id={id}
 					gradientUnits="userSpaceOnUse"
 					ref={linearGradient}
+					x1="0%"
+					x2="0%"
+					y1="0%"
+					y2="0%"
 				>
 					<stop stop-color={localProps.gradientStartColor} stop-opacity="0" />
 					<stop stop-color={localProps.gradientStartColor} />

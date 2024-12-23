@@ -30,7 +30,7 @@
 		"@tsparticles/engine": "^3.7.1",
 		"@tsparticles/slim": "^3.7.1",
 		"clsx": "^2.1.1",
-		"motion": "^10.18.0",
+		"motion": "^11.13.1",
 		"solid-icons": "^1.1.0",
 		"solid-js": "^1.9.3",
 		"solid-motionone": "^1.0.2",
